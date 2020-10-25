@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <title>Arduino WebSerial => turn on / off led</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Arduino WebSerial. </h1>
+    </header>
+    <main class="main">
+      <div id="notSupported">
+        Este navegador NO soporta <b>Web Serial</b>. Asegúrate que estás usando
+        Chrome/Chromium 78 o superior y que está habilitado el flag
+        <code>#enable-experimental-web-platform-features</code> en
+        <code>chrome://flags</code>
+        En Chrome copia esta URL en una nueva pestaña: <a href="chrome://flags/#enable-experimental-web-platform-features">chrome://flags/#enable-experimental-web-platform-features</a>
+      </div>
+      <br>
+      <button id="butConnect" type="button" disabled>🔌Conectar</button>
+      <br>
+      <p>Cambiar estado LED</p>
+      <input disabled class="led" type="checkbox" id="led">
+    </main>
+  </body>
+</html>
