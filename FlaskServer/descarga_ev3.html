@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<center><h3>En esta sección podrás enviar tu código  al Lego Ev3.</h3></center>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+
+	.ace_editor {
+		border: 1px solid lightgray;
+		margin: auto;
+		height: 200px;
+		width: 80%;
+	}
+	.scrollmargin {
+		height: 80px;
+        text-align: center;
+	}
+    </style>
+</head>
+
+
+
+<script>
+    let responseOk;
+
+    function send_code_to_ev3() {
+        var editor = ace.edit("ace");
+        let code = editor.getValue();
+        console.log(code);
+        const message = {
+            method: "GET"
+        };
+        url = 'http://10.42.0.102:8001/run?python_code=' + JSON.stringify(code);
+        fetch(url, message)
+            .then(function(response) {
+                if(response.ok){
+                    responseOk = true
+                }else{
+                    responseOk = false
+                }
+                return response.text();
+            })
+            .then(function(data) {
+                 if(responseOk){
+                    console.log("Ok")
+                }else{
+                    console.log("Send Fail")
+                }
+
+            })
+            .catch(function(err) {
+                console.error(err);
+            });
+    }
+
+    function save_exercise() {
+        var editor = ace.edit("ace");
+        let code = editor.getValue();
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            console.log('código guardado con éxito');
+          }
+        };
+        var csrf = '{{ csrf_token }}';
+        xhttp.open("POST", "/save_user_code/", true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.setRequestHeader("X-CSRFToken", csrf);
+        xhttp.send(JSON.stringify({
+            simulation_code : code
+        }));
+    }
+
+</script>

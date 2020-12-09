@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+
+
+from time import sleep
+from ev3dev2 import list_devices
+from ev3dev2.port import LegoPort
+from ev3dev2.motor import OUTPUT_A, LargeMotor, SpeedPercent
+from ev3dev2.sensor import INPUT_1
+from ev3dev2.sensor.lego import UltrasonicSensor
+
+p1 = LegoPort(INPUT_1)
+p1.mode = 'ev3-uart'
+p1.set_device = 'lego-ev3-us'
+
+
+sleep(0.5)
+
+s = UltrasonicSensor(INPUT_1)
+tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
+gyro = True
+
+print("Running motor...")
+
+while True:
+    dist = s.distance_centimeters
+    if dist < 20:
+        if gyro:
+            tank_drive.on_for_rotations(SpeedPercent(5), SpeedPercent(30), 1)
+            gyro = False
+        else:
+            tank_drive.on_for_rotations(SpeedPercent(30), SpeedPercent(5), 1)
+            gyro = True
+    else:
+        tank_drive.on(SpeedPercent(30), SpeedPercent(30))
+
+    sleep(0.05)

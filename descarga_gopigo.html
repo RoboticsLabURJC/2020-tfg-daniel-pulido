@@ -1,0 +1,71 @@
+{% load static %} <!-- Cargamos los archivos estaticos -->
+
+
+<center><h3>En esta sección podrás enviar tu código  al Gopigo3.</h3></center>
+
+<div class="text-center">
+    <img class="text-center" src="{% static '/'%}{{ exercise.language }}/{{ exercise.exercise_id }}/img/gopigo3.png"
+         width="300px" height="250px">
+</div>
+
+<div id="text" class="text-center">
+    <h3><span id="proxy_state" class="label label-success">Conexión con proxy</span></h3>
+    {% if exercise.language == "python" %}
+        <button type="button" id="send_mbot" class="btn btn-info" onclick="send_code_to_gopigo()"><span
+                class="glyphicon glyphicon-send"></span> Enviar
+        </button>
+</div>
+
+<script>
+    let responseOk;
+
+    function send_code_to_gopigo() {
+        var editor = ace.edit("ace");
+        let code = editor.getValue();
+        console.log(code);
+        const message = {
+            method: "GET"
+        };
+        url = 'http://192.168.1.200:8001/run?python_code=' + JSON.stringify(code);
+        fetch(url, message)
+            .then(function(response) {
+                if(response.ok){
+                    responseOk = true
+                }else{
+                    responseOk = false
+                }
+                return response.text();
+            })
+            .then(function(data) {
+                 if(responseOk){
+                    console.log("Ok")
+                }else{
+                    console.log("Send Fail")
+                }
+
+            })
+            .catch(function(err) {
+                console.error(err);
+            });
+    }
+
+    function save_exercise() {
+        var editor = ace.edit("ace");
+        let code = editor.getValue();
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            console.log('código guardado con éxito');
+          }
+        };
+        var csrf = '{{ csrf_token }}';
+        xhttp.open("POST", "/save_user_code/", true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        xhttp.setRequestHeader("X-CSRFToken", csrf);
+        xhttp.send(JSON.stringify({
+            simulation_code : code
+        }));
+    }
+
+</script>

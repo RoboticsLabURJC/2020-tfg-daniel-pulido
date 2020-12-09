@@ -1,0 +1,41 @@
+<center><h3>En esta sección podrás enviar tu código  al Lego Ev3.</h3></center>
+  <div>
+    <button type="button" id="send_mbot" class="btn btn-info" onclick="send_code_to_ev3()"><span
+            class="glyphicon glyphicon-send"></span> Enviar
+    </button>
+  </div>
+
+  <script>
+      let responseOk;
+
+      function send_code_to_ev3() {
+          let code = 'from time import sleep\nfrom ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveTank\nfrom ev3dev2.sensor import INPUT_1\nfrom ev3dev2.sensor.lego import TouchSensor\nfrom ev3dev2.led import Leds\n\nfrom ev3dev2.port import LegoPort\n# TODO: Add code here\n\nm = LargeMotor(OUTPUT_A)\nm.on_for_rotations(SpeedPercent(75), 5)';
+          console.log(code);
+          const message = {
+              method: "POST"
+          };
+          url = 'http://10.42.0.102:8001/run?python_code=' + JSON.stringify(code);
+          fetch(url, message)
+              .then(function(response) {
+                  if(response.ok){
+                      responseOk = true
+                  }else{
+                      responseOk = false
+                  }
+                  return response.text();
+              })
+              .then(function(data) {
+                   if(responseOk){
+                      console.log("Ok")
+                  }else{
+                      console.log("Send Fail")
+                  }
+
+              })
+              .catch(function(err) {
+                  console.error(err);
+              });
+      }
+</script>
+
+<!-- from time import sleep\nfrom ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveTank\nfrom ev3dev2.sensor import INPUT_1\nfrom ev3dev2.sensor.lego import TouchSensor\nfrom ev3dev2.led import Leds\n\nfrom ev3dev2.port import LegoPort\n# TODO: Add code here\n\nm = LargeMotor(OUTPUT_A)\nm.on_for_rotations(SpeedPercent(75), 5) -->
