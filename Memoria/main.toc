@@ -6,3 +6,8 @@
 \contentsline {subsection}{\numberline {1.1.1}Aplicaciones robóticas}{3}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Software en robótica}{6}{subsection.1.1.2}%
 \contentsline {section}{\numberline {1.2}Robótica educativa}{7}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Objetivos}{11}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Objetivos del TFG}{11}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Metodología}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Requisitos}{13}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Plan de trabajo}{14}{section.2.4}%
