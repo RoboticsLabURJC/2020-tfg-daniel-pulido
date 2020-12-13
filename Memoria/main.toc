@@ -11,3 +11,27 @@
 \contentsline {section}{\numberline {2.2}Metodología}{12}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Requisitos}{13}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Plan de trabajo}{14}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Soporte Simulado}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Características del Lego Ev3}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Soporte de sensores}{18}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Sensor de color}{18}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Sensor de ultrasonido}{21}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Modelo 3D, apariencia}{23}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Bloques Scratch para programación gráfica del drone}{25}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Nuevos robots}{27}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Teleoperadores en WebSim}{28}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Interfaz gráfica}{29}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Arquitectura}{31}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}WebSim y sus ficheros de configuración}{34}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Nuevos ejercicios individuales}{36}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Sigue-líneas visión}{36}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Sigue-líneas infrarrojos}{38}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Choca-gira}{39}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Sigue-pelota}{40}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Atraviesa-bosque}{43}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Cuadrado con drone}{44}{subsection.3.4.6}%
+\contentsline {section}{\numberline {3.5}Ejercicios competitivos}{45}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Arquitectura de cómputo}{45}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Atraviesa-bosque competitivo}{50}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Sigue-líneas competitivo}{53}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Gato-ratón}{54}{subsection.3.5.4}%
