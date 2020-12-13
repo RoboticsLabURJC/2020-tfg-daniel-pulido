@@ -19,32 +19,11 @@
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Robot con sensor de ultrasonidos\relax }}{17}{figure.caption.18}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Sensor color\relax }}{18}{figure.caption.19}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Sensor de ultrasonidos\relax }}{21}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Drone en Blender\relax }}{24}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Escenario de WebSim con drone integrado\relax }}{25}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Modelos de \textit {drone} de distintos colores\relax }}{25}{figure.caption.24}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Bloque de velocidad de ascenso\relax }}{25}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Bloque que obtiene la velocidad vertical del robot\relax }}{26}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Bloque de aterrizaje\relax }}{26}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Bloque de despegue\relax }}{26}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Espacio de trabajo de \textit {Scratch} con los bloques del drone incorporados\relax }}{27}{figure.caption.29}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Modelos de coches Fórmula 1\relax }}{28}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Modelo mBot\relax }}{28}{figure.caption.31}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Interfaz que permite acceder a cada uno de los teleoperadores\relax }}{30}{figure.caption.33}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Arquitectura de la aplicación teleoperadores\relax }}{32}{figure.caption.34}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Escenario para el ejercicio \textit {piBot} sigue-líneas con cámara\relax }}{37}{figure.caption.35}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Solución en \textit {Scratch} para el ejercicio sigue-líneas visión\relax }}{37}{figure.caption.36}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Escenario para el ejercicio para el \textit {robot piBot} sigue-líneas infrarrojos\relax }}{38}{figure.caption.37}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Solución en \textit {Scratch} para el ejercicio sigue-líneas infrarrojos\relax }}{38}{figure.caption.38}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Escenario para el ejercicio choca-gira\relax }}{39}{figure.caption.39}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Solución en \textit {Scratch} para el ejercicio choca-gira\relax }}{40}{figure.caption.40}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Secuencia del ejercicio \textit {drone} sigue-pelota\relax }}{42}{figure.caption.41}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Solución en \textit {Scratch} para el ejercicio sigue pelota drone\relax }}{42}{figure.caption.42}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Escenario para el ejercicio atraviesa bosque\relax }}{43}{figure.caption.43}%
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Solución en \textit {Scratch} para el ejercicio atraviesa bosque\relax }}{43}{figure.caption.44}%
-\contentsline {figure}{\numberline {3.30}{\ignorespaces Escenario de WebSim para el ejercicio drone cuadrado\relax }}{44}{figure.caption.45}%
-\contentsline {figure}{\numberline {3.31}{\ignorespaces Solución en \textit {Scratch} para el ejercicio cuadrado drone\relax }}{44}{figure.caption.46}%
-\contentsline {figure}{\numberline {3.32}{\ignorespaces Editor de \textit {JavaScript} para ejercicios competitivos\relax }}{45}{figure.caption.47}%
-\contentsline {figure}{\numberline {3.33}{\ignorespaces Editor de \textit {Scratch} para ejercicios competitivos\relax }}{47}{figure.caption.48}%
-\contentsline {figure}{\numberline {3.34}{\ignorespaces Escenario y evaluador para el ejercicio atraviesa-bosque\relax }}{50}{figure.caption.49}%
-\contentsline {figure}{\numberline {3.35}{\ignorespaces Ejercicio y evaluador sigue-líneas competitivo\relax }}{54}{figure.caption.50}%
-\contentsline {figure}{\numberline {3.36}{\ignorespaces Evaluador y escenario con dos robots para ejercicio gato-ratón\relax }}{55}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Raycaster\relax }}{22}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Sensor tactil\relax }}{24}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces girosensor\relax }}{25}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Escenario para el ejercicio \textit {LEGO EV3} sigue-líneas\relax }}{26}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Solución en \textit {Scratch} para el ejercicio sigue-líneas\relax }}{26}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Solución en \textit {Scratch} para el ejercicio choca-gira\relax }}{27}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Escenario para el ejercicio atraviesa bosque\relax }}{29}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Solución en \textit {JavaScript} para el ejercicio atraviesa bosque\relax }}{29}{figure.caption.28}%
