@@ -6,24 +6,28 @@
 \contentsline {figure}{\numberline {1.4}{\ignorespaces Robot militar \textit {Big Dog} creado por \textit {Boston Dynamics}\relax }}{5}{figure.caption.7}%
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Vehículo \textit {Waymo} de \textit {Google}\relax }}{6}{figure.caption.8}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Robot \textit {Perseverance} de la \textit {NASA}\relax }}{6}{figure.caption.9}%
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Interfaz gráfica de Scratch\relax }}{8}{figure.caption.10}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Interfaz de LEGO WeDo\relax }}{9}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Interfaz gráfica de LEGO Ev3\relax }}{9}{figure.caption.12}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Kit de piezas y sensores de LEGO Ev3\relax }}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Comunicación cliente-servidor en HTTP\relax }}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Modelo de Educación \textit {STEM}\relax }}{11}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Interfaz gráfica de Scratch\relax }}{12}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Interfaz de LEGO WeDo\relax }}{12}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Interfaz gráfica de LEGO Ev3\relax }}{13}{figure.caption.14}%
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Kit de piezas y sensores de LEGO Ev3\relax }}{14}{figure.caption.15}%
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Menu principal de \textit {Kibotics}\relax }}{15}{figure.caption.16}%
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Ejercicio en Kibotics\relax }}{15}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Metodología de modelo iterativo\relax }}{13}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Metodología de modelo iterativo\relax }}{19}{figure.caption.18}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Conjunto Ev3\relax }}{16}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Robot con sensor de color\relax }}{17}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Robot con sensor tactil\relax }}{17}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Robot con sensor de ultrasonidos\relax }}{17}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Sensor color\relax }}{18}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Sensor de ultrasonidos\relax }}{21}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Raycaster\relax }}{22}{figure.caption.21}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Sensor tactil\relax }}{24}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces girosensor\relax }}{25}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Escenario para el ejercicio \textit {LEGO EV3} sigue-líneas\relax }}{26}{figure.caption.24}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Solución en \textit {Scratch} para el ejercicio sigue-líneas\relax }}{26}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Solución en \textit {Scratch} para el ejercicio choca-gira\relax }}{27}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Escenario para el ejercicio atraviesa bosque\relax }}{29}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Solución en \textit {JavaScript} para el ejercicio atraviesa bosque\relax }}{29}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Conjunto Ev3\relax }}{22}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Robot con sensor de color\relax }}{23}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Robot con sensor tactil\relax }}{23}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Robot con sensor de ultrasonidos\relax }}{23}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sensor color\relax }}{24}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Sensor de ultrasonidos\relax }}{27}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Raycaster\relax }}{28}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Sensor tactil\relax }}{30}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces girosensor\relax }}{31}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Escenario para el ejercicio \textit {LEGO EV3} sigue-líneas\relax }}{32}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Solución en \textit {Scratch} para el ejercicio sigue-líneas\relax }}{32}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Solución en \textit {Scratch} para el ejercicio choca-gira\relax }}{33}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Escenario para el ejercicio atraviesa bosque\relax }}{35}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Solución en \textit {JavaScript} para el ejercicio atraviesa bosque\relax }}{35}{figure.caption.32}%

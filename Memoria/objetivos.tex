@@ -9,15 +9,26 @@ El objetivo de este trabajo es dar soporte en la plataforma de \textit{Kibotics}
         
     \item Añadir la infraestructura necesaria como \textit{drivers}, y funciones al \textit{Robot API} para que el robot se programable en cualquier lenguaje soportado por la plataforma, y funcione en el robot real
     
-    \item Crear un conjunto de ejercicios para que haya un temario fácil de seguir por el estudiante, y con una curva de dificultad moderada
+    \item Crear un conjunto de ejercicios para que haya una comprobacion de que lo implementado funciona, y asi tener un temario fácil de seguir por el estudiante, y con una curva de dificultad moderada
     
 \end{itemize}
 \textbf{Soporte Real}
 \begin{itemize}
-    \item Instalar una imagen de un sistema operativo en el \textit{Lego ev3} en este caso, una distribución basada en \textit{Debian Linux}.
-    \item Instalar un servidor en el robot capaz de recibir mensajes con el código, y lo transforme en un archivo y lo ejecute dentro de la máquina.
+    \item Instalar una imagen de un sistema operativo en el \textit{Lego ev3} en este caso, una distribución basada en \textit{Debian Linux}, e instalar lo necesario para que se ejecuten programas en \textit{Python}.
+    \item Instalar un servidor en el robot capaz de recibir mensajes con el código, y lo transforme en un archivo y lo ejecute dentro de la máquina. Posteriormente, probar la ejecución enviando ejercicios desde el navegador.
     
 \end{itemize}
+
+\section{Requisitos}
+\label{sec:requisitos}
+Para completar la integración del robot \textbf{LEGO Ev3} se necesitan ciertos requisitos que cumplir:
+\begin{itemize}
+    \item Dentro del \textbf{LEGO Ev3} debe correr una distribución de \textit{Linux} , en este caso he optado por la imagen creada por \textit{ev3dev}, que es una distribución basada en el sistema operativo \textit{Debian Linux}, de la cual entrare en mas detalle en el Capitulo 5: \textit{Soporte Lego ev3 físico}.
+\item Se deben crear todas las funciones necesarias para que todos los sensores incluidos en \textit{LEGO Ev3}, tengan equivalencia en la plataforma de \textit{Kibotics}.
+\item Toda la funcionalidad que implemente en la plataforma debe ser comprobada mediante ejercicios que se realicen tanto en la plataforma, como en el robot real.
+    \item El resultado final debe ser lo más sencillo posible, no debe requerir configuraciones adicionales. Este software tiene que estar diseñado para estudiantes. 
+\end{itemize}    
+
 \section{Metodología}
 \label{sec:metodologia}
 
@@ -37,22 +48,15 @@ Cuando los cambios eran revisados por el tutor, se seguía una dinámica de \tex
 
 
 
-\section{Requisitos}
-\label{sec:requisitos}
-Para completar la integración del robot \textbf{LEGO Ev3} se necesitan ciertos requisitos que cumplir:
-\begin{itemize}
-    \item Dentro del \textbf{LEGO Ev3} debe correr una distribución de \textit{Linux} , en este caso he optado por la imagen creada por \textit{ev3dev}, que es una distribución basada en el sistema operativo \textit{Debian Linux}, de la cual entrare en mas detalle en el Capitulo 5: \textit{Soporte Lego ev3 físico}.
-    \item El resultado final debe ser lo más sencillo posible, no debe requerir configuraciones adicionales. Este software tiene que estar diseñado para estudiantes. 
-\end{itemize}    
-
 \section{Plan de trabajo}
 \label{sec:plan}
 
 El plan de trabajo a seguir para conseguir el objetivo se puede dividir en los siguientes pasos:
 \begin{itemize}
     \item \textit{Paso 1}: Aterrizaje en \textit{Kibotics}. Lo primero que hay que hacer es familiarizarse con el entorno con el que se va a trabajar. \textit{Kibotics} es una plataforma web en la que entraremos mas en detalle en el siguiente capitulo 
-    \item \textit{Paso 2}: Comienzo de la creación del robot simulado. Comenzaremos por la creación de varios modelos 3D para usarlos en el entorno simulado, son varios diferentes ya que lo original que tiene \textit{LEGO} es poder construir tu robot en base a la tarea que vaya a realizar, con las piezas que incluye el kit .
+    \item \textit{Paso 2}: Comienzo de la creación del robot simulado. Comenzaremos por la creación de varios modelos 3D para usarlos en el entorno simulado, son varios diferentes ya que lo original que tiene \textit{LEGO} es poder construir tu robot en base a la tarea que vaya a realizar, con las piezas que incluye el kit. Además de la creación de los ejercicios que lleven a probar las funciones implementadas, para probar su funcionamiento, así como para añadirlos a la plataforma.
     \item \textit{Paso 3}: Desarrollo de las funciones y ejercicios dentro de la aplicación de \textit{Kibotics} para crear una dinámica de trabajo con el nuevo robot.
-    \item \textit{Paso 4}: Dar soporte al robot real para poder programarlo en \textit{python} desde el exterior, y la instalación de un server para que pueda recibir código y ejecutarlo en local. 
+    \item \textit{Paso 4}: Dar soporte al robot real para poder programarlo en \textit{python} desde el exterior, y la instalación de un server para que pueda recibir código y ejecutarlo en local.\newline
+Probar que funciona este envio de programas,con la ejecución de ejercicios programados en el navegador
     \item \textit{Paso 5}: Creación de los \textit{drivers} que hagan de traductor entre lo que creas en la plataforma, y lo que entiende el robot. 
 \end{itemize}

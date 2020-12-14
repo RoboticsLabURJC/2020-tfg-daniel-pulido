@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.12)  13 DEC 2020 21:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.12)  14 DEC 2020 03:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -487,7 +487,7 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 16
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-<img/logo_vect.png, id=96, 169.8345pt x 338.2236pt>
+<img/logo_vect.png, id=164, 169.8345pt x 338.2236pt>
 File: img/logo_vect.png Graphic file (type png)
 <use img/logo_vect.png>
 Package pdftex.def Info: img/logo_vect.png  used on input line 162.
@@ -542,7 +542,7 @@ LaTeX Info: Redefining \% on input line 220.
 
 ] (./intro.tex
 Cap\'{\i }tulo 1.
-<img/robot.png, id=211, 1505.625pt x 1929.2075pt>
+<img/robot.png, id=311, 1505.625pt x 1929.2075pt>
 File: img/robot.png Graphic file (type png)
 <use img/robot.png>
 Package pdftex.def Info: img/robot.png  used on input line 13.
@@ -569,7 +569,7 @@ been already used, duplicate ignored
 l.22     \item \textbf
                       {Actuadores}: Equivalen a los músculos humanos, son l...
 [2 <./img/robot.png>]
-<img/roomba.jpg, id=219, 376.40625pt x 351.56343pt>
+<img/roomba.jpg, id=319, 376.40625pt x 351.56343pt>
 File: img/roomba.jpg Graphic file (type jpg)
 <use img/roomba.jpg>
 Package pdftex.def Info: img/roomba.jpg  used on input line 33.
@@ -587,12 +587,12 @@ been already used, duplicate ignored
                    \relax 
 l.36 
       [3]
-<img/davinci.jpg, id=223, 979.66pt x 654.445pt>
+<img/davinci.jpg, id=323, 979.66pt x 654.445pt>
 File: img/davinci.jpg Graphic file (type jpg)
 <use img/davinci.jpg>
 Package pdftex.def Info: img/davinci.jpg  used on input line 40.
 (pdftex.def)             Requested size: 273.14923pt x 182.46443pt.
-<img/bigdog.jpg, id=224, 223.60046pt x 265.79839pt>
+<img/bigdog.jpg, id=324, 223.60046pt x 265.79839pt>
 File: img/bigdog.jpg Graphic file (type jpg)
 <use img/bigdog.jpg>
 Package pdftex.def Info: img/bigdog.jpg  used on input line 47.
@@ -607,7 +607,7 @@ been already used, duplicate ignored
                    \relax 
 l.49     \end{figure}
                       [4 <./img/roomba.jpg> <./img/davinci.jpg>]
-<img/waymo.jpg, id=228, 1928.20375pt x 947.54pt>
+<img/waymo.jpg, id=328, 1928.20375pt x 947.54pt>
 File: img/waymo.jpg Graphic file (type jpg)
 <use img/waymo.jpg>
 Package pdftex.def Info: img/waymo.jpg  used on input line 55.
@@ -625,7 +625,7 @@ been already used, duplicate ignored
                    \relax 
 l.58 
       [5 <./img/bigdog.jpg>]
-<img/perseverance.jpg, id=233, 622.325pt x 350.30875pt>
+<img/perseverance.jpg, id=333, 622.325pt x 350.30875pt>
 File: img/perseverance.jpg Graphic file (type jpg)
 <use img/perseverance.jpg>
 Package pdftex.def Info: img/perseverance.jpg  used on input line 62.
@@ -653,12 +653,6 @@ LaTeX Warning: Citation `bib:orocos' on page 7 undefined on input line 73.
 
 LaTeX Warning: Citation `bib:jderobot' on page 7 undefined on input line 74.
 
-
-LaTeX Warning: Citation `bib:secundaria' on page 7 undefined on input line 82.
-
-
-LaTeX Warning: Citation `bib:primaria' on page 7 undefined on input line 82.
-
 LaTeX Info: Redefining \. on input line 84.
 LaTeX Info: Redefining \% on input line 84.
 LaTeX Info: Redefining \. on input line 84.
@@ -667,97 +661,168 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.84 
-      [7]
+l.84 \item \textbf
+                  {Tecnología Push:} Esta tecnología consiste en entregar ...
+[7]
+<img/http.jpeg, id=343, 814.04124pt x 511.9125pt>
+File: img/http.jpeg Graphic file (type jpg)
+<use img/http.jpeg>
+Package pdftex.def Info: img/http.jpeg  used on input line 102.
+(pdftex.def)             Requested size: 325.61072pt x 204.76137pt.
 
-LaTeX Warning: Citation `bib:scratch' on page 8 undefined on input line 86.
 
-<img/scratch.jpg, id=241, 702.625pt x 376.40625pt>
-File: img/scratch.jpg Graphic file (type jpg)
-<use img/scratch.jpg>
-Package pdftex.def Info: img/scratch.jpg  used on input line 89.
-(pdftex.def)             Requested size: 318.66948pt x 170.71947pt.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Warning: Citation `bib:lego' on page 8 undefined on input line 93.
-
-<img/lego1.png, id=242, 1283.79625pt x 801.99625pt>
-File: img/lego1.png Graphic file (type png)
-<use img/lego1.png>
-Package pdftex.def Info: img/lego1.png  used on input line 97.
-(pdftex.def)             Requested size: 318.66948pt x 199.06677pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 100.
-LaTeX Info: Redefining \% on input line 100.
-LaTeX Info: Redefining \. on input line 100.
-LaTeX Info: Redefining \% on input line 100.
+LaTeX Info: Redefining \. on input line 109.
+LaTeX Info: Redefining \% on input line 109.
+LaTeX Info: Redefining \. on input line 109.
+LaTeX Info: Redefining \% on input line 109.
 pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.100 
-       [8 <./img/scratch.jpg>]
-<img/lego2.jpg, id=248, 1204.5pt x 718.685pt>
-File: img/lego2.jpg Graphic file (type jpg)
-<use img/lego2.jpg>
-Package pdftex.def Info: img/lego2.jpg  used on input line 105.
-(pdftex.def)             Requested size: 318.66948pt x 190.14355pt.
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
-LaTeX Info: Redefining \. on input line 110.
-LaTeX Info: Redefining \% on input line 110.
- [9 <./img/lego1.png> <./img/lego2.jpg>]
-<img/kitev3.jpg, id=254, 701.62125pt x 529.98pt>
-File: img/kitev3.jpg Graphic file (type jpg)
-<use img/kitev3.jpg>
-Package pdftex.def Info: img/kitev3.jpg  used on input line 114.
-(pdftex.def)             Requested size: 318.66948pt x 240.71266pt.
-)
-(./objetivos.tex
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [10 <./img/kitev3.jpg>]
-Cap\'{\i }tulo 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 5.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5
-.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [11
+l.109 \begin{itemize}
+                      [8]
 
-]
-<img/metodoiterativo.png, id=272, 2908.8675pt x 1606.0pt>
-File: img/metodoiterativo.png Graphic file (type png)
-<use img/metodoiterativo.png>
-Package pdftex.def Info: img/metodoiterativo.png  used on input line 32.
-(pdftex.def)             Requested size: 409.71692pt x 226.18628pt.
+LaTeX Warning: Citation `bib:navegadores' on page 9 undefined on input line 116
+.
+
+LaTeX Info: Redefining \. on input line 120.
+LaTeX Info: Redefining \% on input line 120.
+LaTeX Info: Redefining \. on input line 120.
+LaTeX Info: Redefining \% on input line 120.
+[9 <./img/http.jpeg>]
+
+LaTeX Warning: Citation `bib:secundaria' on page 10 undefined on input line 131
+.
+
+
+LaTeX Warning: Citation `bib:primaria' on page 10 undefined on input line 131.
+
+<img/stem.jpg, id=351, 304.0158pt x 168.63pt>
+File: img/stem.jpg Graphic file (type jpg)
+<use img/stem.jpg>
+Package pdftex.def Info: img/stem.jpg  used on input line 136.
+(pdftex.def)             Requested size: 318.66948pt x 176.76566pt.
+LaTeX Info: Redefining \. on input line 138.
+LaTeX Info: Redefining \% on input line 138.
+LaTeX Info: Redefining \. on input line 138.
+LaTeX Info: Redefining \% on input line 138.
+[10]
+
+LaTeX Warning: Citation `bib:scratch' on page 11 undefined on input line 142.
+
+<img/scratch.jpg, id=356, 702.625pt x 376.40625pt>
+File: img/scratch.jpg Graphic file (type jpg)
+<use img/scratch.jpg>
+Package pdftex.def Info: img/scratch.jpg  used on input line 145.
+(pdftex.def)             Requested size: 318.66948pt x 170.71947pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
- [12]
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
-LaTeX Info: Redefining \. on input line 53.
-LaTeX Info: Redefining \% on input line 53.
+LaTeX Info: Redefining \. on input line 148.
+LaTeX Info: Redefining \% on input line 148.
+LaTeX Info: Redefining \. on input line 148.
+LaTeX Info: Redefining \% on input line 148.
+ [11 <./img/stem.jpg>]
 
-[13 <./img/metodoiterativo.png>]) (./simulado.tex
+LaTeX Warning: Citation `bib:lego' on page 12 undefined on input line 149.
+
+<img/lego1.png, id=362, 1283.79625pt x 801.99625pt>
+File: img/lego1.png Graphic file (type png)
+<use img/lego1.png>
+Package pdftex.def Info: img/lego1.png  used on input line 153.
+(pdftex.def)             Requested size: 318.66948pt x 199.06677pt.
+<img/lego2.jpg, id=365, 1204.5pt x 718.685pt>
+File: img/lego2.jpg Graphic file (type jpg)
+<use img/lego2.jpg>
+Package pdftex.def Info: img/lego2.jpg  used on input line 161.
+(pdftex.def)             Requested size: 318.66948pt x 190.14355pt.
+LaTeX Info: Redefining \. on input line 163.
+LaTeX Info: Redefining \% on input line 163.
+LaTeX Info: Redefining \. on input line 163.
+LaTeX Info: Redefining \% on input line 163.
+[12 <./img/scratch.jpg> <./img/lego1.png>]
+<img/kitev3.jpg, id=371, 701.62125pt x 529.98pt>
+File: img/kitev3.jpg Graphic file (type jpg)
+<use img/kitev3.jpg>
+Package pdftex.def Info: img/kitev3.jpg  used on input line 170.
+(pdftex.def)             Requested size: 318.66948pt x 240.71266pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 173.
+LaTeX Info: Redefining \% on input line 173.
+LaTeX Info: Redefining \. on input line 173.
+LaTeX Info: Redefining \% on input line 173.
+ [13 <./img/lego2.jpg>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 180.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 180.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
+80.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 180--182
+
+ []
+
+<img/kibotics2.png, id=380, 1610.015pt x 805.0075pt>
+File: img/kibotics2.png Graphic file (type png)
+<use img/kibotics2.png>
+Package pdftex.def Info: img/kibotics2.png  used on input line 185.
+(pdftex.def)             Requested size: 455.24411pt x 227.61157pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/kibotics1.png, id=381, 1902.10625pt x 823.075pt>
+File: img/kibotics1.png Graphic file (type png)
+<use img/kibotics1.png>
+Package pdftex.def Info: img/kibotics1.png  used on input line 192.
+(pdftex.def)             Requested size: 455.24411pt x 196.98943pt.
+LaTeX Info: Redefining \. on input line 196.
+LaTeX Info: Redefining \% on input line 196.
+LaTeX Info: Redefining \. on input line 196.
+LaTeX Info: Redefining \% on input line 196.
+[14 <./img/kitev3.jpg>]) (./objetivos.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [14]
+ [15 <./img/kibotics2.png> <./img/kibotics1.png>]
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [16
+
+]
+Cap\'{\i }tulo 2.
+[17]
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
+ [18]
+<img/metodoiterativo.png, id=415, 2908.8675pt x 1606.0pt>
+File: img/metodoiterativo.png Graphic file (type png)
+<use img/metodoiterativo.png>
+Package pdftex.def Info: img/metodoiterativo.png  used on input line 43.
+(pdftex.def)             Requested size: 409.71692pt x 226.18628pt.
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+LaTeX Info: Redefining \. on input line 51.
+LaTeX Info: Redefining \% on input line 51.
+ [19 <./img/metodoiterativo.png>]) (./simulado.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [20]
 Cap\'{\i }tulo 3.
-<img/partes.png, id=288, 760.8425pt x 670.505pt>
+<img/partes.png, id=427, 760.8425pt x 670.505pt>
 File: img/partes.png Graphic file (type png)
 <use img/partes.png>
 Package pdftex.def Info: img/partes.png  used on input line 9.
@@ -770,15 +835,15 @@ Overfull \hbox (77.34201pt too wide) in paragraph at lines 9--10
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15
+ [21
 
 ]
-<img/blendercolor.jpg, id=293, 1927.2pt x 1036.87375pt>
+<img/blendercolor.jpg, id=432, 1927.2pt x 1036.87375pt>
 File: img/blendercolor.jpg Graphic file (type jpg)
 <use img/blendercolor.jpg>
 Package pdftex.def Info: img/blendercolor.jpg  used on input line 15.
 (pdftex.def)             Requested size: 318.66948pt x 171.44067pt.
-<img/blendertouch.jpg, id=294, 1927.2pt x 1034.86626pt>
+<img/blendertouch.jpg, id=433, 1927.2pt x 1034.86626pt>
 File: img/blendertouch.jpg Graphic file (type jpg)
 <use img/blendertouch.jpg>
 Package pdftex.def Info: img/blendertouch.jpg  used on input line 20.
@@ -790,8 +855,8 @@ LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
- [16 <./img/partes.png>]
-<img/blenderus.jpg, id=300, 1927.2pt x 1037.8775pt>
+ [22 <./img/partes.png>]
+<img/blenderus.jpg, id=439, 1927.2pt x 1037.8775pt>
 File: img/blenderus.jpg Graphic file (type jpg)
 <use img/blenderus.jpg>
 Package pdftex.def Info: img/blenderus.jpg  used on input line 25.
@@ -800,8 +865,8 @@ LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
- [17 <./img/blendercolor.jpg> <./img/blendertouch.jpg> <./img/blenderus.jpg>]
-<img/color.png, id=307, 156.585pt x 579.16376pt>
+ [23 <./img/blendercolor.jpg> <./img/blendertouch.jpg> <./img/blenderus.jpg>]
+<img/color.png, id=445, 156.585pt x 579.16376pt>
 File: img/color.png Graphic file (type png)
 <use img/color.png>
 Package pdftex.def Info: img/color.png  used on input line 39.
@@ -1227,7 +1292,7 @@ LaTeX Info: Redefining \. on input line 62.
 LaTeX Info: Redefining \% on input line 62.
 LaTeX Info: Redefining \. on input line 62.
 LaTeX Info: Redefining \% on input line 62.
-[18 <./img/color.png>]
+[24 <./img/color.png>]
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
 put line 62.
@@ -1248,13 +1313,13 @@ LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
 LaTeX Info: Redefining \. on input line 103.
 LaTeX Info: Redefining \% on input line 103.
-[19]
+[25]
 LaTeX Info: Redefining \. on input line 138.
 LaTeX Info: Redefining \% on input line 138.
 LaTeX Info: Redefining \. on input line 138.
 LaTeX Info: Redefining \% on input line 138.
- [20]
-<img/ultrasonidos.png, id=389, 173.64874pt x 191.71625pt>
+ [26]
+<img/ultrasonidos.png, id=528, 173.64874pt x 191.71625pt>
 File: img/ultrasonidos.png Graphic file (type png)
 <use img/ultrasonidos.png>
 Package pdftex.def Info: img/ultrasonidos.png  used on input line 147.
@@ -1264,7 +1329,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--150
 
  []
 
-<img/pruebaUS.png, id=390, 995.72pt x 780.9175pt>
+<img/pruebaUS.png, id=529, 995.72pt x 780.9175pt>
 File: img/pruebaUS.png Graphic file (type png)
 <use img/pruebaUS.png>
 Package pdftex.def Info: img/pruebaUS.png  used on input line 158.
@@ -1276,13 +1341,13 @@ LaTeX Info: Redefining \. on input line 161.
 LaTeX Info: Redefining \% on input line 161.
 LaTeX Info: Redefining \. on input line 161.
 LaTeX Info: Redefining \% on input line 161.
- [21 <./img/ultrasonidos.png>]
+ [27 <./img/ultrasonidos.png>]
 LaTeX Info: Redefining \. on input line 184.
 LaTeX Info: Redefining \% on input line 184.
 LaTeX Info: Redefining \. on input line 184.
 LaTeX Info: Redefining \% on input line 184.
- [22 <./img/pruebaUS.png>]
-<img/tactil.png, id=419, 154.5775pt x 377.41pt>
+ [28 <./img/pruebaUS.png>]
+<img/tactil.png, id=558, 154.5775pt x 377.41pt>
 File: img/tactil.png Graphic file (type png)
 <use img/tactil.png>
 Package pdftex.def Info: img/tactil.png  used on input line 229.
@@ -1296,20 +1361,20 @@ LaTeX Info: Redefining \. on input line 232.
 LaTeX Info: Redefining \% on input line 232.
 LaTeX Info: Redefining \. on input line 232.
 LaTeX Info: Redefining \% on input line 232.
-[23]
+[29]
 Underfull \vbox (badness 1584) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 255.
 LaTeX Info: Redefining \% on input line 255.
 LaTeX Info: Redefining \. on input line 255.
 LaTeX Info: Redefining \% on input line 255.
- [24 <./img/tactil.png>]
-<img/gyrosensor.png, id=481, 171.64125pt x 177.66376pt>
+ [30 <./img/tactil.png>]
+<img/gyrosensor.png, id=620, 171.64125pt x 177.66376pt>
 File: img/gyrosensor.png Graphic file (type png)
 <use img/gyrosensor.png>
 Package pdftex.def Info: img/gyrosensor.png  used on input line 258.
 (pdftex.def)             Requested size: 113.81102pt x 117.80333pt.
-<img/siguelineas.png, id=482, 911.405pt x 596.2275pt>
+<img/siguelineas.png, id=621, 911.405pt x 596.2275pt>
 File: img/siguelineas.png Graphic file (type png)
 <use img/siguelineas.png>
 Package pdftex.def Info: img/siguelineas.png  used on input line 279.
@@ -1321,13 +1386,13 @@ LaTeX Info: Redefining \. on input line 282.
 LaTeX Info: Redefining \% on input line 282.
 LaTeX Info: Redefining \. on input line 282.
 LaTeX Info: Redefining \% on input line 282.
- [25 <./img/gyrosensor.png>]
-<img/solucion.png, id=488, 626.34pt x 383.4325pt>
+ [31 <./img/gyrosensor.png>]
+<img/solucion.png, id=627, 626.34pt x 383.4325pt>
 File: img/solucion.png Graphic file (type png)
 <use img/solucion.png>
 Package pdftex.def Info: img/solucion.png  used on input line 285.
 (pdftex.def)             Requested size: 313.16922pt x 191.71577pt.
-<img/chocagira.png, id=489, 1618.045pt x 622.325pt>
+<img/chocagira.png, id=628, 1618.045pt x 622.325pt>
 File: img/chocagira.png Graphic file (type png)
 <use img/chocagira.png>
 Package pdftex.def Info: img/chocagira.png  used on input line 300.
@@ -1336,13 +1401,13 @@ LaTeX Info: Redefining \. on input line 303.
 LaTeX Info: Redefining \% on input line 303.
 LaTeX Info: Redefining \. on input line 303.
 LaTeX Info: Redefining \% on input line 303.
- [26 <./img/siguelineas.png> <./img/solucion.png>]
+ [32 <./img/siguelineas.png> <./img/solucion.png>]
 LaTeX Info: Redefining \. on input line 325.
 LaTeX Info: Redefining \% on input line 325.
 LaTeX Info: Redefining \. on input line 325.
 LaTeX Info: Redefining \% on input line 325.
- [27 <./img/chocagira.png>]
-<img/forest.png, id=515, 842.14626pt x 480.79625pt>
+ [33 <./img/chocagira.png>]
+<img/forest.png, id=654, 842.14626pt x 480.79625pt>
 File: img/forest.png Graphic file (type png)
 <use img/forest.png>
 Package pdftex.def Info: img/forest.png  used on input line 360.
@@ -1354,8 +1419,8 @@ LaTeX Info: Redefining \. on input line 364.
 LaTeX Info: Redefining \% on input line 364.
 LaTeX Info: Redefining \. on input line 364.
 LaTeX Info: Redefining \% on input line 364.
- [28]
-<img/solucionforest.png, id=549, 344.28625pt x 256.96pt>
+ [34]
+<img/solucionforest.png, id=688, 344.28625pt x 256.96pt>
 File: img/solucionforest.png Graphic file (type png)
 <use img/solucionforest.png>
 Package pdftex.def Info: img/solucionforest.png  used on input line 367.
@@ -1366,12 +1431,12 @@ LaTeX Info: Redefining \% on input line 249.
 LaTeX Info: Redefining \. on input line 249.
 LaTeX Info: Redefining \% on input line 249.
 
-[29 <./img/forest.png> <./img/solucionforest.png>]
+[35 <./img/forest.png> <./img/solucionforest.png>]
 LaTeX Info: Redefining \. on input line 249.
 LaTeX Info: Redefining \% on input line 249.
 LaTeX Info: Redefining \. on input line 249.
 LaTeX Info: Redefining \% on input line 249.
- [30
+ [36
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
@@ -1382,9 +1447,15 @@ LaTeX Info: Redefining \% on input line 24.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 252.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 252.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 6F331E76CE96C0145299A1D9AAD4EB1F;1461.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 9833F27EB4E98DB9FE7E4F9B628FC063;2748
+(rerunfilecheck)             After:  491FDE9AAD0FC966AEA0634557CC5615;1798.
 
 LaTeX Warning: There were undefined references.
 
@@ -1394,25 +1465,70 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
  ) 
 Here is how much of TeX's memory you used:
- 11051 strings out of 481239
- 164725 string characters out of 5920376
- 548858 words of memory out of 5000000
- 25822 multiletter control sequences out of 15000+600000
+ 11147 strings out of 481239
+ 166399 string characters out of 5920376
+ 550107 words of memory out of 5000000
+ 25881 multiletter control sequences out of 15000+600000
  563661 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,13n,45p,853b,2147s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (38 pages, 7005091 bytes).
+pdfTeX warning (dest): name{figure.caption.35} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.33} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.5.3} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.5.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.5.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.3.2} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.4.3.1} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section.4.1} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{chapter.4} has been referenced but does not exist, 
+replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on main.pdf (44 pages, 9262141 bytes).
 PDF statistics:
- 652 PDF objects out of 1000 (max. 8388607)
- 558 compressed objects within 6 object streams
- 259 named destinations out of 1000 (max. 500000)
- 315 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 797 PDF objects out of 1000 (max. 8388607)
+ 690 compressed objects within 7 object streams
+ 291 named destinations out of 1000 (max. 500000)
+ 471 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -74,12 +74,68 @@ Para dotar de esta inteligencia a los robots se necesitan herramientas que trans
       \item \textit{\textbf{JdeRobot}}\cite{bib:jderobot} Plataforma de desarrollo robótico, en la que se basa este proyecto. Tiene varios nodos programados  con varios lenguajes de programación, con compatibilidad con otros \textit{middleware}.
 \end{itemize}{}
 
+\section{Tecnologías web}
+\label{sec:web}
+Las tecnologías web sirven para acceder a los recursos de conocimiento que hay disponibles en \textit{Internet} utilizando un \textit{navegador}. Esto va desde leer publicaciones, buscar referencias en bibliotecas, compras electronicas, etcetera... Son herramientas que procesan y te muestran mediante una interfaz gráfica lo almacenado en un servidor. Las tecnologias más relevantes son:
+\begin{itemize}
+\item \textbf{Correo Electrónico:} El correo electrónico se utiliza para el intercambio de mensajes entre personas por medio de computadoras y es una de las herramientas más importantes que existen para la comunicación y el trabajo colaborativo. 
+\item \textbf{Motores de búsqueda:}Los motores de búsqueda están formados por un paquete de programas que permite localizar, dentro de un gran conjunto, aquellos documentos que cumplen una serie de requisitos específicos.
+\item \textbf{Navegadores Web:} Los navegadores son programas preparados para mostrar las páginas Web y para el acceso a Internet, a través de una interfaz gráfica que permite representar texto, gráficos, audio y vídeo
+\item \textbf{Tecnología Push:} Esta tecnología consiste en entregar al usuario la información que necesita evitándole así tener que buscarla en la Web. El usuario indica qué tipo de información desea y es el software quien se encarga de localizarla, avisándole mediante una señal, que la misma está a su disposición. 
+\end{itemize}{}
+Lo que nos interesa de las \textit{Tecnologías Web} es el modelo de cliente-servidor, para abastecer a mi robot de los programas que se desarrollan en \textit{Kibotics.}
+\subsection{HTTP}
+\label{subsec:http} 
+\textit{HiperText Transfer Protocol} (\textit{HTTP}) es el protocolo de nivel de aplicación utilizado para transferir recursos hipermedia entre ordenadores y sigue el esquema petición-respuesta entre cliente y servidor (Figura \ref{fig:http}). 
+Las peticiones están definidas por el protocolo y tienen métodos concretos: 
+\begin{itemize}
+    \item GET: Solicita un recurso al servidor especificando su \textit{URL}.
+    \item HEAD: Método similar a GET con la diferencia de que únicamente solicita las cabeceras y no descarga el recurso completo.
+    \item POST: Envía datos al servidor, normalmente un recurso específico que provoca un cambio de estado. Es también bastante similar GET pero la cabecera va en claro. 
+    \item PUT: Actualiza información sobre un recurso del servidor. 
+    \item DELETE: Elimina en el servidor un recurso.
+\end{itemize}
+
+Aunque estos son los principales métodos, el protocolo tiene flexibilidad para ir añadiendo nuevos e incorporar funcionalidad. El número de métodos ha ido aumentando con las nuevas versiones. 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{img/http.jpeg}
+\caption{Comunicación cliente-servidor en HTTP} \label{fig:http}
+\end{figure}
+
+\subsection{Tecnologías en servidor}
+\label{subsec:tecserver}
+En la parte del servidor web se encarga de proveer los datos, hacer posible crear una aplicación que se le mostrará al cliente y facilitar herramientas como bases de datos y recursos compartidos. 
+\begin{itemize}
+    \item \textit{Node.js}: Node. js es un entorno JavaScript que nos permite ejecutar en el servidor, de manera asíncrona, con una arquitectura orientada a eventos   
+    \item \textit{Django}: Django es un framework web extremadamente popular y completamente funcional, escrito en  \textit{Python}. El módulo muestra por qué Django es uno de los frameworks de servidores web más populares.
+\end{itemize}
+
+\subsection{Tecnologías en cliente}
+\label{subsec:tecclient}
+Es la parte encargada de dar forma a la interfaz de usuario y de establecer la comunicación con el servidor. Una pieza importante del cliente es el navegador, ya que es el encargado de leer e interpretar la información recibida. Entre los navegadores \textit{web} más empleados se encuentran \textit{Firefox}, \textit{Google Chrome} u \textit{Opera}\cite{bib:navegadores}. Las tecnologías que hacen posible esa comunicación son: 
+
+\begin{itemize} 
+    \item \textit{\textbf{JavaScript}}. Es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos. Es el lenguaje más utilizado para el desarrollo de aplicaciones Web y de paginas Web. La mayor parte de \textit{Kibotics} esta desarrollado en \textit{Javascript}. Por lo que en el siguiente capítulo desarrollaremos en más profundidad.
+    \item \textit{\textbf{HTML}}. siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web. Es el estándar más utilizado a dia de hoy.\newline
+HTML sólo sirve para indicar como va ordenado el contenido de una página web. Esto lo hace por medio de las marcas de hipertexto las cuales son etiquetas conocidas en inglés como tags. Las mejoras del diseño gráfico ya vienen dada de la versión actual, \textit{HTML5}, que incluye muchas mejoras respecto a su predecesor: \textit{canvas}, \textit{websockets}, \textit{WebRTC}, vídeo, audio, etc. Este lenguaje indica la estructura de una página web, para editar el estilo y presentación visual hay que hacer uso de otros elementos como \textit{CSS}.
+    \item \textit{\textbf{Cascading Style Sheets (CSS)}}. Lenguaje de diseño gráfico para definir y crear la presentación de un documento escrito en un lenguaje de marcado. De esta forma, se puede separar información y datos (en los documentos \textit{HTML}) y todo lo relativo al diseño y presentación (en documentos \textit{CSS}). Actualmente los navegadores usan la versión \textit{CSS3}.
+
+\end{itemize}
+
 
 \section{Robótica educativa}
 \label{sec:educativa}
 La robotica educativa ha ido tomando mas importancia con los años, ya que cada vez es mas importante que estudiantes de cualquier nivel estén familiarizados con la tecnología, tiene valores positivos como la implementación de pensamiento lógico, resolución de problemas y trabajo en equipo en las actividades académicas, que son ramas del conocimiento que se desarrollan poco en edades tempranas , con una componente en conocimiento matemático y físicos y ademas añade un atractivo que no tienen las asignaturas convencionales.
 Muchos estudios han demostrado que el uso de kits de robótica en la educación favorece a la capacidad de reflexión de los estudiantes.
-Cada año se crean mas cursos de robótica, y en 2015 la comunidad de Madrid introdujo la asignatura de robótica en los planes docentes de Enseñanza Secundaria con la asignatura ``Tecnología, Programación y Robótica''\cite{bib:secundaria} y en el curso 2020-2021 se empezará a implantar en Educación Primaria la asignatura ``Programación y Robótica''\cite{bib:primaria}.\\
+Cada año se crean mas cursos de robótica, y en 2015 la comunidad de Madrid introdujo la asignatura de robótica en los planes docentes de Enseñanza Secundaria con la asignatura ``Tecnología, Programación y Robótica''\cite{bib:secundaria} y en el curso 2020-2021 se empezará a implantar en Educación Primaria la asignatura ``Programación y Robótica''\cite{bib:primaria}.\newline
+Este tipo de educación es el llamado modelo \textbf{STEM}(siglas de \textit{Science, Technology, Engineering y Mathematics}), término creado por Seymound Papert en la década de los 80 cuando creo uno de los primeros juguetes con programación incorporada, creada para niños, el llamado \textit{"Lego-Logo"}, dando mucha importancia a juegos con engranajes, que consideraba que enriquecía el pensamiento. Justamente, el referente del protagonista de este proyecto.\newline
+Pero no fue hasta 2010, cuando este modelo de educación empezó a tomar relevancia, y se inicio la inclusión en la agenda escolar.
+        \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/stem.jpg}
+    \caption{Modelo de Educación \textit{STEM}} \label{fig:stem}
+    \end{figure}
 Una de las mayores partes de la robótica tiene que ver con la programación, que ademas de ser una habilidad muy importante para la sociedad actual, es algo complejo. Por lo que se utilizan lenguajes de programación visual, estos se tratan de lenguajes que abstraen en bloques las funciones o métodos de cualquier lenguaje de programación. Dentro de este tipo de lenguajes, los mas destacables son :
 
 \begin{itemize}
@@ -118,5 +174,28 @@ En el caso de LEGO y en otros kits incorporan los elementos básicos para la con
 
 
 En el siguiente capitulo, profundizare mas en lo que se puede hacer con el robot \textbf{LEGO Ev3} y explicare cuales van a ser los objetivos y porque elegir este robot.
+
+\section{Kibotics}
+\label{sec:kibotics}
+Kibotics\footnote{\url{https://kibotics.org/}}, es un entorno web desarrollado por la Asociación JdeRobot\footnote{\url{https://jderobot.github.io/}} para la docencia de robótica. Fue creada para impartir cursos de robótica, en los que destacan una iniciación muy sencilla, y una gran variedad de recursos a disposición del alumno.
+Es una plataforma en la que podemos encontrar distintos ejercicios de robots simulados que no son reales (como el Formula 1). Tiene los ejercicios divididos , en los robots con ruedas sobre una superficie, con cámaras, sensores de todo tipo, y los drones, con funcionalidad adicional, y otro tipo de ejercicios, y dentro de estos dos grupos, se dividen entre los dos lenguajes de programación. \newline
+ 
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=1\textwidth]{img/kibotics2.png}
+  \caption{Menu principal de \textit{Kibotics}}
+  \label{Robot PiBot}
+\end{figure}
+En cuanto a los lenguajes reconocidos por esta plataforma, encontramos \textit{Blockly},el equivalente de \textit{Scratch} pero creada por \textit{Google}, un lenguaje de bloques. Su uso en colegios, para estudiantes de corta edad es cada vez más frecuente. También encontramos \textit{Python} un lenguaje de alto nivel, de los más populares actualmente. Es el que emplean los estudiantes más mayores. 
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=1\textwidth]{img/kibotics1.png}
+  \caption{Ejercicio en Kibotics}
+  \label{Ejercicio con Blockly en Kibotics}
+\end{figure}
+
+Cada ejercicio viene con una parte teórica, donde se explica la lección que se va a aprender y los pasos para seguir para poder completar el ejercicio, la siguiente pestaña, es donde se programa el ejercicio, y la última, es donde se encuentra el simulador que ejecuta el código que acabas de programar.
+
+
 
 
