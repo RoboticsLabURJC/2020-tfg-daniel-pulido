@@ -1,13 +1,14 @@
-\chapter{Soporte Fisico}
-
-Ahora nos centraremos en cual ha sido el desarrollo seguido para que el bloque \textit{Ev3} reciba codigo desde un cliente exterior y pueda ejecutarlo en local. Y luego como adaptarlo para su posterior implementación en el server de \textit{Kibotics}
+\chapter{Soporte del Robot LEGO Ev3 Físico}
+\chaptermark{Soporte Físico}
+Ahora nos centraremos en cuál ha sido el desarrollo seguido para que el bloque \textit{Ev3} reciba código desde un cliente exterior y pueda ejecutarlo en local. Primero, el \textit{driver} en \textit{Python} que permite a las aplicaciones de los usuarios de \textit{Kibotics} recibir las lecturas de los sensores del robot real u ordenar movimiento a sus motores. Y luego cómo integrarlo de modo que el programa se descargue en el robot real desde la página web de \textit{Kibotics}
 
 \section{Interfaz de programación de sensores y actuadores}
+\sectionmark{Interfaz de programación}
 \label{sec:interfazfisico}
 Para crear los \textit{drivers} de \textit{Kibotics} del robot \textit{LEGO EV3} real se ha utilizado la librería \texttt{ev3dev2} donde se encuentran las funciones necesarias para el control del robot en Python 
 
 \subsection{Soporte de actuadores}
-Los motores son los actuadores como ya he explicado en el anterior capitulo, y en la forma de uso de \textit{Kibotics} es la de \textit{Tracción diferencial}, en el cual los motores se mueven a la par. Por lo tanto para crear las funciones  del \textit{HAL API} en Python, Voy a utilizar la clase \textit{MoveTank} dentro de la librería de \texttt{ev3dev2} \footnote{\url{https://github.com/ev3dev/ev3dev-lang-python}} .
+Los motores son los actuadores y la forma de uso de \textit{Kibotics} es la de \textit{Tracción diferencial}, en el cual los motores se mueven a la par. Por lo tanto para crear las funciones  del \textit{HAL API} en Python voy a utilizar la clase \textit{MoveTank} dentro de la librería de \texttt{ev3dev2} \footnote{\url{https://github.com/ev3dev/ev3dev-lang-python}} .
  
 \begin{lstlisting}[frame=single,breaklines=true, label=Clase MoveTank caption=Clase MoveTank,  captionpos=b]
 
@@ -37,7 +38,7 @@ class MoveTank(MotorSet):
         self._gyro = None
 \end{lstlisting}
 
-En esta clase se encuentran todas los métodos con los que construiré mi \textit{Driver}
+En esta clase se encuentran todos los métodos con los que construiré mi \textit{Driver}
 
 
 \begin{lstlisting}[frame=single,breaklines=true, label=Driver Actuadores, caption=Drivers,  captionpos=b]
@@ -85,10 +86,10 @@ class Ev3Wrapper:
         self.avanzar_hasta(-distance)
 
     def girar_derecha_hasta(self, degrees):
-        self.TurnDegrees(degrees, 100)
+        self.TurnDegrees(degrees, 20)
 
     def girar_izquierda_hasta(self, degrees):
-        self.TurnDegrees(-degrees, 100)
+        self.TurnDegrees(-degrees, 20)
 
     def parar(self):
         tank_drive.odometry_stop()
@@ -115,7 +116,7 @@ class Ev3Wrapper:
 
 
 \subsection{Soporte de sensores}
-Dentro de los sensores soportados por el \textit{HAL API} de \textit{Kibotics} hay algunos, que no se pueden aplicar al robot \textit{LEGO EV3} ya que no dispone de sensores, como la cámara o el sensor de Infrarrojos. Por lo que los \textit{drivers} que se incluirán en este apartado son:
+Dentro de los sensores soportados por el \textit{HAL API} de \textit{Kibotics} hay algunos que no se pueden aplicar al robot \textit{LEGO EV3} ya que no dispone de sensores, como la cámara o el sensor de Infrarrojos. Por lo que los \textit{drivers} que se incluirán en este apartado son:
 
 \begin{table}[H]
 \caption{Métodos (HAL API) soportados por Ev3.}
@@ -135,7 +136,7 @@ Dentro de los sensores soportados por el \textit{HAL API} de \textit{Kibotics} h
 }
 \end{table}
 
-Para este \textit{driver}, utilizaré las funciones definidas en el API de \texttt{Ev3dev2.sensor},las cuales incluyen todas los sensores que puede llevar el \textit{LEGO EV3}. Pero solo utilizaremos las clases \texttt{TouchSensor(), ColorSensor() y Ultrasonic()} que son los tres sensores que usamos en este proyecto. 
+Para este \textit{driver} utilizaré las funciones definidas en el API de \texttt{Ev3dev2.sensor}, las cuales incluyen todas los sensores que puede llevar el \textit{LEGO EV3}. Pero solo utilizaremos las clases \texttt{TouchSensor(), ColorSensor() y Ultrasonic()} que son los tres sensores que usamos en este proyecto. 
 
 \begin{lstlisting}[frame=single,breaklines=true, label=Driver Actuadores, caption=Drivers,  captionpos=b]
 from ev3dev2.sensor import INPUT_1, INPUT_2, INPUT_3, INPUT_4
@@ -152,7 +153,7 @@ class Ev3Wrapper:
 
 
     def getObjectColor(self, color):
-        cs.raw(color)
+        cs.color()
 
     def getDistance(self):
         us.distance_centimeters_continuous()
@@ -161,40 +162,9 @@ class Ev3Wrapper:
         to.is_pressed()
 \end{lstlisting}
 
-\section{Descarga de la plataforma}
-\subsection{Preparación ordenador a bordo}
-Lo primero para la recepción de mensajes es tener un dispositivo que pueda recibirlos, en este caso tendremos que intalar en el \textit{LEGO EV3} un sistema operativo que nos permita desplegar un servidor. Comenzaré hablando del apartado técnico del robot, para entender la solución adoptada. El Bloque \textit{Ev3} es la mejora de su predecesor el \textit{LEGO NXT}, añadiéndole mas potencia, memoria y expandibilidad. Cuenta con un procesador ARM9 a 300 MHz con memoria Flash de 16 MB, 64 MB de RAM y memoria ampliable con tarjetas mini SD hasta 32 GB. Ademas de eso dispone de conexiones \textit{Bluetoooth 2.1} y puerto USB. 
-\\
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.8\textwidth]{img/legomind.jpg}
-  \caption{Diseño hardware del Ev3}
-  \label{Diseño hardware del Ev3}
-\end{figure}
-\\
+\section{Descarga desde la plataforma}
 
-\begin{wrapfigure}{l}{0.3\linewidth}
-    \centering
-    \includegraphics[width=0.6\linewidth]{img/logo_ev3dev_mono.png}
-    \caption{Ev3Dev Logo}
-    \label{fig:ev3dev}
-\end{wrapfigure}
-
-Son las características de un PC en miniatura, por lo que la mejor opción era insertar una micro SD con una imagen de \textit{Linux} que permitiera tener un sistema de ficheros, descargar librerías y ejecutar programas. Después de contemplar varias opciones me decante por la opción de \textit{Ev3Dev}\footnote{\url{https://www.ev3dev.org/}}.\newline
-\textit{Ev3Dev} es un sistema operativo basado en \textit{Debian-Linux} diseñadoespecialmente para el \textit{LEGO MINDSTORM EV3} , haciendo ingeniería inversa del bloque.\newline
-Una instalada la imagen en el robot para tener conexión a Internet hay dos opciones, la más simple es conectar un \textit{Wifi Dongle} al puerto USB del Bloque \textit{Ev3}, y se accede a la red \textit{Wifi} como cualquier ordenador. La segunda opción, es conectar por cable el robot a tu ordenador, y conectarlo a la red como una extensión de tu red.\newline
-Una vez conectado a Internet, ya puedes conectarte al robot vía \textit{SSH}.
-
-\begin{figure}[h!]
-  \centering
-    \includegraphics[width=0.8\textwidth]{img/ev3dev.png}
-  \caption{Interfaz de la terminal de Ev3}
-  \label{Diseño hardware del Ev3}
-\end{figure}
-Además crearon una plataforma de software para programar el robot. Esto incluye, soporte para muchos lenguajes de programación, entre ellos \textit{Python, Java o C++}. Para este proyecto he elegido utilizar el lenguaje \textit{Python}, ya que es uno de los lenguajes que comprende \textbf{Kibotics} y estoy más familiarizado con él. 
-
-\subsection{Diseño}
-En la siguiente figura se muestra el diseño seguido para integrar el Ev3 real a la plataforma Kibotics. El proceso consta de 4 pasos y en las siguientes secciones se profundizará en cada una de las partes y en las interacciones necesarias entre el cliente, el servidor de Kibotics y el servidor \textit{Flask} que lanzaremos en el \textit{Robot Ev3},lo que permitira programarlo desde el navegador web usando  \textit{Kibotics}.
+En la figura se muestra el diseño seguido para integrar el Ev3 real a la plataforma Kibotics. El proceso consta de 4 pasos y en las siguientes secciones se profundizará en cada una de las partes y en las interacciones necesarias entre el cliente, el servidor de Kibotics y el servidor \textit{Flask} que lanzaremos en el \textit{Robot Ev3},lo que permitira programarlo desde el navegador web usando  \textit{Kibotics}.
 
 \begin{figure}[h!]
   \centering
@@ -203,16 +173,37 @@ En la siguiente figura se muestra el diseño seguido para integrar el Ev3 real a
   \label{comunicacion}
 \end{figure}
 
+\subsection{Preparación ordenador a bordo del robot}
+Lo primero para la recepción de mensajes es tener un dispositivo que pueda recibirlos, en este caso tendremos que instalar en el \textit{LEGO EV3} un sistema operativo que permita desplegar un servidor. Comenzaré hablando del apartado técnico del robot, para entender la solución adoptada. El Bloque \textit{Ev3} es la mejora de su predecesor el \textit{LEGO NXT}, añadiéndole mas potencia, memoria y expandibilidad. Cuenta con un procesador ARM9 a 300 MHz con memoria Flash de 16 MB, 64 MB de RAM y memoria ampliable con tarjetas mini SD hasta 32 GB. Ademas de eso dispone de conexiones \textit{Bluetoooth 2.1} y puerto USB. 
+
+\begin{wrapfigure}{l}{0.3\linewidth}
+    \centering
+    \includegraphics[width=0.6\linewidth]{img/logo_ev3dev_mono.png}
+    \caption{Ev3Dev Logo}
+    \label{fig:ev3dev}
+\end{wrapfigure}
+
+\textit{Ev3Dev}\footnote{\url{https://www.ev3dev.org/}} es un sistema operativo basado en \textit{Debian-Linux} diseñadoespecialmente para el \textit{LEGO MINDSTORM EV3} , haciendo ingeniería inversa del bloque.\newline
+Una vez instalada la imagen en el robot, para tener conexión a Internet hay dos opciones. La más simple es conectar un \textit{Wifi Dongle} al puerto USB del Bloque \textit{Ev3}, y se accede a la red \textit{Wifi} como cualquier ordenador. La segunda opción es conectar por cable el robot a tu ordenador, y conectarlo a la red como una extensión de tu red.\newline
+Una vez conectado a Internet, ya puedes conectarte al robot vía \textit{SSH}.
+
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.8\textwidth]{img/ev3dev.png}
+  \caption{Interfaz de la terminal de Ev3}
+  \label{Diseño hardware del Ev3}
+\end{figure}
+Además crearon en \textit{Ev3dev} un entorno de software para programar el robot. Esto incluye soporte para muchos lenguajes de programación, entre ellos \textit{Python, Java o C++}. Para este proyecto he elegido utilizar el lenguaje \textit{Python}, ya que es uno de los lenguajes que comprende \textit{Kibotics} y estoy más familiarizado con él. 
 
 \subsection{WebBrowser}
 
 \subsubsection{Editor en el navegador web}
 
-El editor de texto se encontrara entre la parrilla de ejercicios de \textit{Kibotics}, en este caso, \textit{Kibotics} solo actua como plataforma que guarda los ejercicios que envió, y me proporciona la interfaz para poner el editor de texto que permita escribir su programa utilizando el lenguaje \textit{Python}. En el editor se importa la librería “\textit{Ev3dev2}”  que proporciona una API para interactuar con los sensores y actuadores del robot. Pero en este caso, \textit{Kibotics} no actúa en el envió, solo sirve la página para que podamos introducir el código.
+El editor de texto se encontrará entre la parrilla de ejercicios de \textit{Kibotics}. En este caso \textit{Kibotics} solo actua como plataforma que guarda los ejercicios que envió, y me proporciona la interfaz para poner el editor de texto que permita escribir su programa utilizando el lenguaje \textit{Python}. En el editor se importa la librería “\textit{Ev3dev2}”  que proporciona una API para interactuar con los sensores y actuadores del robot. Pero en este caso, \textit{Kibotics} no actúa en el envío, solo sirve la página para que podamos introducir el código.
 
 \subsubsection{Envío del código al servidor Flask en el robot}
 
-Utilizamos el editor "\textit{ace}" para que el usuario escriba su código en la página Web, y cuando le de al botón "Enviar", comienza el proceso de envío desarrollado en el script siguiente:
+Utilizamos el editor \textit{ACE} para que el usuario escriba su código en la página Web, y cuando le de al botón \texttt{Enviar}, comienza el proceso de envío desarrollado en el script siguiente:
 \\
 \begin{lstlisting}[frame=single,breaklines=true, label=Función de envío del código al servidor, caption=Función de envío del código al servidor captionpos=b] <center><h3>En esta seccion podras enviar tu codigo  al LEGO Ev3.</h3></center>
 
@@ -270,7 +261,7 @@ El servidor \texttt{Flask} hará la recepción del código que escribimos en el 
 
 
 \subsection{Back-End}
-El servidor que se va a crear, va a hacer uso de \texttt{Flask} que es un entorno creado por \textit{Django} escrito en \textit{Python}, por lo que voy a programarlo en \textit{Python}. Va a estar creado para que reciba peticiones del navegador con el código que el usuario escribio en el editor
+El servidor que se ha creado, hace uso de \texttt{Flask} que es un entorno creado por \textit{Django} escrito en \textit{Python}, por lo que voy a programarlo en \textit{Python}. Esta creado para que reciba peticiones del navegador con el código que el usuario escribió en el editor
 
 
 
@@ -303,8 +294,8 @@ if __name__ == "__main__":
 
 Una vez ha recibido el código, el servidor ya sabe que el lenguaje en que viene es \textit{Python}, pero viene con algunos simbolos añadidos de HTML, por lo que se realizan dos \textit{replace} para dejarlo como estaba en origen.\newline
 Una vez hecho este proceso, se procede a escribir un ejecutable con el código, para ello hay creado un archivo llamado \textit{ejercicio.py}.
-Una vez creado el archivo se comprueba que no hay otro proceso ejecutandose,si es así se envía una señal \textit{kill} a dicho proceso.
-Tras ejecutar el programa en un nuevo proceso, el robot realizará las instrucciones que el usuario programo en el editor del navegador web.
+Una vez creado el archivo se comprueba que no hay otro proceso ejecutándose, si es así se envía una señal \textit{kill} a dicho proceso.
+Tras ejecutar el programa en un nuevo proceso, el robot realizará las instrucciones que el usuario programó en el editor del navegador web.
 \\
 \begin{lstlisting}[frame=single,breaklines=true, label=Creación del proceso con el programa para el robot, caption=Creación del proceso con el programa para el robot,  captionpos=b]
 if exercice:
@@ -327,7 +318,7 @@ if exercice:
 
 \subsubsection{Respuesta del Servidor}
 
-Por ultimo, se contesta al cliente con el código \textit{200 OK} 
+Por último, se contesta al cliente con el código \textit{200 OK} 
 
 \begin{lstlisting}[frame=single,breaklines=true, label=Respuesta del Servidor, caption=Creación del proceso con el programa para el robot,  captionpos=b]
 
@@ -339,32 +330,38 @@ headers = {'Content-Type': 'text/plain','Access-Control-Allow-Origin': '*'}
 
 
 \section{Validación experimental con Ejercicios}
-
-\subsection{Bump and go}
+\sectionmark{Validación Experimental}
+En esta sección procedo a enviar dos ejercicios programados con las funciones de \textit{Kibotics} en el editor Web  para comprobar que lo que he contado anteriormente funciona. 
+\subsection{Ejercicio Bump and go}
 Para comprobar que todo lo anterior funciona hice tres ejercicios enviados desde un navegador web y ejecutados en el robot real. El primero, el \textit{BumpandGo} \footnote{\url{https://www.youtube.com/watch?v=5dD7O7Qku6I&ab_channel=DanielPulidoMillanes}} probando los el sensor de contacto.
+\\
+\begin{figure}[h!]
+  \centering
+    \includegraphics[width=0.8\textwidth]{img/editor_ev3.png}
+  \caption{Editor Web para \textit{LEGO Ev3}}
+  \label{Editor Web}
+\end{figure}
+\clearpage
+
+En este apartado será donde insertemos el código que mandaremos al robot, para el caso del \textit{Bump and Go}:
+
 
 \begin{lstlisting}[frame=single,breaklines=true, label=Bump and Go, caption=Bump and Go,  captionpos=b]
 
 #!/usr/bin/env python3
 
-from time import sleep
-
-from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveTank
-from ev3dev2.sensor import INPUT_1
-from ev3dev2.sensor.lego import TouchSensor
-from ev3dev2.led import Leds
-
-ts = TouchSensor()
-leds = Leds()
-tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
+import Ev3Wrapper
+import time
+Ev3 = Ev3Wrapper.Ev3Wrapper()
 
 print("Bump and go!")
 
 while True:
-    if ts.is_pressed:
-        tank_drive.on_for_rotations(SpeedPercent(-50), SpeedPercent(-75), 10)
+    if Ev3.IsTouching():
+    	Eve.retroceder_hasta(10)
+        Ev3.girar_derecha_hasta(120)
     else:
-        tank_drive.on(SpeedPercent(30), SpeedPercent(30))
+        Ev3.avanzar(30)
     # don't let this loop use 100% CPU
     sleep(0.01)
 
@@ -372,7 +369,7 @@ while True:
 
 
 
-\subsection{Siguelineas}
+\subsection{Ejercicio Siguelineas}
 
 El siguiente ejercicio que envié fue el \textit{Siguelineas}\footnote{\url{https://www.youtube.com/watch?v=iMn7UsaB2vo&ab_channel=DanielPulidoMillanes}} para también probar la función \textit{reflectedlightintensity} del sensor de color:
  
@@ -380,24 +377,20 @@ El siguiente ejercicio que envié fue el \textit{Siguelineas}\footnote{\url{http
 
 #!/usr/bin/env python3
 
-from time import sleep
 
-from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveTank
-from ev3dev2.sensor import INPUT_1
-from ev3dev2.sensor.lego import ColorSensor
-from ev3dev2.led import Leds
+#!/usr/bin/env python3
 
-cs = ColorSensor()
-leds = Leds()
-tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
+import Ev3Wrapper
+import time
+Ev3 = Ev3Wrapper.Ev3Wrapper()
 
 
 print("Siguelineas!")
 
 while True:
-    while cs.reflected_light_intensity>30:
-        tank_drive.on(SpeedPercent(5), SpeedPercent(20))
-    tank_drive.on(SpeedPercent(20), SpeedPercent(5))
+    while Ev3.getcolor(black)==1:
+        Ev3.TurnDegrees(20,15)
+    Ev3.TurnDegrees(-20,15)
     # don't let this loop use 100% CPU
     sleep(0.02)
 

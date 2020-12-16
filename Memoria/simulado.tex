@@ -1,4 +1,5 @@
-\chapter{Soporte Simulado}
+\chapter{Soporte del Simulado Robot LEGO Ev3}
+\chaptermark{Soporte simulado}
 \label{chap:simulado}
 Ahora que tenemos definidos cuáles van a ser nuestros objetivos y la infraestructura que vamos a utilizar para llevarlos acabo, en este capítulo se va a hablar del proceso de integración en la plataforma del robot simulado. Primero se describe cómo se ha materializado el \textit{LEGO EV3} en el simulador \textit{WebSim} de la plataforma \textit{Kibotics}. Después se describe la implementación realizada de la interfaz de programación a través de la cual el estudiante recoge las lecturas de los sensores simulados u ordena movimiento a los motores simulados. Finalmente , a modo de validación experimental, se presentan los tres ejercicios desarrollados que utilizan esa interfaz de programación del robot simulado.. Pero antes de eso se darán unas nociones básicas de las características de este robot, para poder entender, el proceso de desarrollo. 
 \section{Modelo 3D}
@@ -44,6 +45,7 @@ Una vez realizados estos cambios se procede a insertar en el modelo tridimension
 
 
 \section{Interfaz de programación de sensores y actuadores}
+\sectionmark{Interfaz de programación}
 \label{sec:interfazsimula}
 \subsection{Soporte de actuadores}
 Los motores son los actuadores del \textit{LEGO EV3}, son los que, a la orden del controlador, realizan el movimiento para completar su tarea asignada. En el kit de \textit{LEGO} vienen incluidos dos tipos de motores, motor grande y motor mediano.\newline
@@ -318,6 +320,7 @@ Este sensor no requiere una implementación dentro de la plataforma ya que el ú
 
   
 \section{Validación experimental con ejercicios}
+\sectionmark{Validación experimental}
 \label{sec:ejercicios}
 
 Se han añadido ejercicios para comprobar la funcionalidad de cada uno de los sensores anteriormente explicados 

@@ -2,26 +2,26 @@
 \label{chap:herramientas}
 En este capítulo se van a detallar las herramientas y tecnologías utilizadas en el desarrollo de este proyecto principalmente en el ámbito web. Algunas se han elegido por facilidad de uso y otras por necesidad del entorno desarrollado.
 
-\section{Lego Ev3}
+\section{Robot Lego Ev3}
 \label{sec:caracteristicas} 
-Dentro de los robots de \textit{LEGO} el que mas versatilidad, además de más potencia de procesamiento y posibilidades en las opciones de creatividad a la hora de crear robots es \textit{LEGO MINDSTORMS Education}(Pack en el que viene integrado el \textit{LEGO Ev3}) tambien trae una mayor gama de sensores, por no decir que es uno de los lideres en la educación STEM (siglas en inglés de Ciencias, Tecnología,Ingeniería y Matemática), En el centro de \textit{LEGO MINDSTORMS Education} se encuentra el Bloque EV3, el bloque inteligente programable que controla motores y sensores y además proporciona comunicación inalámbrica como quiera que sea.
+Dentro de los robots de \textit{LEGO} el que más versatilidad, además de más potencia de procesamiento y posibilidades en las opciones de creatividad a la hora de crear robots es \textit{LEGO MINDSTORMS Education}\cite{bib:mindstorm} (Pack en el que viene integrado el \textit{LEGO Ev3}) también trae una mayor gama de sensores, por no decir que es uno de los líderes en la educación STEM (siglas en inglés de Ciencias, Tecnología,Ingeniería y Matemática). En el centro de \textit{LEGO MINDSTORMS Education} se encuentra el Bloque EV3, el bloque inteligente programable que controla motores y sensores y además proporciona comunicación inalámbrica.
  \begin{figure}[H]
     \centering
     \includegraphics[scale=0.7]{img/partes.png}
     \caption{Conjunto Ev3} \label{fig:partes}
 \end{figure}
- Esto quiere decir que las posibilidades a la hora de crear diferentes robots, con diferentes configuraciones de sensores, son prácticamente infinitas. Pero vamos a centrarnos en los casos que mas funcionalidad tienen. El robot que mas versatilidad presenta a la hora de superar ejercicios, es un robot triciclo, con dos ruedas delanteras y una pivotante trasera. Así que este será nuestro modelo para el robot. Y ademas como el \textit{kit de LEGO MINDSTORMS} viene con tres sensores diferentes, crearé tres modelos para integrarlos por separado en la plataforma.
+ Esto quiere decir que las posibilidades a la hora de crear diferentes robots, con diferentes configuraciones de sensores, son prácticamente infinitas. Pero vamos a centrarnos en los casos que más funcionalidad tienen. El robot que más versatilidad presenta a la hora de superar ejercicios, es un robot triciclo, con dos ruedas delanteras y una pivotante trasera. Así que este será nuestro modelo para el robot. Y además, como el \textit{kit de LEGO MINDSTORMS} viene con tres sensores diferentes, crearé tres modelos para integrarlos por separado en la plataforma.
 
-\section{Python}
+\section{Lenguaje Python}
 
-Python es un lenguaje de programación administrado por la Python Software Foundation.Posee una licencia de código abierto, denominada Python Software Foundation License.Es un lenguaje interpretado, por lo que no se necesita compilar el código fuente para poder ejecutarlo. Esto ofrece ventajas como la rapidez de desarrollo e inconvenientes como una me-nor velocidad. En ciertos casos, cuando se ejecuta por primera vez un código, se producen unos bytecodes que se guardan en el sistema y que sirven para acelerar la compilación implícita que realiza el intérprete cada vez que se ejecuta el mismo código.Lenguaje muy popular en los últimos años gracias a la cantidad de librerías que contiene,tipos de datos y funciones incorporadas en el propio lenguaje, que ayudan a realizar muchas tareas habituales sin necesidad de tener que programarlas desde cero. Ademas, su filosofía hace hincapié en una sintaxis que favorezca un código legible, facilitando su aprendizaje.
+Python es un lenguaje de programación administrado por la Python Software Foundation.Posee una licencia de código abierto, denominada Python Software Foundation License.Es un lenguaje interpretado, por lo que no se necesita compilar el código fuente para poder ejecutarlo. Esto ofrece ventajas como la rapidez de desarrollo e inconvenientes como una menor velocidad. En ciertos casos, cuando se ejecuta por primera vez un código, se producen unos bytecodes que se guardan en el sistema y que sirven para acelerar la compilación implícita que realiza el intérprete cada vez que se ejecuta el mismo código. 
 Este lenguaje nos es muy importante en este proyecto ya que es el lenguaje nativo del robot y en el que van a ir programados los \textit{drivers} para el robot real. 
 
-\section{HTML}
+\section{Lenguaje HTML}
 
 HTML (HyperText Markup Languaje) fue desarrollado en 1991 por Tim Berners-Lee mientras trabajaba en la Organización Europea para la Investigación Nuclear (CERN), y popularizado por el navegador Mosaic desarrollado en NCSA (Raggett, Le Hors y Jacobs, 1999).
 
-Es un lenguaje de marcado que sirve para estructurar una página Web. Permite poner etiquetas a diferentes partes de la página para darles la misma apariencia. También tiene tipos de funciones para personalizar el tipo de letra y la forma que tienen en pantalla
+Es un lenguaje de marcado que sirve para estructurar una página web. Permite poner etiquetas a diferentes partes de la página para darles la misma apariencia. También tiene tipos de funciones para personalizar el tipo de letra y la forma que tienen en pantalla
 
 Un documento HTML tiene una estructura de árbol  donde la etiqueta html es el elemento raíz y cada nuevo elemento es una rama del anterior. Estas ramas se pueden ir extendiendo sea necesidad del proyecto web.
 
@@ -39,15 +39,19 @@ Un documento HTML tiene una estructura de árbol  donde la etiqueta html es el e
 </html>
 \end{lstlisting}
 
-\section{JavaScript}
+HTML5 es la mejora de HTML, establece una serie de nuevos elementos y atributos que reflejan el uso actual de los sitios web modernos, incluye nuevas etiquetas como \texttt{<nav>} que es el bloque de navegación del sitio web. Tiene soporte para \textit{Canvas} y visores para MathML y SVG.\newline
+
+Usare HTML para crear el editor web que se encargará de enviar el código al robot.
+
+\section{Lenguaje JavaScript}
 \label{sec:js}
-\textit{JavaScript} es un lenguaje de programación interpretado de alto nivel que se encuentra bajo el estándar ECMA Script. Este lenguaje es comúnmente conocido por su uso en los scripts delas páginas web. Es un lenguaje tipacdo débil y dinámico. Esta diseñado para ser utilizado en páginas Web, actualmente existen otras posibilidades de ejecutar \textit{JavaScript} en todo tipo de aplicaciones haciendo uso de \textit{Nodejs}.\newline
+\textit{JavaScript} es un lenguaje de programación interpretado de alto nivel que se encuentra bajo el estándar ECMA Script. Este lenguaje es comúnmente conocido por su uso en los scripts de las páginas web. Es un lenguaje tipado débil y dinámico. Esta diseñado para ser utilizado en páginas Web, actualmente existen otras posibilidades de ejecutar \textit{JavaScript} en todo tipo de aplicaciones haciendo uso de \textit{Nodejs}.\newline
 La sintaxis es similar a la utilizada en Java y C++. De esta manera, se facilita el aprendizaje del lenguaje ya que está basado en conceptos ya conocidos por el programador.\newline
-Este es el lenguaje en el que estan programados los \textit{drivers} de los robots implementados en \textit{Kibotics}. 
+Este es el lenguaje en el que estan programados los \textit{drivers} de los robots simulados en la plataforma \textit{Kibotics}. 
 % A-FRAME %
-\section{A-Frame}
+\section{Entorno A-Frame}
 \label{sec:aframe}
-\textit{A-Frame} es un entorno de código abierto destinado a crear experiencias de realidad virtual, siendo una de las comunidades creadoras de contenido para realidad virtual más grandes del mundo. Esto se debe a que es un entorno soportado por la mayoria de gafas de VR(\textit{Virtual Reality}) como \textit{OculusRift, HTC Vive o GearsVR}.\newline
+\textit{A-Frame}: \footnote{\url{https://aframe.io/}}  es un entorno de código abierto destinado a crear experiencias de realidad virtual, siendo una de las comunidades creadoras de contenido para realidad virtual más grandes del mundo. Esto se debe a que es un entorno soportado por la mayoria de gafas de VR(\textit{Virtual Reality}) como \textit{OculusRift, HTC Vive o GearsVR}.\newline
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{img/Aframe.png}
@@ -55,19 +59,15 @@ Este es el lenguaje en el que estan programados los \textit{drivers} de los robo
     \label{fig:A-Frame}
 \end{figure}
 
-Esta creado a partir de \textit{HTML} de forma que sea sencillo de leer y comprender. De esta manera es accesible para crear una gran comunidad. \textit{A-Frame} sigue el patrón ECS(entidad-componente-sistema). Se trata de un patrón de desarrollo de juegos basado en el principio de composición sobre herencia. De esta manera, se otorga una mayor flexibilidad en la definición de entidades ya que cada objeto de la escena se corresponde con una entidad y cada entidad,a su vez, está compuesta por uno o más componentes que contienen datos y estado de la entidad. Por tanto, una entidad puede verse modificada en tiempo de ejecución si alguno de los componentes que agrega modifica sus datos
-
-A-Frame, además de disponer primitivas como las mostradas, hace posible la creación de primitivas para poder elaborar escenas lo más completas posible. También se pueden incluir entidades más complejas a partir de modelos 3D en formatos como \textit{gltf}, \textit{obj} o \textit{collada} de los cuales se hablará en siguientes apartados.
-
-
-
-
+Esta creado a partir de \textit{HTML} de forma que sea sencillo de leer y comprender. De esta manera es accesible para crear una gran comunidad. \textit{A-Frame} sigue el patrón ECS(entidad-componente-sistema). Se trata de un patrón de desarrollo de juegos basado en el principio de composición sobre herencia. De esta manera, se otorga una mayor flexibilidad en la definición de entidades ya que cada objeto de la escena se corresponde con una entidad y cada entidad,a su vez, está compuesta por uno o más componentes que contienen datos y estado de la entidad. Por tanto, una entidad puede verse modificada en tiempo de ejecución si alguno de los componentes que agrega modifica sus datos.
+\\
+A-Frame es la base sobre la que esta programado el simulador de la plataforma de \textit{Kibotics}.
 
 
 % BLENDER %
-\section{Blender}
+\section{Editor 3D Blender}
 \label{sec:blender}
-\textit{Blender} es un programa libre dedicado al diseño y animación 3D. Mediante una interfaz gráfica permite diseñar objetos, personajes y escenas en tres dimensiones con muy diversas técnicas. Cada uno de los elementos creados pueden ser animados mediante \textit{keyframing} o animación por fotogramas clave. En su origen \textit{Blender} fue distribuido como una herramienta privada explotada por un estudio de animación, pero actualmente se encuentra bajo licencia \textit{GPL}\cite{bib:gpl}. 
+\textit{Blender} \footnote{\url{https://www.blender.org/}} es un programa libre dedicado al diseño y animación 3D. Mediante una interfaz gráfica permite diseñar objetos, personajes y escenas en tres dimensiones con muy diversas técnicas. Cada uno de los elementos creados pueden ser animados mediante \textit{keyframing} o animación por fotogramas clave. En su origen \textit{Blender} fue distribuido como una herramienta privada explotada por un estudio de animación, pero actualmente se encuentra bajo licencia \textit{GPL} 
 
     
 \begin{figure}[ht]
@@ -77,33 +77,16 @@ A-Frame, además de disponer primitivas como las mostradas, hace posible la crea
     \label{fig:blender}
 \end{figure}
 
-Existe un almacén web desde donde es posible descargarse una gran variedad de modelos y escenarios, además de desarrollar los propios. Una vez desarrollado el modelo o escenario, estos editores exportan el modelo o escenario en formato "gltf", que es el formato soportado por \textit{A-Frame} y estaría listo para insertarlo en el entorno simulado.\newline
-Los escenarios y modelos generados por estos editores son creados mediante la intersección de líneas, generando los distintos tipos de objetos. Es posible adjuntar una textura o color a cada cara que forma el objeto. Además, el editor \textit{Blender}, al ser más complejo, permite la introducción de iluminación y trabajar con formas geométricas entres dimensiones directamente.\newline
-Este es el programa que usaremos para crear los modelos del robot simulado.
+Existe un almacén web desde donde es posible descargarse una gran variedad de modelos y escenarios, además de desarrollar los propios. Una vez desarrollado el modelo o escenario, estos editores exportan el modelo o escenario en formato "gltf", que es un formato soportado por \textit{A-Frame} y estaría listo para insertarlo en el entorno simulado.\newline
+Los escenarios y modelos generados por este editor son creados mediante la intersección de líneas, generando los distintos tipos de objetos. Es posible adjuntar una textura o color a cada cara que forma el objeto. Esto lo utilizaré a la hora de crear mis modelos tridimensionales y poder integrarlos en la plataforma \textit{Kibotics}.
 
 
 % WEBSIM %
 \section{Simulador WebSim}
 
 \textit{Websim} es un simulador diseñado para enseñar conceptos básicos de tecnología e iniciar a niños en robótica y programación. 
-\subsection{Diseño}
-\label{subsec:design}
-El simulador hace uso del entorno \textit{A-Frame} y su diseño permite conectar un editor de texto o un editor de bloques para  programar en \textit{JavaScript} o \textit{Blockly} y conectar este código con el robot simulado. También permite acoplar una aplicación externa al navegador a través de comunicaciones ICE. En la figura \ref{fig:websim} se puede ver el diseño de \textit{WebSim}.
-
-Las principales funcionalidades del simulador son: 
-
-\begin{itemize}
-    \item Registrar los componentes principales para constituir un robot en \textit{A-Frame}, los cuales son \textit{followBody}, \textit{spectatorComponent} e \textit{intersectionHandler}. El primero se encarga de simular una cámara en el robot, el segundo maneja eventos de intersección de los láseres y el último permite anclar distintos elementos al robot simulado. 
+El simulador hace uso del entorno \textit{A-Frame} y su diseño permite conectar un editor de texto o un editor de bloques para  programar en \textit{JavaScript}, \textit{Blockly} o \textit{Python} y conectar este código con el robot simulado.  En la figura \ref{fig:websim} se puede ver el diseño de \textit{WebSim}.
     
-    \item Ofrece una interfaz en diferentes lenguajes de programación \textit{JavaScript} para manejar el robot en el entorno simulado de \textit{A-Frame} llamada \textit{Hardware Abstraction Layer} (\textit{HAL API}). \textit{Websim} se encarga de enviar instrucciones al robot de manera sencilla sin necesidad de comunicarse con el motor de \textit{A-Frame}. 
-    
-    
-    \item Permite manejar la ejecución de la simulación del robot. Es decir, permite lanzar o pausar la ejecución del robot e incluso reiniciar su posición para no tener que recargar la página en caso de querer probar distintos códigos con la misma simulación. Además este control del entorno evita que la variable \textit{myRobot} pierda el objeto instanciado porque el usuario cambie su valor.
-    
-\end{itemize}
-
-Gracias a estas características, el simulador hace que los usuarios puedan programar de manera sencilla, ya que solo tienen que acceder a la información que ofrecen los sensores del robot y mandar órdenes sobre los actuadores del mismo. Es decir, solo  se tienen que encargar de programar la lógica del robot para resolver los ejercicios propuestos que se explicarán en próximos capítulos. 
-
 
 \begin{figure}[H]
     \centering
@@ -111,11 +94,8 @@ Gracias a estas características, el simulador hace que los usuarios puedan prog
     \caption{Interfaz gráfica de \textit{WebSim}} \label{fig:websim}
 \end{figure}
 
+Las características del simulador hacen que los usuarios puedan programar el robot simulado de manera sencilla, ya que solo tengan que acceder a la información que ofrecen los sensores del robot y mandar ordenes a los actuadores. Es decir, que solo tengan que programar la lógica del robot para resolver los ejercicios propuestos. 
 
-
-
-\subsection{Drivers de sensores}
-\label{subsec:driversSensores}
 El robot consta de sensores simulados con \textit{A-Frame}. Los drivers permiten que el usuario, vía \textit{JavaScript}, pueda acceder a estos y obtener su información. En este entorno disponemos de los siguientes sensores: 
 
 \begin{table}[H]
@@ -138,17 +118,13 @@ El robot consta de sensores simulados con \textit{A-Frame}. Los drivers permiten
 }
 \end{table}
 
-\subsection{Drivers de actuadores}
-\label{subsec:driversMotores}
-
-La función de los actuadores es otorgar movimiento al cuerpo del robot simulado en \textit{A-Frame}. Con los métodos creados, además, no es necesario mandarle órdenes constantemente, si no que es suficiente con mandar la instrucción una vez y el robot seguirá ejecutándola hasta que reciba una nueva.  
-
+Además de sensores, el robot tiene actuadores. Los actuadores se encargan de dar movimiento al robot simulado en \textit{A-Frame}.
 
 En la tabla \ref{tab:tablaMotores} se explican todas las funciones del \textit{HAL API} que hacen referencia a los actuadores.
 
 \begin{table}[H]
   \begin{center}
-    \caption{Métodos (HAL API) de los actuadores del robot.}
+    \caption{Métodos (HAL API) de los actuadores del robot en \textit{JavaScript}.}
     \vspace{0.5cm}
     \label{tab:tablaMotores}
     \begin{tabular}{|c|c|} 
@@ -164,18 +140,19 @@ En la tabla \ref{tab:tablaMotores} se explican todas las funciones del \textit{H
   \end{center}
 \end{table}
 
-Estos seran los \textit{drivers} que tenga que agregar a la funcionalidad tanto en el robot simulado, programado en \textit{JavaScript}  y el real que tendrá unos equivalentes en \textit{Python}.
+Además del \textit{Driver} en \textit{Javascript} para los robots simulados, la plataforma de \textit{Kibotics} ofrece recubrimientos de este HAL API en \textit{Python} y en \textit{Scratch}. Los usuarios programan sus aplicaciones robóticas usando esos interfaces de alto nivel.
 
-\section{Django}
+\section{Servidor Django}
 
-Django es un framework de código abierto escrito en Python, creado en 2005, el cual permite desarrollar un entorno web complejo de una forma rápida y estructurada. Actualmente es mantenido por Django Software Foundation y se encuentra en la versión 3.0 (Novapros, 2020).
+Django \footnote{\url{https://www.djangoproject.com/es}} un entorno de código abierto escrito en Python, creado en 2005, el cual permite desarrollar un entorno web complejo de una forma rápida y estructurada. Actualmente es mantenido por Django Software Foundation y se encuentra en la versión 3.0, aunque para este proyecto vamos a usar la versión 2.2, que es la que utiliza \textit{Kibotics} actualmente.
 
-Sigue una arquitectura MVC (Modelo – Vista - Controlador), como se observa en la figura(Holovaty y Kaplan-Moss, 2007).
+Sigue una arquitectura MVC (Modelo – Vista - Controlador), como se observa en la figura.
 \begin{itemize}
-	\item \textit{Modelo}. Los modelos de datos creados están mapeados directamente a las tablas de la base de datos, permitiendo aislar el código de la aplicación de la base de datos.
+	\item \textit{Modelo}. Es la representación de la información con la cual el sistema opera, por lo tanto gestiona todos los accesos a dicha información, tanto consultas como actualizaciones, implementando también los privilegios de acceso que se hayan descrito en las especificaciones de la aplicación
 
-	\item \textit{Vista}. Corresponde con la capa de presentación, y está basada en plantillas HTML.		
-	\item \textit{Controlador (en Django llamado “views”)}. Responsable de seleccionar la plantilla a mostrar. Atiende a una petición y, según el mapeo de la URL, (Uniform Resource Locator) redirige a una vista u otra.
+	\item \textit{Vista}. Presenta el 'modelo' en un formato adecuado para interactuar (usualmente la interfaz de usuario), por tanto requiere de dicho 'modelo' la información que debe representar como salida.
+	
+	\item \textit{Controlador}. Responde a eventos e invoca peticiones al 'modelo' cuando se hace alguna solicitud sobre la información.por tanto se podría decir que el 'controlador' hace de intermediario entre la 'vista' y el 'modelo' (.
 \end{itemize}
 \begin{figure}[h!]
   \centering
@@ -183,17 +160,17 @@ Sigue una arquitectura MVC (Modelo – Vista - Controlador), como se observa en 
   \caption{Arquitectura Django}
   \label{Arquitectura Django}
 \end{figure}
-La meta fundamental de Django es facilitar la creación de sitios web complejos. Django pone énfasis en el re-uso, la conectividad y extensibilidad de componentes, el desarrollo rápido y el principio No te repitas (DRY, del inglés Don't Repeat Yourself). Python es usado en todas las partes del framework, incluso en configuraciones, archivos, y en los modelos de datos. 
-Ofrece una serie de características bastante interesantes como es su excelente capa de seguridad (p ej. permite una protección contra los ataques maliciosos “Cross-site request forgery”), dispone de un sistema de administrador “por defecto,” sin necesidad de realizar ningún tipo de configuración. También proporciona una interfaz para el acceso a la base de datos, facilitando las consultas (Novapros, 2020).
+La meta fundamental de Django es facilitar la creación de sitios web complejos. Django pone énfasis en el re-uso, la conectividad y extensibilidad de componentes, el desarrollo rápido y el principio No te repitas (DRY, del inglés Don't Repeat Yourself). Python es usado en todas las partes del entorno, incluso en configuraciones, archivos, y en los modelos de datos. 
 
 
-\section{Flask}
+\section{Servidor Flask}
 
-Flask, lanzado en abril de 2010 es, junto con Django, uno de los framework webs más famosos escritos en Python.\newline
-Está enfocado en proporcionar lo mínimo necesario para poner en funcionamiento una aplicación, por eso se le considera un framework “minimalista”. Por otro lado, no requiere de otras dependencias para realizar acciones básicas, de manera que la curva de aprendizaje para su comprensión es muy baja. Debido a su sencillez en la estructura, posee una velocidad mayor que Django y es bastante útil para iniciarse en el aprendizaje de desarrollo web, permitiendo crear servidores de una forma rápida. Debido a ello, Flask está orientado al sector servicios, los cuales implican muchas visitas y una carga grande de peticiones, y también para proyectos personalizados o sencillos (Rodríguez, 2019).
+\textit{Flask} \footnote{\url{https://flask.palletsprojects.com/en/1.1.x/}} es un entorno escrito en \textit{Python} y concebido para facilitar el desarrollo de Aplicaciones Web bajo el patrón MVC(Modelo - Vista - Controlador). Se le considera un entrono minimalista porque tiene las herramientas  mínimas necesarias para crear una aplicación web funcional pero si se necesita en algún momento una nueva funcionalidad hay un conjunto muy grande extensiones  que se pueden instalar con \textit{Flask} que le van dotando de funcionalidad.
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.4\textwidth]{img/flask.png}
   \caption{Logo Flask}
   \label{Flask}
 \end{figure}
+
+Usaré \textit{Flask} para instalar un servidor en el robot \textit{LEGO Ev3} que reciba peticiones.

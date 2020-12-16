@@ -1,12 +1,12 @@
 \chapter{Introducción}
 \label{chap:intro}
-En este capítulo se introducen los conceptos básicos en robótica, de como esta nos ayuda en nuestro día a día, y cual es su estado actual. Y como puede ser un gran recurso en la educación. En lo que se basa este proyecto
+En este capítulo se introducen los conceptos básicos en robótica, de como esta nos ayuda en nuestro día a día, y cual es su estado actual. Y como puede ser un gran recurso en la educación, y de las principales características de la robótica educativa.
 
 \section{Robótica}
 \label{sec:robotica}
 La robótica es una rama de las ingenierías y de las ciencias de la computación que se encarga del diseño, construcción, operación, estructura, manufactura y aplicación de los robots.
 El término \textit{robot} se popularizó con el éxito de la obra R.U.R. (\textit{Robots Universales Rossum}), escrita por Karel Čapek en 1920. En la traducción al inglés de dicha obra la palabra checa \textit{robota}, que significa trabajos forzados o trabajador, fue traducida al inglés como robot.
-Un robot es una entidad virtual o mecánica artificial. Están diseñados con un proposito propio.La independencia creada en sus movimientos hace que sus acciones sean la razón de un estudio razonable y profundo en el área de la ciencia y tecnología. La palabra robot puede referirse tanto a mecanismos físicos como a sistemas virtuales de software, aunque suele aludirse a los segundos con el término de bots.
+Un robot es una entidad virtual o mecánica artificial. Están diseñados con un propósito propio.La independencia creada en sus movimientos hace que sus acciones sean la razón de un estudio razonable y profundo en el área de la ciencia y tecnología. La palabra robot puede referirse tanto a mecanismos físicos como a sistemas virtuales de software, aunque suele aludirse a los segundos con el término de bots.
 
     \begin{figure}[H]
     \centering
@@ -17,7 +17,7 @@ Un robot es una entidad virtual o mecánica artificial. Están diseñados con un
 No hay un consenso sobre qué máquinas pueden ser consideradas robots,
 dentro de este proyecto tomaremos como definición que un robot es un sistema autónomo programable capaz de realizar tareas complejas. Además, todos los robots se componen de tres partes esenciales  se componen de sensores, controladores y actuadores.
 \begin{itemize}
-    \item \textbf{Sensores}: Son los sentidos del robot, con ellos ve, escucha y sabe lo que hay en el entorno. Recogen la información necesaria para que el robot realice la tarea En este grupo se encuentran lásers, cámaras, ultrasonidos u odómetros..
+    \item \textbf{Sensores}: Son los sentidos del robot, con ellos ve, escucha y sabe lo que hay en el entorno. Recogen la información necesaria para que el robot realice la tarea En este grupo se encuentran láseres, cámaras, ultrasonidos u odómetros..
     \item \textbf{Controladores}: El equivalente al cerebro humano, utiliza los datos recogidos por los sensores para elaborar una respuesta para que la lleve acabo los actuadores.
     \item \textbf{Actuadores}: Equivalen a los músculos humanos, son los que se encargan de interactuar con el entorno para llevar a cabo su tarea. Son brazos mecánicos, motores, etcétera...
 \end{itemize}
@@ -34,7 +34,7 @@ Ahora que tenemos las bases de lo que es un robot asentadas podemos hablar de cu
     \caption{Aspiradora robótica \textit{Roomba}} \label{fig:roomba}
     \end{figure}
 
-    \item Robots médicos: Son robots diseñados para el uso en medicina para realizar tareas que requieren mucha precision como en el caso de una cirugía, con el robot \textit{Da Vinci} o robots diminutos que son capaces de navegar por las venas hasta llegar al corazón y allí realizar la cirugía necesaria.
+    \item Robots médicos: Son robots diseñados para el uso en medicina para realizar tareas que requieren mucha precisión como en el caso de una cirugía, con el robot \textit{Da Vinci} o robots diminutos que son capaces de navegar por las venas hasta llegar al corazón y allí realizar la cirugía necesaria.
       \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{img/davinci.jpg}
@@ -48,7 +48,7 @@ Ahora que tenemos las bases de lo que es un robot asentadas podemos hablar de cu
     \caption{Robot militar \textit{Big Dog} creado por \textit{Boston Dynamics}} \label{fig:bigdog}
     \end{figure}
     
-    \item Vehículos autónomos: Es el campo de la robótica que más en auge esta ahora mismo. El objetivo de estos robots es usar la información que proporcionan sus sensores internos, como cámaras, sensores infrarrojos \textit{Lidar}, y sensores externos como el GPS para llevar de un punto a otro un vehículo.
+    \item Vehículos autónomos: Es el campo de la robótica que más en auge esta ahora mismo. El objetivo de estos robots es usar la información que proporcionan sus sensores como cámaras, sensores infrarrojos, sistemas \textit{Lidar} o el GPS entre otros, para llevar el vehículo de un lugar a otro.
 
     \begin{figure}[H]
         \centering
@@ -66,7 +66,7 @@ Ahora que tenemos las bases de lo que es un robot asentadas podemos hablar de cu
 
 \subsection{Software en robótica}
 \label{subsec:softwarerobot}
-Para dotar de esta inteligencia a los robots se necesitan herramientas que transformen los datos recibidos de los sensores en algo que puedan aplicar en los actuadores. Hace años, cada maquina tenía un software especifico con sensores y actuadores únicos para ese robot y esa tarea a desarrollar. Esto hacia, que aunque hubieras implementado el software para otros robots anteriormente, tuvieras que repetir el proceso con cada nuevo robot. Con los años se desarrollaron plataformas de software que permiten desarrollar de manera genérica para todos los robots, y actuando de mediador entre el robot y el software del creador,estos son los llamados \textit{middleware} que hacen que te puedas abstraer de los \textit{drivers} característicos de cada robot. Los middleware mas importantes a día de hoy son:
+Para dotar de esta inteligencia a los robots se necesitan herramientas que transformen los datos recibidos de los sensores en algo que puedan aplicar en los actuadores. Hace años, cada máquina tenía un software específico con sensores y actuadores únicos para ese robot y esa tarea a desarrollar. Esto hacia, que aunque hubieras implementado el software para otros robots anteriormente, tuvieras que repetir el proceso con cada nuevo robot. Con los años se desarrollaron plataformas de software que permiten desarrollar de manera genérica para todos los robots, y actuando de mediador entre el robot y el software del creador,estos son los llamados \textit{middleware} que hacen que te puedas abstraer de los \textit{drivers} característicos de cada robot. Los middleware mas importantes a día de hoy son:
 \begin{itemize}
     \item \textit{\textbf{Robot Operating System (ROS)}}\cite{bib:ros}. Plataforma de \textit{software} libre para el desarrollo de \textit{software} de robots. Provee servicios estándar de un sistema operativo como la abstracción de \textit{hardware}, control de dispositivos de bajo nivel, mecanismos de intercambio de mensajes entre procesos y mas herramientas vitales para el desarrollo del robot. Es el mas utilizado a día de hoy porque fue especialmente desarrollado para \textit{UNIX} y luego se implemento para el resto de sistemas operativos
     \item \textit{\textbf{ORCA}}\cite{bib:orca}. Plataforma de \textit{software} libre diseñado para crear aplicaciones mas complejas, ya que esta orientado a las componentes por separado
@@ -76,17 +76,17 @@ Para dotar de esta inteligencia a los robots se necesitan herramientas que trans
 
 \subsection{Simuladores robóticos}
 \label{sec:simuladores}
-La simulación  es el proceso de diseñar un modelo de un sistema real y llevar a término experiencias con él, con la finalidad de comprender el comportamiento del sistema o evaluar nuevas estrategias. De esta forma los simuladores ahorran tiempo porque puedes detectar posibles errores en el código antes de lanzarlo en el \textit{Hardware} y que pueda llevar mayores problemas.\newline
+La simulación  es el proceso de diseñar un modelo de un sistema real y llevar a término experiencias con él, con la finalidad de comprender el comportamiento del sistema o evaluar nuevas estrategias. De esta forma los simuladores ahorran tiempo porque puedes detectar posibles errores en el código antes de lanzarlo en el \textit{Hardware} y que pueda llevar a mayores problemas.\newline
 Algunos de los simuladores que más se utilizan y más nos interesan en este proyecto:
 \begin{itemize}
-    \item \textbf{Gazebo}: Gazebo es un simulador de robótica 3D de código abierto. Gazebo fue un componente en el Proyecto Player desde 2004 hasta 2011. Gazebo integró el motor de física ODE, la representación de OpenGL y el código de soporte para la simulación de sensores y el control del actuador. También es importante destacar que tiene soporte para \texttt{ROS} lo que significa que puedes probar código real del robot en el simulador
+    \item \textbf{Gazebo}\cite{bib:Gazebo}: Gazebo es un simulador de robótica 3D de código abierto. Gazebo fue un componente en el Proyecto Player desde 2004 hasta 2011. Gazebo integró el motor de física ODE, la representación de OpenGL y el código de soporte para la simulación de sensores y el control del actuador. También es importante destacar que tiene soporte para \texttt{ROS} lo que significa que puedes probar código real del robot en el simulador
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/gazebo.png}
     \caption{Interfaz de Gazebo} \label{fig:gazebo}
     \end{figure}
     
-    \item \textbf{WebSim}: Es un simulador diseñado por alumnos de la universidad y que va escalando poco a poco. Hace uso de un entorno A-Frame y su diseño permite conectarlo con un editor que permite programar en diferentes lenguajes como \textit{JavaScript} y \textit{Python}, incluso un lenguaje de bloques llamado \textit{Blockly}(equivalente a Scratch pero diseñado por Google). Permite acoplar una aplicación externa a través de comunicaciones ICE. Es la base de la plataforma de \textit{Kibotics} y que vamos a utilizar en este proyecto.
+    \item \textbf{WebSim}: Es un simulador diseñado por alumnos de la universidad y que va escalando poco a poco. Hace uso de un entorno A-Frame y su diseño consiste en un editor que permite programar en diferentes lenguajes como \textit{JavaScript} y \textit{Python}, incluso un lenguaje de bloques llamado \textit{Blockly}(equivalente a Scratch pero diseñado por Google). Es la base de la plataforma de \textit{Kibotics} y que vamos a utilizar en este proyecto.
 \end{itemize}
 
 \section{Tecnologías web}
@@ -100,14 +100,14 @@ WWW es una combinación de 4 ideas: Hipertexto, identificadores de recursos(URL 
 \caption{Concepto de Tecnologias Web} \label{fig:tecnologiasweb}
 \end{figure}
 
-Lo que nos interesa de las \textit{Tecnologías Web} es el modelo de cliente-servidor, también llamados, \textit{FrontEnd} a todo lo que el usuario se encuentra directamente en la web, lo que es la parte del cliente. Y \textit{BackEnd} a la parte del interior de las aplicaciones que viven en el servidor, que es lo denominado "el lado del servidor". Modelo que utilizare para abastecer a mi robot de los programas que se desarrollan en \textit{Kibotics}.
+Lo que nos interesa de las \textit{Tecnologías Web} es el modelo de cliente-servidor, también llamado, \textit{FrontEnd} a todo lo que el usuario se encuentra directamente en la web, lo que es la parte del cliente. Y \textit{BackEnd} a la parte del interior de las aplicaciones que viven en el servidor, que es lo denominado \textit{el lado del servidor}. 
 \subsection{FrontEnd}
 \label{subsec:frontend} 
 Es la parte encargada de dar forma a la interfaz de usuario y de establecer la comunicación con el servidor. Una pieza importante del cliente es el navegador, ya que es el encargado de leer e interpretar la información recibida. Entre los navegadores \textit{web} más empleados se encuentran \textit{Firefox}, \textit{Google Chrome} u \textit{Opera}\cite{bib:navegadores}. Las tecnologías que hacen posible esa comunicación son: 
 
 \begin{itemize} 
-    \item \textit{\textbf{JavaScript}}. Es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos. Es el lenguaje más utilizado para el desarrollo de aplicaciones Web y de paginas Web. La mayor parte de \textit{Kibotics} esta desarrollado en \textit{Javascript}. Por lo que en el siguiente capítulo desarrollaremos en más profundidad.
-    \item \textit{\textbf{HTML}}. siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web. Es el estándar más utilizado a dia de hoy.\newline
+    \item \textit{\textbf{JavaScript}}. Es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos. Es el lenguaje más utilizado para el desarrollo de aplicaciones Web y de paginas Web.
+    \item \textit{\textbf{HTML}}. siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web. Es el estándar más utilizado a día de hoy.\newline
 HTML sólo sirve para indicar como va ordenado el contenido de una página web. Esto lo hace por medio de las marcas de hipertexto las cuales son etiquetas conocidas en inglés como tags. Las mejoras del diseño gráfico ya vienen dada de la versión actual, \textit{HTML5}, que incluye muchas mejoras respecto a su predecesor: \textit{canvas}, \textit{websockets}, \textit{WebRTC}, vídeo, audio, etc. Este lenguaje indica la estructura de una página web, para editar el estilo y presentación visual hay que hacer uso de otros elementos como \textit{CSS}.
     \item \textit{\textbf{Cascading Style Sheets (CSS)}}. Lenguaje de diseño gráfico para definir y crear la presentación de un documento escrito en un lenguaje de marcado. De esta forma, se puede separar información y datos (en los documentos \textit{HTML}) y todo lo relativo al diseño y presentación (en documentos \textit{CSS}). Actualmente los navegadores usan la versión \textit{CSS3}.
 
@@ -123,7 +123,7 @@ HTML sólo sirve para indicar como va ordenado el contenido de una página web. 
 En la parte del servidor web se encarga de proveer los datos, hacer posible crear una aplicación que se le mostrará al cliente y facilitar herramientas como bases de datos y recursos compartidos. 
 \begin{itemize}
     \item \textbf{Node.js}: Node. js es un entorno JavaScript que nos permite ejecutar en el servidor, de manera asíncrona, con una arquitectura orientada a eventos   
-    \item \textbf{Django}: Django es un framework web extremadamente popular y completamente funcional, escrito en  \textit{Python}. El módulo muestra por qué Django es uno de los frameworks de servidores web más populares.
+    \item \textbf{Django}: Django es un entorno web extremadamente popular y completamente funcional, escrito en  \textit{Python}. 
 \end{itemize}
 
 \subsection{HTTP}
@@ -146,20 +146,20 @@ Aunque estos son los principales métodos, el protocolo tiene flexibilidad para 
 
 \section{Robótica educativa}
 \label{sec:educativa}
-La robotica educativa ha ido tomando mas importancia con los años, ya que cada vez es mas importante que estudiantes de cualquier nivel estén familiarizados con la tecnología, tiene valores positivos como la implementación de pensamiento lógico, resolución de problemas y trabajo en equipo en las actividades académicas, que son ramas del conocimiento que se desarrollan poco en edades tempranas , con una componente en conocimiento matemático y físicos y ademas añade un atractivo que no tienen las asignaturas convencionales.
+La robótica educativa ha ido tomando mas importancia con los años, ya que cada vez es más importante que estudiantes de cualquier nivel estén familiarizados con la tecnología, tiene valores positivos como la implementación de pensamiento lógico, resolución de problemas y trabajo en equipo en las actividades académicas, que son ramas del conocimiento que se desarrollan poco en edades tempranas , con una componente en conocimiento matemático y físicos y además añade un atractivo que no tienen las asignaturas convencionales.
 Muchos estudios han demostrado que el uso de kits de robótica en la educación favorece a la capacidad de reflexión de los estudiantes.
-Cada año se crean mas cursos de robótica, y en 2015 la comunidad de Madrid introdujo la asignatura de robótica en los planes docentes de Enseñanza Secundaria con la asignatura ``Tecnología, Programación y Robótica''\cite{bib:secundaria} y en el curso 2020-2021 se empezará a implantar en Educación Primaria la asignatura ``Programación y Robótica''\cite{bib:primaria}.\newline
-Este tipo de educación es el llamado modelo \textbf{STEM}(siglas de \textit{Science, Technology, Engineering y Mathematics}), término creado por Seymound Papert en la década de los 80 cuando creo uno de los primeros juguetes con programación incorporada, creada para niños, el llamado \textit{"Lego-Logo"}, dando mucha importancia a juegos con engranajes, que consideraba que enriquecía el pensamiento. Justamente, el referente del protagonista de este proyecto.\newline
+Cada año se crean mas cursos de robótica, y en 2015 la comunidad de Madrid introdujo la asignatura de robótica en los planes docentes de Enseñanza Secundaria con la asignatura ``Tecnología, Programación y Robótica'' y en el curso 2020-2021 se empezará a implantar en Educación Primaria la asignatura ``Programación y Robótica''.\newline
+Este tipo de educación es el llamado modelo \textbf{STEM} (siglas de \textit{Science, Technology, Engineering y Mathematics}), término creado por Seymound Papert en la década de los 80 cuando creo uno de los primeros juguetes con programación incorporada, creada para niños, el llamado \textit{"Lego-Logo"}, dando mucha importancia a juegos con engranajes, que consideraba que enriquecía el pensamiento. Justamente, el referente del protagonista de este proyecto.\newline
 Pero no fue hasta 2010, cuando este modelo de educación empezó a tomar relevancia, y se inicio la inclusión en la agenda escolar.
         \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/stem.jpg}
     \caption{Modelo de Educación \textit{STEM}} \label{fig:stem}
     \end{figure}
-Una de las mayores partes de la robótica tiene que ver con la programación, que ademas de ser una habilidad muy importante para la sociedad actual, es algo complejo. Por lo que se utilizan lenguajes de programación visual, estos se tratan de lenguajes que abstraen en bloques las funciones o métodos de cualquier lenguaje de programación. Dentro de este tipo de lenguajes, los mas destacables son :
+Una de las mayores partes de la robótica tiene que ver con la programación, que además de ser una habilidad muy importante para la sociedad actual, es algo complejo. Por lo que se utilizan lenguajes de programación visual, estos se tratan de lenguajes que abstraen en bloques las funciones o métodos de cualquier lenguaje de programación. Dentro de este tipo de lenguajes, los más destacables son :
 
 \begin{itemize}
-    \item \textit{\textbf{Scratch}}\cite{bib:scratch}: proyecto liderado por el Grupo \textit{Lifelong Kindergarten} del \textit{MIT}, es utilizado por estudiantes para programar animaciones, juegos e interacciones. Su atractivo reside en lo facil que es de entender el pensamiento computacional debido a su sencilla interfaz gráfica y la implementación de sus bloques.
+    \item \textit{\textbf{Scratch}}\cite{bib:scratch}: proyecto liderado por el Grupo \textit{Lifelong Kindergarten} del \textit{MIT}, es utilizado por estudiantes para programar animaciones, juegos e interacciones. Su atractivo reside en lo fácil que es de entender el pensamiento computacional debido a su sencilla interfaz gráfica y la implementación de sus bloques.
     \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/scratch.jpg}
@@ -182,7 +182,7 @@ Como se puede observar es una abstracción muy simple para estudiantes de mas co
     \caption{Interfaz gráfica de LEGO Ev3} \label{fig:lego2}
     \end{figure}
 
-En el caso del software para el \textbf{LEGO Ev3}, añade un grado de complejidad, incluyendo apartados para realizar operaciones matemáticas, envio de archivos entre robots, y añade mas actuadores, como la pantalla que integra el robot, o los altavoces.
+En el caso del software para el \textbf{LEGO Ev3}, añade un grado de complejidad, incluyendo apartados para realizar operaciones matemáticas, envío de archivos entre robots, y más actuadores, como la pantalla que integra el robot, o los altavoces.
 
 En el caso de LEGO y en otros kits incorporan los elementos básicos para la construcción de un robot. En este en particular viene con lo indispensable para construir con piezas de LEGO. También incluye un microprocesador para ser programado, con Linux instalado, sensores (infrarrojos, táctiles y de color) y motores.
   \begin{figure}[H]
@@ -193,13 +193,13 @@ En el caso de LEGO y en otros kits incorporan los elementos básicos para la con
 \end{itemize}{}
 
 
-En el siguiente capitulo, profundizare mas en lo que se puede hacer con el robot \textbf{LEGO Ev3} y explicare cuales van a ser los objetivos y porque elegir este robot.
+En el siguiente capitulo, profundizaré más en lo que se puede hacer con el robot \textbf{LEGO Ev3} y explicaré cuales van a ser los objetivos y porque elegir este robot.
 
 
 
 \subsection{Kibotics}
 \label{sec:kibotics}
-Kibotics\footnote{\url{https://kibotics.org/}}, es un entorno web desarrollado por la Asociación JdeRobot\footnote{\url{https://jderobot.github.io/}} para la docencia de robótica. Fue creada para impartir cursos de robótica, en los que destacan una iniciación muy sencilla, y una gran variedad de recursos a disposición del alumno.
+Kibotics\footnote{\url{https://kibotics.org/}}\cite{bib:kibotics}, es un entorno web desarrollado por la Asociación JdeRobot\footnote{\url{https://jderobot.github.io/}} para la docencia de robótica. Fue creada para impartir cursos de robótica, en los que destacan una iniciación muy sencilla, y una gran variedad de recursos a disposición del alumno.
 Es una plataforma en la que podemos encontrar distintos ejercicios de robots simulados que no son reales (como el Formula 1). Tiene los ejercicios divididos , en los robots con ruedas sobre una superficie, con cámaras, sensores de todo tipo, y los drones, con funcionalidad adicional, y otro tipo de ejercicios, y dentro de estos dos grupos, se dividen entre los dos lenguajes de programación. \newline
  
 \begin{figure}[h]
