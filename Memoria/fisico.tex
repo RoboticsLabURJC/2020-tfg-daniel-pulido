@@ -1,329 +1,406 @@
 \chapter{Soporte Fisico}
 
-Al igual que en los capítulos anteriores, mostraremos cuál ha sido el desarrollo realizado para llevar, en este caso, el robot GopiGo3 a la plataforma Kibotics, lo que permitirá su programación.
+Ahora nos centraremos en cual ha sido el desarrollo seguido para que el bloque \textit{Ev3} reciba codigo desde un cliente exterior y pueda ejecutarlo en local. Y luego como adaptarlo para su posterior implementación en el server de \textit{Kibotics}
 
-\section{Características del Robot GoPiGo3}
+\section{Interfaz de programación de sensores y actuadores}
+\label{sec:interfazfisico}
+Para crear los \textit{drivers} de \textit{Kibotics} del robot \textit{LEGO EV3} real se ha utilizado la librería \texttt{ev3dev2} donde se encuentran las funciones necesarias para el control del robot en Python 
 
-GoPiGo es un robot fabricado por Dexter Industries \footnote{\url{https://www.dexterindustries.com}}, que pretende integrar la Raspberry Pi en los robots, dotándoles así de una mayor capacidad y flexibilidad. Actualmente se encuentra en su versión GoPiGo3, que consiste en un kit robótico con forma de vehículo (Figura 6.1).
+\subsection{Soporte de actuadores}
+Los motores son los actuadores como ya he explicado en el anterior capitulo, y en la forma de uso de \textit{Kibotics} es la de \textit{Tracción diferencial}, en el cual los motores se mueven a la par. Por lo tanto para crear las funciones  del \textit{HAL API} en Python, Voy a utilizar la clase \textit{MoveTank} dentro de la librería de \texttt{ev3dev2} \footnote{\url{https://github.com/ev3dev/ev3dev-lang-python}} .
+ 
+\begin{lstlisting}[frame=single,breaklines=true, label=Clase MoveTank caption=Clase MoveTank,  captionpos=b]
+
+class MoveTank(MotorSet):
+    """
+    Controls a pair of motors simultaneously, via individual speed setpoints for each motor.
+
+    Example:
+
+    .. code:: python
+
+        tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
+        # drive in a turn for 10 rotations of the outer motor
+        tank_drive.on_for_rotations(50, 75, 10)
+    """
+    def __init__(self, left_motor_port, right_motor_port, desc=None, motor_class=LargeMotor):
+        motor_specs = {
+            left_motor_port: motor_class,
+            right_motor_port: motor_class,
+        }
+
+        MotorSet.__init__(self, motor_specs, desc)
+        self.left_motor = self.motors[left_motor_port]
+        self.right_motor = self.motors[right_motor_port]
+        self.max_speed = self.left_motor.max_speed
+        self._cs = None
+        self._gyro = None
+\end{lstlisting}
+
+En esta clase se encuentran todas los métodos con los que construiré mi \textit{Driver}
+
+
+\begin{lstlisting}[frame=single,breaklines=true, label=Driver Actuadores, caption=Drivers,  captionpos=b]
+
+
+import ev3dev2.motor
+import time
+
+
+class Ev3Wrapper:
+
+    def __init__(self,
+                 left_motor_port=OUTPUT_D,
+                 right_motor_port=OUTPUT_A):
+
+
+        tank_drive = MoveTank(left_motor_port, right_motor_port)
+
+
+    def TurnDegrees(self, degrees, speed):
+        # get the starting position of each motor
+        tank_drive.turn_degrees(self, speed, degrees)
+
+    def avanzar(self, val):
+        tank_drive.on(self,val, val)
+
+    def retroceder(self, val):
+        tank_drive.on(self,-val,-val)
+
+    def girar_derecha(self, w):
+
+        tank_drive.turn_right(self, 360, 2*3,1416/w)
+
+    def girar_izquierda(self, w):
+
+        tank_drive.turn_left(self, 360, 2*3,1416/w)
+
+    def avanzar_hasta(self, distance):
+        dist_mm = distance * 1000
+
+        # the number of degrees each wheel needs to turn
+        tank_drive.on_for_distance(self, 20, distance_mm, brake=True, block=True)
+
+    def retroceder_hasta(self, distance):
+        self.avanzar_hasta(-distance)
+
+    def girar_derecha_hasta(self, degrees):
+        self.TurnDegrees(degrees, 100)
+
+    def girar_izquierda_hasta(self, degrees):
+        self.TurnDegrees(-degrees, 100)
+
+    def parar(self):
+        tank_drive.odometry_stop()
+
+
+    def target_reached(self,left_target_degrees,right_target_degrees):
+        tolerance = 5
+        min_left_target = left_target_degrees - tolerance
+        max_left_target = left_target_degrees + tolerance
+        min_right_target = right_target_degrees - tolerance
+        max_right_target = right_target_degrees + tolerance
+
+        current_left_position = left_motor_port.position()
+        current_right_position = right_motor_port.position()
+
+        if current_left_position > min_left_target and \
+           current_left_position < max_left_target and \
+           current_right_position > min_right_target and \
+           current_right_position < max_right_target:
+            return True
+        else:
+            return False
+\end{lstlisting}
+
+
+\subsection{Soporte de sensores}
+Dentro de los sensores soportados por el \textit{HAL API} de \textit{Kibotics} hay algunos, que no se pueden aplicar al robot \textit{LEGO EV3} ya que no dispone de sensores, como la cámara o el sensor de Infrarrojos. Por lo que los \textit{drivers} que se incluirán en este apartado son:
+
+\begin{table}[H]
+\caption{Métodos (HAL API) soportados por Ev3.}
+\vspace{0.5cm}
+\label{tab:tablaSensores}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|ll}
+\cline{1-3}
+\textbf{Método} & \textbf{Descripción} & \textbf{Salida} &  &  \\ \cline{1-3}
+.getDistance() & \begin{tabular}[c]{@{}c@{}}Devuelve la distancia entre el robot\\  y la intersección del raycaster en el centro\end{tabular} & number(metros) &  &  \\ \cline{1-3}
+.IsTouching() & Devuelve si algo presiona el sensor & Boolean &  &  \\ \cline{1-3}
+.getObjectColor(color) & \begin{tabular}[c]{@{}c@{}}Devuelve un objeto con la posición del elemento\\ detectado por la cámara del color pasado por parámetro\end{tabular} & \begin{tabular}[c]{@{}c@{}}\{center:{[}x.y{]},\\ area: int\}\end{tabular} &  &  \\ \cline{1-3}
+
+
+
+\end{tabular}%
+}
+\end{table}
+
+Para este \textit{driver}, utilizaré las funciones definidas en el API de \texttt{Ev3dev2.sensor},las cuales incluyen todas los sensores que puede llevar el \textit{LEGO EV3}. Pero solo utilizaremos las clases \texttt{TouchSensor(), ColorSensor() y Ultrasonic()} que son los tres sensores que usamos en este proyecto. 
+
+\begin{lstlisting}[frame=single,breaklines=true, label=Driver Actuadores, caption=Drivers,  captionpos=b]
+from ev3dev2.sensor import INPUT_1, INPUT_2, INPUT_3, INPUT_4
+import ev3dev2.sensor.lego
+import time
+
+
+class Ev3Wrapper:
+
+    def __init__(self):
+        us= UltraSonic()
+        to= TouchSensor()
+        cs = ColorSensor()
+
+
+    def getObjectColor(self, color):
+        cs.raw(color)
+
+    def getDistance(self):
+        us.distance_centimeters_continuous()
+
+    def isTouching(self):
+        to.is_pressed()
+\end{lstlisting}
+
+\section{Descarga de la plataforma}
+\subsection{Preparación ordenador a bordo}
+Lo primero para la recepción de mensajes es tener un dispositivo que pueda recibirlos, en este caso tendremos que intalar en el \textit{LEGO EV3} un sistema operativo que nos permita desplegar un servidor. Comenzaré hablando del apartado técnico del robot, para entender la solución adoptada. El Bloque \textit{Ev3} es la mejora de su predecesor el \textit{LEGO NXT}, añadiéndole mas potencia, memoria y expandibilidad. Cuenta con un procesador ARM9 a 300 MHz con memoria Flash de 16 MB, 64 MB de RAM y memoria ampliable con tarjetas mini SD hasta 32 GB. Ademas de eso dispone de conexiones \textit{Bluetoooth 2.1} y puerto USB. 
 \\
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.8\textwidth]{img/motoresysensores.jpg}
+    \includegraphics[width=0.8\textwidth]{img/legomind.jpg}
   \caption{Diseño hardware del Ev3}
   \label{Diseño hardware del Ev3}
 \end{figure}
 \\
-Entre las características del \textit{hardware} del GoPiGo3 destaca su cuerpo, que consiste en un acrílico grueso. Requiere un voltaje de entre 7-12V, conseguible con una batería a pilas. Dispone de una placa llamada “GoPiGo3", que se conecta a la Raspberry Pi. La comunicación con la controladora se produce a través de la interfaz SPI (\textit{Serial Peripheral Interface}). Incluye dos motores para conectarlo a las ruedas, las cuales tienen 66,5 mm de diámetro. También dispone de codificadores electrónicos, que se conectan a los motores para mejorar la movilidad. Respecto a las interfaces externas, destacan los dos puertos I2C (\textit{Inter-Integrated Circuit}) y los puertos serie que están acoplados a los pines de la Raspberry Pi (Dexter Industries, 2020).
-\\
-\\
-Dexter Industries también ha desarrollado DexterOS, que incluye el \textit{software} necesario para que la Raspberry Pi funcione con GoPiGo3 (Dexter Industries, 2020). DexterOS se distribuye mediante una SD (\textit{Secure Digital}) de 8GB que se inserta en la ranura de la Raspberry Pi. Este \textit{software} emite una señal \textit{WiFi} que, una vez que el usuario se ha conectado a ese punto de acceso, al acceder al navegador se obtiene una web que permite interactuar con el robot sin necesidad de realizar ninguna descarga previa en el ordenador (Figura 6.2).
-\\
+
+\begin{wrapfigure}{l}{0.3\linewidth}
+    \centering
+    \includegraphics[width=0.6\linewidth]{img/logo_ev3dev_mono.png}
+    \caption{Ev3Dev Logo}
+    \label{fig:ev3dev}
+\end{wrapfigure}
+
+Son las características de un PC en miniatura, por lo que la mejor opción era insertar una micro SD con una imagen de \textit{Linux} que permitiera tener un sistema de ficheros, descargar librerías y ejecutar programas. Después de contemplar varias opciones me decante por la opción de \textit{Ev3Dev}\footnote{\url{https://www.ev3dev.org/}}.\newline
+\textit{Ev3Dev} es un sistema operativo basado en \textit{Debian-Linux} diseñadoespecialmente para el \textit{LEGO MINDSTORM EV3} , haciendo ingeniería inversa del bloque.\newline
+Una instalada la imagen en el robot para tener conexión a Internet hay dos opciones, la más simple es conectar un \textit{Wifi Dongle} al puerto USB del Bloque \textit{Ev3}, y se accede a la red \textit{Wifi} como cualquier ordenador. La segunda opción, es conectar por cable el robot a tu ordenador, y conectarlo a la red como una extensión de tu red.\newline
+Una vez conectado a Internet, ya puedes conectarte al robot vía \textit{SSH}.
+
 \begin{figure}[h!]
   \centering
-    \includegraphics[width=0.6\textwidth]{img/logo_vect.png}
-  \caption{Sotfware para GoPiGo3}
-  \label{Sotfware para GoPiGo3}
+    \includegraphics[width=0.8\textwidth]{img/ev3dev.png}
+  \caption{Interfaz de la terminal de Ev3}
+  \label{Diseño hardware del Ev3}
 \end{figure}
-\\
-Esta web dispone de cuatro módulos. El primero incluye lecciones integradas para aprender a programar el GoPiGo3 y algunos conceptos sobre los sensores de los que dispone. Otro módulo ofrece la posibilidad de conducir el GoPiGo3 de forma remota. Los otros dos módulos sirven como editores para programar el robot, de manera que uno de ellos permite programarlo mediante un lenguaje basado en bloques llamado \texttt{Bloxter} (Figura 6.3), muy similar a \texttt{Blockly} y diseñado por la propia empresa, mientras que el otro sirve para programarlo en \texttt{Python} (Dexter Industries, 2020). También han creado librerías que facilitan su programación para este lenguaje (una de ellas se llama \texttt{EasyGoPiGo3}).
-\\
+Además crearon una plataforma de software para programar el robot. Esto incluye, soporte para muchos lenguajes de programación, entre ellos \textit{Python, Java o C++}. Para este proyecto he elegido utilizar el lenguaje \textit{Python}, ya que es uno de los lenguajes que comprende \textbf{Kibotics} y estoy más familiarizado con él. 
 
+\subsection{Diseño}
+En la siguiente figura se muestra el diseño seguido para integrar el Ev3 real a la plataforma Kibotics. El proceso consta de 4 pasos y en las siguientes secciones se profundizará en cada una de las partes y en las interacciones necesarias entre el cliente, el servidor de Kibotics y el servidor \textit{Flask} que lanzaremos en el \textit{Robot Ev3},lo que permitira programarlo desde el navegador web usando  \textit{Kibotics}.
 
-\section{Diseño}
-
-La figura 6.4 muestra el diseño seguido para integrar el GoPiGo3 real a la plataforma Kibotics. En comparación con el diseño para los dos robots anteriores, en este caso se utiliza un servidor adicional \texttt{Flask} que permitirá la recepción del programa en el robot en su procesador Raspberry Pi.
-\\
 \begin{figure}[h!]
   \centering
     \includegraphics[width=0.8\textwidth]{img/esquema.JPG}
-  \caption{Diseño para la integración del GoPiGo3. La línea roja indica los componentes que deben estar conectados a la misma red WiFi}
-  \label{Diseño para la integración del GoPiGo3}
+  \caption{Diseño para la integración del Ev3}
+  \label{comunicacion}
 \end{figure}
+
+
+\subsection{WebBrowser}
+
+\subsubsection{Editor en el navegador web}
+
+El editor de texto se encontrara entre la parrilla de ejercicios de \textit{Kibotics}, en este caso, \textit{Kibotics} solo actua como plataforma que guarda los ejercicios que envió, y me proporciona la interfaz para poner el editor de texto que permita escribir su programa utilizando el lenguaje \textit{Python}. En el editor se importa la librería “\textit{Ev3dev2}”  que proporciona una API para interactuar con los sensores y actuadores del robot. Pero en este caso, \textit{Kibotics} no actúa en el envió, solo sirve la página para que podamos introducir el código.
+
+\subsubsection{Envío del código al servidor Flask en el robot}
+
+Utilizamos el editor "\textit{ace}" para que el usuario escriba su código en la página Web, y cuando le de al botón "Enviar", comienza el proceso de envío desarrollado en el script siguiente:
 \\
-El proceso consta de 5 pasos y en las siguientes secciones se profundizará en cada una de las partes y en las interacciones necesarias entre el cliente, el servidor de Kibotics y el servidor \texttt{Flask} de la Raspberry Pi, que permitirá programar al GoPiGo3 desde el navegador web usando Kibotics.
-
-\section{Lado Cliente}
-
-En la parrilla de unidades de Kibotics, se pueden encontrar varios ejercicios dedicados al GoPiGo3 para \texttt{Python}. Actualmente solo está disponible para este lenguaje.
-\\
-\\
-En una de secciones del ejercicio se proporciona información al usuario sobre cómo realizar el envío, así como de las instalaciones que deben realizar. En este caso solo tiene que hacer instalaciones en la Raspberry Pi del robot, ya que en el ordenador del anfitrión no es necesaria ninguna instalación. En el fragmento 6.1 se muestran los detalles de cómo se ha diseñado esta sección.
-\\
-\begin{lstlisting}[frame=single,breaklines=true, label=Página de información del GoPiGo3, caption=Página de información del GoPiGo3,  captionpos=b]
-<html>
-<head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>GoPiGo3</title></head>
-<body><h1>GoPiGo3 example</h1>
-<p>Podras realizar tu programa para enviarselo al GoPiGo.</p>
-<p><img src="{% static 'python/PRMbo009/img/GoPiGo3.png' %}" width=200px></p>
-
-<h2>1 - Instalacion</h2>
-<ul>
- <li type="circle">
-  <h4>   <b>En la Raspberry Pi 3 del GoPiGo3:</b> </h4>
-   <ol start='1' >
-    <li>
-     Descargar el siguiente fichero comprimido => <a href="{% static 'python/PRMbo009/install/configuracion_GoPiGo.zip' %}" target="_blank">Intalador</a>
-    </li>
-    <li>
-     Descomprimir el Zip descargado y situarlo en el directorio /home/pi/
-    </li>
-    <li>
-     Ir al directorio e instalar los drivers necesario, para ello abrir un terminal y ejecutar
-    </li>
-    <ol start='1' >
-     <li>
-      <code>chmod +x instalar_drivers_GoPiGo.sh</code>
-     </li>
-     <li>
-      <code>./instalar_drivers_GoPiGo.sh</code>
-     </li>
-    </ol>
-    <li>
-     Agregar la instruccion que permite levantar siempre el servidor al encenderse la Raspberry, para ello dirigirse al directorio y abrir un terminal:</li> 
-     <ol start='1' >
-      <li>
-       Ejecutar => <code>chmod +x iniciar_servidor_GoPiGo.sh</code>
-      </li> 
-      <li>
-       Abrir el servicio cron => <code>crontabl -e</code>
-      </li> 
-      <li>
-       Agregar la tarea <code> @reboot /home/pi/configuracion_GoPiGo/iniciar_servidor_GoPiGo.sh &</code>
-      </li> 
-     </ol>
-   </ol>
-   </li>
-   <li type="circle">
-    <h4>   <b>En el ordenador MacOS/Linux/Windows:</b> </h4>
-     <p>No es necesaria ningun tipo de instalacion adicional para el funcionamiento.</p>
-    </li>
-</ul>
-
-<h2>2 - Ejecucion</h2>
-<ol start='' >
- <li>
-  Realice su programa
- </li>
-  <li>
-   Eciende el GoPiGo y asegurate de que esta conectado a el WiFi. 
-  </li>
-  <li>
-   Pulse en <b>Enviar</b>, si todo ha ido bien se cargara el programa en el GoPiGo3. 
-  </li>
-</ol>
-</body>
-</html>
-\end{lstlisting}
-
-\subsection{Editor en el navegador web}
-
-Para escribir un programa y enviarlo al robot desde el lado del cliente, otra sección de la página web del ejercicio proporciona un editor donde el usuario podrá escribir su programa utilizando el lenguaje \texttt{Python}. En el editor se importa la librería “\texttt{EasyGoPigo3}” (Dexter Industries, 2018), que proporciona una API para interactuar con los sensores y actuadores del robot 
-
-\subsection{Envío del código al servidor Flask en el robot}
-
-Una vez que el usuario ha escrito el programa deseado, deberá pulsar el botón “Enviar” que puede verse en la figura 6.5, el cual desencadenará todo el proceso de envío. En el fragmento 6.2 se muestra cuál es el código HTML que permite iniciar este proceso.
-\\
-\begin{lstlisting}[frame=single,breaklines=true, label=Sección para el envío, caption=Sección para el envío,  captionpos=b]
-<center><h3>En esta seccion podras enviar tu codigo  al GoPiGo3.</h3></center>
+\begin{lstlisting}[frame=single,breaklines=true, label=Función de envío del código al servidor, caption=Función de envío del código al servidor captionpos=b] <center><h3>En esta seccion podras enviar tu codigo  al LEGO Ev3.</h3></center>
 
 <div class="text-center">
- <img class="text-center" src="{% static '/'%}{{ exercise.language }}/{{ exercise.exercise_id }}/img/GoPiGo3.png" width="300px" height="250px">
+ <img class="text-center" src="{% static '/'%}{{ exercise.language }}/{{ exercise.exercise_id }}/img/ev3.png" width="300px" height="250px">
 </div>
 
-<div id="text" class="text-center">
- <h3><span id="proxy_state" class="label label-success">Conexion con proxy</span></h3>
-  <button type="button" id="send_mbot" class="btn btn-info" onclick="send_code_to_GoPiGo()">
-   <span class="glyphicon glyphicon-send"></span> Enviar
-  </button>
+<div class="text-center">
+  <img class="text-center" src="{% static '/'%}img/lego-mindstorms-education-ev3.jpg"
+      width="300px" height="250px"
+</div>
+
+      <button type="button" id="send_mbot" class="btn btn-info" onclick="send_code_to_ev3()"><span
+              class="glyphicon glyphicon-send"></span> Enviar
+      </button>
 </div>
 \end{lstlisting}
-Tras pulsar el botón de envío, desde el navegador se manda al servidor \texttt{Flask} levantado en la Raspberry Pi del robot, el código del programa que se había escrito previamente en el editor. Este código se envía como un \textit{query parameter} de una petición GET haciendo uso de la función \texttt{fecth()}, de forma similar que en los capítulos anteriores.
+Tras pulsar el botón \texttt{Enviar}, este código que hemos escrito en el editor se envía como un \textit{query parameter} de una petición POST. Desde el navegador se manda al servidor \textit{Flask} levantado en el robot. 
 \\
-\begin{lstlisting}[frame=single,breaklines=true, label=Función de envío del código al servidor del GopiGo3, caption=Función de envío del código al servidor del GopiGo3,  captionpos=b]
-function send_code_to_GoPiGo() {
-   var editor = ace.edit("ace");
-   let code = editor.getValue();
-   console.log(code);
-   const message = {
-      method: "GET"
-   };
-   url = 'http://192.168.1.200:8001/run?python_code=' + JSON.stringify(code);
-   fetch(url, message)
-      .then(function(response) {
-         if(response.ok){
-            responseOk = true
-         }else{
-            responseOk = false
-         }
-           return response.text();
-         })
-      .then(function(data) {
-         if(responseOk){
-            console.log("Ok")
-         }else{
-            console.log("Send Fail")
-         }
+\begin{lstlisting}[frame=single,breaklines=true, label=Función de envío del código al servidor, caption=Función de envío del código al servidor,  captionpos=b]
+let responseOk;
 
-      })
-      .catch(function(err) {
-         console.error(err);
-      });
+  function send_code_to_ev3() {
+      var editor = ace.edit("ace");
+      let code = editor.getValue();
+      console.log(code);
+      const message = {
+          method: "POST"
+      };
+      url = 'http://10.42.0.1:8001/run?python_code=' + JSON.stringify(code);
+      fetch(url, message)
+          .then(function(response) {
+              if(response.ok){
+                  responseOk = true
+              }else{
+                  responseOk = false
+              }
+              return response.text();
+          })
+          .then(function(data) {
+               if(responseOk){
+                  console.log("Ok")
+              }else{
+                  console.log("Send Fail")
+              }
+
+          })
+          .catch(function(err) {
+              console.error(err);
+          });
+  }
 }
 \end{lstlisting}
-El servidor \texttt{Flask} recibirá el código y realizará una serie de acciones (sección 6.5) que permitirán cargar el programa al robot.
+El servidor \texttt{Flask} hará la recepción del código que escribimos en el editor, y realizará determinadas acciones para que se pueda ejecutar en el \textit{LEGO EV3}
 
-\section{Lado Servidor Kibotics}
 
-Este servidor no toma un papel tan importante para el proceso de envío del programa al GoPiGo3 como sí lo tenía para el Mbot y el dron Tello. En ellos, además de servir las páginas necesarias al navegador que permiten ir al ejercicio concreto del robot, a la sección de información o al editor, era el encargado de manipular el código fuente, de crear el ejecutable o de realizar el empaquetado que se enviaba al robot.
-\\
-\\
-En este diseño, una vez que el código está escrito en el editor web, es enviado al servidor de kibotics para el guardado del ejercicio del usuario y al servidor \texttt{Flask} del robot para procesarlo y ejecutarlo. 
+\subsection{Back-End}
+El servidor que se va a crear, va a hacer uso de \texttt{Flask} que es un entorno creado por \textit{Django} escrito en \textit{Python}, por lo que voy a programarlo en \textit{Python}. Va a estar creado para que reciba peticiones del navegador con el código que el usuario escribio en el editor
 
-\section{Lado GoPiGo3}
 
-La Raspberry Pi del GoPiGo3 toma un papel muy importante en el proceso de envío del programa al robot, puesto que en ella se tendrá montado un servidor \texttt{Flask} HTTP, que recibirá las peticiones del cliente y contendrá la lógica para la ejecución del programa recibido.
-\\
-\\
-A diferencia del ordenador anfitrión, donde no se requería ninguna instalación para el envío del programa, en la Raspberry Pi sí hay que realizar unas instalaciones previas para poder utilizarse en el GopiGo3.
 
-\subsection{Preparación del ordenador a bordo del GoPiGo3}
+\begin{lstlisting}[frame=single,breaklines=true, label=Extracción del código en el servidor Flask, caption=Extracción del código en el servidor Flask,  captionpos=b]
+import subprocess
+import os
+import signal
+import time
 
-La preparación de la Raspberry Pi requiere una serie de procesos.
+from flask import Flask, make_response, request
+app = Flask(__name__)   
 
-\begin{enumerate}
-	\item \textit{Instalar sistema operativo}
-	\\
-	\\
-	La Raspberry Pi necesita un sistema operativo. Aunque existen varios que puede soportar, se debe utilizar \texttt{Raspbian}, un sistema operativo optimizado para ella y basado en Debian, una distribución GNU/Linux.
-	\item \textit{Instalación de los drivers y configuración} 
-	\\
-	\\
-	Se deben instalar los \textit{drivers} y las librerías necesarias para que pueda interactuar con los sensores y actuadores del robot GoPiGo3. También es indispensable que esté conectada a la misma red \textit{WiFi} que el ordenador anfitrión, así como tener asignada la IP (Protocolo de Internet) fija \texttt{192.168.1.200}. Si esto no se cumple, cada vez que se encienda la Raspberry Pi, tendrá una IP distinta y no podrá realizarse el envío.
-	\\
-	\\
-	En la página de información del ejercicio para el GoPiGo3 en Kibotics se le proporciona al usuario un fichero comprimido que contiene un ejecutable que instalará los \textit{drivers} y configurará la IP fija, evitando así que sea el usuario quien tenga que hacerlo (Fragmento 6.4).
-	\\
-	\begin{lstlisting}[frame=single,breaklines=true, label=Ejecutable para la instalación y configuración de la Raspberry Pi, caption=Ejecutable para la instalación y configuración de la Raspberry Pi,  captionpos=b]
-#!/bin/bash
-
-######### Instalacion GoPiGo3 #############
-
-echo "Instalando GoPiGo3"
-curl -kL dexterindustries.com/update_GoPiGo3 | bash
-
-echo "Intalacion GoPiGo3 completa"
-
-######## Actualizar el firmware GoPiGo3 ####
-
-echo "Actualizando firmware de GoPiGo3"
-
-mv ~/Dexter/GoPiGo3/Firmware/archives/GoPiGo3_Firmware_0.3.4.bin ~/Dexter/GoPiGo3/Firmware/
-rm ~/Dexter/GoPiGo3/Firmware/GoPiGo3_Firmware_1.0.0.bin
-chmod +x ~/Dexter/GoPiGo3/Firmware/GoPiGo3_flash_firmware.sh
-bash ~/Dexter/GoPiGo3/Firmware/GoPiGo3_flash_firmware.sh
-
-echo "Finalizada actualizacion firmware para GoPiGo3"
-
-###### Crear entorno virtual ###
-
-echo "Creando entorno virtual python3"
-
-python3 -m venv ~/.virtualenvs/GoPiGo
-source ~/.virtualenvs/GoPiGo/bin/activate
-pip install GoPiGo3
-pip install numpy
-pip install pandas
-pip install Flask
-deactivate
-
-echo "Finalizado Creacion de entonro virtual"
-
-### Configurar ip estatica ###
-
-echo "Configurando ip estatica"
-
-sudo service dhcpcd status
-sudo service dhcpcd start
-sudo systemctl enable dhcpcd
-
-echo -e "\ninterface wlan0\nstatic ip_address=192.168.1.200/24\nstatic routers=192.168.1.1\nstatic domain_name_servers=192.168.1.1" >> /etc/dhcpcd.conf
-
-echo "Configurada ip estatica"
-
-echo "##########################"
-echo "### Proceso Completado ###"
-echo "##########################"
-
-read -p "Necesitas reiniciar. Quieres tu reiniciarl la maquina? [y/n]: " restart
-if [ "$restart" = "y" ]; then
-        sudo reboot
-fi
-	\end{lstlisting}
-	\item \textit{Montaje del servidor Flask}
-	\\
-	\\
-	El fichero comprimido también contiene el código fuente que permite crear el servidor HTTP. El servidor se ha desarrollado con el lenguaje \texttt {Python} y haciendo uso de \texttt{Flask}, un entorno escrito en \texttt{Python} que permite crear servidores webs.
-	\\
-	\\
-	Es necesario que este servidor se lance una vez que se encienda la Raspberry Pi de manera automática, ya que si no, es el usuario quien tendría que lanzarlo cada vez que se encienda. Para ello hacemos uso del servicio \texttt{cron}, un administrador de tareas en \texttt{Linux} que permite programar el lanzamiento de comandos en un determinado momento (Dinahosting, s.f.).
-	\\
-	\\
-	Para programar el lanzamiento del servidor de manera automática al encenderse el robot, el usuario deber realizar las siguientes acciones:
-	\begin{enumerate}
-		\item Descomprimir el fichero descargado en el directorio \textit{/home/pi/} y dar permiso de ejecución al ejecutable \textit{iniciar\_servidor\_GoPiGo.sh}
-		\item Abrir un terminal y ejecutar:  \textit{crontab -e}
-		\item Añadir la tarea: \textit{@reboot /home/pi/configuración\_GoPiGo/iniciar\_servidor\_GoPiGo.sh}
-		\item Reiniciar el servicio cron: \textit{sudo /etc/init.d/cron restart}
-	\end{enumerate}
-\end{enumerate}
-
-\subsection{Recepción a bordo del código fuente}
-
-El servidor \texttt{Flask} del GoPiGo3 recibe la petición del navegador con el código extraído del editor, donde el usuario escribió el programa.
-\\
-\begin{lstlisting}[frame=single,breaklines=true, label=Extracción del código en el servidor del GoPiGo3, caption=Extracción del código en el servidor del GoPiGo3,  captionpos=b]
 exercice = None
-@app.route('/run',methods=["GET"])
+@app.route('/run',methods=["POST"])
 def run_program():
-   global exercice
-   code = request.args.get('python_code')
-    . . .
+    global exercice
+	my_json = request.data.decode('utf8').replace("'", '"')
+    data = json.loads(my_json)
+    code = json.dumps(data["code"])
+    
+    
+#----------------------------------------------------------
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=8001, debug=True)
 \end{lstlisting}
 
-\subsection{Creación del proceso que ejecuta la aplicación robótica}
+\subsubsection{Creación del proceso que ejecuta la aplicación robótica}
 
-El robot GoPiGo3 entiende el lenguaje \texttt{Python} porque tiene un intérprete de \texttt{Python} ya instalado, de manera que una vez extraído el código del usuario, no es necesario realizar ningún tipo de conversión.
-\\
-\\
-Se tiene que crear un proceso que ejecute el código recibido. Para ello es necesario crear un ejecutable \texttt{Python} (extensión .py) y empotrarle el código extraído. Podría ocurrir que el robot ya estuviera ejecutando un programa, por lo que antes de lanzar el nuevo programa, se tiene que verificar si ya se está ejecutando otro en él y, en tal caso, “matar” al proceso que lo ejecuta.
-\\
-\\
+Una vez ha recibido el código, el servidor ya sabe que el lenguaje en que viene es \textit{Python}, pero viene con algunos simbolos añadidos de HTML, por lo que se realizan dos \textit{replace} para dejarlo como estaba en origen.\newline
+Una vez hecho este proceso, se procede a escribir un ejecutable con el código, para ello hay creado un archivo llamado \textit{ejercicio.py}.
+Una vez creado el archivo se comprueba que no hay otro proceso ejecutandose,si es así se envía una señal \textit{kill} a dicho proceso.
 Tras ejecutar el programa en un nuevo proceso, el robot realizará las instrucciones que el usuario programo en el editor del navegador web.
 \\
 \begin{lstlisting}[frame=single,breaklines=true, label=Creación del proceso con el programa para el robot, caption=Creación del proceso con el programa para el robot,  captionpos=b]
-# Stop process have alreay up
 if exercice:
-   try:
-      os.killpg(os.getpgid(exercice.pid), signal.SIGKILL)
-   except ProcessLookupError:
-      pass
+        try:
+            os.killpg(os.getpgid(exercice.pid), signal.SIGKILL)
+        except ProcessLookupError:
+            pass
 
-time.sleep(2)
+    time.sleep(2)
+  
+    code  = code[1:-1].split("\\n")
+    print(code)
+    fdOut = open("./ejercicio.py","w")
+    for line in code:
+            fdOut.write(line + "\n")
     
-# Creat exercice.py
-code  = code[1:-1].split("\\n")
-fdOut = open("./ejercicio.py","w")
-for line in code:
-   fdOut.write(line + "\n")
+    exercice = subprocess.Popen(["python","ejercicio.py"],stdout=subprocess.PIPE,preexec_fn=os.setsid)
     
-# Run process
-exercice = subprocess.Popen(["python","ejercicio.py"],stdout=subprocess.PIPE,preexec_fn=os.setsid)
 \end{lstlisting}
 
-\section{Validación experimental}
+\subsubsection{Respuesta del Servidor}
 
-Una vez mostrado el diseño que permite programar el GoPiGo3 desde la plataforma Kibotics, podemos observar la flexibilidad y operatividad que tiene este robot gracias a la Raspberry Pi que lleva integrada.
-\\
-\\
+Por ultimo, se contesta al cliente con el código \textit{200 OK} 
+
+\begin{lstlisting}[frame=single,breaklines=true, label=Respuesta del Servidor, caption=Creación del proceso con el programa para el robot,  captionpos=b]
+
+headers = {'Content-Type': 'text/plain','Access-Control-Allow-Origin': '*'}
+    return make_response('Ok', 200, headers)
+
+\end{lstlisting}
+
+
+
+\section{Validación experimental con Ejercicios}
+
+\subsection{Bump and go}
+Para comprobar que todo lo anterior funciona hice tres ejercicios enviados desde un navegador web y ejecutados en el robot real. El primero, el \textit{BumpandGo} \footnote{\url{https://www.youtube.com/watch?v=5dD7O7Qku6I&ab_channel=DanielPulidoMillanes}} probando los el sensor de contacto.
+
+\begin{lstlisting}[frame=single,breaklines=true, label=Bump and Go, caption=Bump and Go,  captionpos=b]
+
+#!/usr/bin/env python3
+
+from time import sleep
+
+from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveTank
+from ev3dev2.sensor import INPUT_1
+from ev3dev2.sensor.lego import TouchSensor
+from ev3dev2.led import Leds
+
+ts = TouchSensor()
+leds = Leds()
+tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
+
+print("Bump and go!")
+
+while True:
+    if ts.is_pressed:
+        tank_drive.on_for_rotations(SpeedPercent(-50), SpeedPercent(-75), 10)
+    else:
+        tank_drive.on(SpeedPercent(30), SpeedPercent(30))
+    # don't let this loop use 100% CPU
+    sleep(0.01)
+
+\end{lstlisting}
+
+
+
+\subsection{Siguelineas}
+
+El siguiente ejercicio que envié fue el \textit{Siguelineas}\footnote{\url{https://www.youtube.com/watch?v=iMn7UsaB2vo&ab_channel=DanielPulidoMillanes}} para también probar la función \textit{reflectedlightintensity} del sensor de color:
+ 
+ \begin{lstlisting}[frame=single,breaklines=true, label=Siguelineas, caption=SigueLineas,  captionpos=b]
+
+#!/usr/bin/env python3
+
+from time import sleep
+
+from ev3dev2.motor import LargeMotor, OUTPUT_A, OUTPUT_B, SpeedPercent, MoveTank
+from ev3dev2.sensor import INPUT_1
+from ev3dev2.sensor.lego import ColorSensor
+from ev3dev2.led import Leds
+
+cs = ColorSensor()
+leds = Leds()
+tank_drive = MoveTank(OUTPUT_A, OUTPUT_B)
+
+
+print("Siguelineas!")
+
+while True:
+    while cs.reflected_light_intensity>30:
+        tank_drive.on(SpeedPercent(5), SpeedPercent(20))
+    tank_drive.on(SpeedPercent(20), SpeedPercent(5))
+    # don't let this loop use 100% CPU
+    sleep(0.02)
+
+\end{lstlisting}
+
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.12)  14 DEC 2020 03:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.12)  16 DEC 2020 02:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -361,7 +361,26 @@ LaTeX Info: Redefining \% on input line 24.
 LaTeX Warning: Label `fig:color' multiply defined.
 
 
+LaTeX Warning: Label `tab:tablaMotores' multiply defined.
+
+
+LaTeX Warning: Label `fig:color' multiply defined.
+
+
 LaTeX Warning: Label `fig:tactil' multiply defined.
+
+
+LaTeX Warning: Label `tab:tablaSensores' multiply defined.
+
+
+LaTeX Warning: Label `Driver Actuadores' multiply defined.
+
+
+LaTeX Warning: Label `Diseño hardware del Ev3' multiply defined.
+
+
+LaTeX Warning: Label `Función de envío del código al servidor' multiply defi
+ned.
 
 )
 \openout1 = `main.aux'.
@@ -487,7 +506,7 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 16
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-<img/logo_vect.png, id=164, 169.8345pt x 338.2236pt>
+<img/logo_vect.png, id=225, 169.8345pt x 338.2236pt>
 File: img/logo_vect.png Graphic file (type png)
 <use img/logo_vect.png>
 Package pdftex.def Info: img/logo_vect.png  used on input line 162.
@@ -500,24 +519,46 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 ) [1
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/logo_vect.png>] [2] 
-(./main.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./img/logo_vect.png>] (./r
+esumen.tex
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 4--5
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+) [3
+
+]
+LaTeX Info: Redefining \. on input line 209.
+LaTeX Info: Redefining \% on input line 209.
+ [4
+
+] (./main.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-
-[3
-
-])
+ [5]
+LaTeX Info: Redefining \. on input line 62.
+LaTeX Info: Redefining \% on input line 62.
+ [6])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
 LaTeX Info: Redefining \. on input line 211.
 LaTeX Info: Redefining \% on input line 211.
- [4] (./main.lof
+ [7]
+LaTeX Info: Redefining \. on input line 211.
+LaTeX Info: Redefining \% on input line 211.
+ [8
+
+] (./main.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [5
-
+ [9
 
 ])
 \tf@lof=\write5
@@ -525,24 +566,25 @@ LaTeX Info: Redefining \% on input line 1.
 
 LaTeX Info: Redefining \. on input line 215.
 LaTeX Info: Redefining \% on input line 215.
- [6] (./main.lot
+ [10] (./main.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lot=\write6
 \openout6 = `main.lot'.
 
- [7
+
+[11
 
 
 ]
 LaTeX Info: Redefining \. on input line 220.
 LaTeX Info: Redefining \% on input line 220.
- [8
+ [12
 
 ] (./intro.tex
 Cap\'{\i }tulo 1.
-<img/robot.png, id=311, 1505.625pt x 1929.2075pt>
+<img/robot.png, id=431, 1505.625pt x 1929.2075pt>
 File: img/robot.png Graphic file (type png)
 <use img/robot.png>
 Package pdftex.def Info: img/robot.png  used on input line 13.
@@ -569,7 +611,7 @@ been already used, duplicate ignored
 l.22     \item \textbf
                       {Actuadores}: Equivalen a los músculos humanos, son l...
 [2 <./img/robot.png>]
-<img/roomba.jpg, id=319, 376.40625pt x 351.56343pt>
+<img/roomba.jpg, id=440, 376.40625pt x 351.56343pt>
 File: img/roomba.jpg Graphic file (type jpg)
 <use img/roomba.jpg>
 Package pdftex.def Info: img/roomba.jpg  used on input line 33.
@@ -587,12 +629,12 @@ been already used, duplicate ignored
                    \relax 
 l.36 
       [3]
-<img/davinci.jpg, id=323, 979.66pt x 654.445pt>
+<img/davinci.jpg, id=444, 979.66pt x 654.445pt>
 File: img/davinci.jpg Graphic file (type jpg)
 <use img/davinci.jpg>
 Package pdftex.def Info: img/davinci.jpg  used on input line 40.
 (pdftex.def)             Requested size: 273.14923pt x 182.46443pt.
-<img/bigdog.jpg, id=324, 223.60046pt x 265.79839pt>
+<img/bigdog.jpg, id=445, 223.60046pt x 265.79839pt>
 File: img/bigdog.jpg Graphic file (type jpg)
 <use img/bigdog.jpg>
 Package pdftex.def Info: img/bigdog.jpg  used on input line 47.
@@ -607,7 +649,7 @@ been already used, duplicate ignored
                    \relax 
 l.49     \end{figure}
                       [4 <./img/roomba.jpg> <./img/davinci.jpg>]
-<img/waymo.jpg, id=328, 1928.20375pt x 947.54pt>
+<img/waymo.jpg, id=449, 1928.20375pt x 947.54pt>
 File: img/waymo.jpg Graphic file (type jpg)
 <use img/waymo.jpg>
 Package pdftex.def Info: img/waymo.jpg  used on input line 55.
@@ -625,7 +667,7 @@ been already used, duplicate ignored
                    \relax 
 l.58 
       [5 <./img/bigdog.jpg>]
-<img/perseverance.jpg, id=333, 622.325pt x 350.30875pt>
+<img/perseverance.jpg, id=453, 622.325pt x 350.30875pt>
 File: img/perseverance.jpg Graphic file (type jpg)
 <use img/perseverance.jpg>
 Package pdftex.def Info: img/perseverance.jpg  used on input line 62.
@@ -650,185 +692,224 @@ LaTeX Warning: Citation `bib:orca' on page 7 undefined on input line 72.
 
 LaTeX Warning: Citation `bib:orocos' on page 7 undefined on input line 73.
 
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 8
+2.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+<img/gazebo.png, id=457, 853.1875pt x 666.49pt>
+File: img/gazebo.png Graphic file (type png)
+<use img/gazebo.png>
+Package pdftex.def Info: img/gazebo.png  used on input line 85.
+(pdftex.def)             Requested size: 318.66948pt x 248.9365pt.
 
-LaTeX Warning: Citation `bib:jderobot' on page 7 undefined on input line 74.
+Underfull \vbox (badness 6220) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 84.
-LaTeX Info: Redefining \% on input line 84.
-LaTeX Info: Redefining \. on input line 84.
-LaTeX Info: Redefining \% on input line 84.
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
+LaTeX Info: Redefining \. on input line 88.
+LaTeX Info: Redefining \% on input line 88.
 pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.84 \item \textbf
-                  {Tecnología Push:} Esta tecnología consiste en entregar ...
-[7]
-<img/http.jpeg, id=343, 814.04124pt x 511.9125pt>
-File: img/http.jpeg Graphic file (type jpg)
-<use img/http.jpeg>
-Package pdftex.def Info: img/http.jpeg  used on input line 102.
-(pdftex.def)             Requested size: 325.61072pt x 204.76137pt.
+l.88 
+      [7]
+<img/tecnologiasweb.png, id=464, 903.375pt x 343.2825pt>
+File: img/tecnologiasweb.png Graphic file (type png)
+<use img/tecnologiasweb.png>
+Package pdftex.def Info: img/tecnologiasweb.png  used on input line 99.
+(pdftex.def)             Requested size: 361.3436pt x 137.31056pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
-LaTeX Info: Redefining \. on input line 109.
-LaTeX Info: Redefining \% on input line 109.
+LaTeX Info: Redefining \. on input line 104.
+LaTeX Info: Redefining \% on input line 104.
+LaTeX Info: Redefining \. on input line 104.
+LaTeX Info: Redefining \% on input line 104.
 pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.109 \begin{itemize}
-                      [8]
+l.104 \subsection
+                 {FrontEnd} [8 <./img/gazebo.png>]
 
-LaTeX Warning: Citation `bib:navegadores' on page 9 undefined on input line 116
+LaTeX Warning: Citation `bib:navegadores' on page 9 undefined on input line 106
 .
 
-LaTeX Info: Redefining \. on input line 120.
-LaTeX Info: Redefining \% on input line 120.
-LaTeX Info: Redefining \. on input line 120.
-LaTeX Info: Redefining \% on input line 120.
-[9 <./img/http.jpeg>]
+LaTeX Info: Redefining \. on input line 113.
+LaTeX Info: Redefining \% on input line 113.
+LaTeX Info: Redefining \. on input line 113.
+LaTeX Info: Redefining \% on input line 113.
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.113 
+       [9 <./img/tecnologiasweb.png>]
+<img/http.jpeg, id=474, 814.04124pt x 511.9125pt>
+File: img/http.jpeg Graphic file (type jpg)
+<use img/http.jpeg>
+Package pdftex.def Info: img/http.jpeg  used on input line 118.
+(pdftex.def)             Requested size: 325.61072pt x 204.76137pt.
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
+pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.134 \begin{itemize}
+                      [10 <./img/http.jpeg>]
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
-LaTeX Warning: Citation `bib:secundaria' on page 10 undefined on input line 131
+ []
+
+
+LaTeX Warning: Citation `bib:secundaria' on page 11 undefined on input line 151
 .
 
 
-LaTeX Warning: Citation `bib:primaria' on page 10 undefined on input line 131.
+LaTeX Warning: Citation `bib:primaria' on page 11 undefined on input line 151.
 
-<img/stem.jpg, id=351, 304.0158pt x 168.63pt>
+<img/stem.jpg, id=479, 304.0158pt x 168.63pt>
 File: img/stem.jpg Graphic file (type jpg)
 <use img/stem.jpg>
-Package pdftex.def Info: img/stem.jpg  used on input line 136.
+Package pdftex.def Info: img/stem.jpg  used on input line 156.
 (pdftex.def)             Requested size: 318.66948pt x 176.76566pt.
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
-[10]
+LaTeX Info: Redefining \. on input line 158.
+LaTeX Info: Redefining \% on input line 158.
+LaTeX Info: Redefining \. on input line 158.
+LaTeX Info: Redefining \% on input line 158.
+pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.158     \end{figure}
+                       [11]
 
-LaTeX Warning: Citation `bib:scratch' on page 11 undefined on input line 142.
+LaTeX Warning: Citation `bib:scratch' on page 12 undefined on input line 162.
 
-<img/scratch.jpg, id=356, 702.625pt x 376.40625pt>
+<img/scratch.jpg, id=483, 702.625pt x 376.40625pt>
 File: img/scratch.jpg Graphic file (type jpg)
 <use img/scratch.jpg>
-Package pdftex.def Info: img/scratch.jpg  used on input line 145.
+Package pdftex.def Info: img/scratch.jpg  used on input line 165.
 (pdftex.def)             Requested size: 318.66948pt x 170.71947pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 148.
-LaTeX Info: Redefining \% on input line 148.
-LaTeX Info: Redefining \. on input line 148.
-LaTeX Info: Redefining \% on input line 148.
- [11 <./img/stem.jpg>]
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
+LaTeX Info: Redefining \. on input line 168.
+LaTeX Info: Redefining \% on input line 168.
+pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.168 
+       [12 <./img/stem.jpg>]
 
-LaTeX Warning: Citation `bib:lego' on page 12 undefined on input line 149.
+LaTeX Warning: Citation `bib:lego' on page 13 undefined on input line 169.
 
-<img/lego1.png, id=362, 1283.79625pt x 801.99625pt>
+<img/lego1.png, id=487, 1283.79625pt x 801.99625pt>
 File: img/lego1.png Graphic file (type png)
 <use img/lego1.png>
-Package pdftex.def Info: img/lego1.png  used on input line 153.
+Package pdftex.def Info: img/lego1.png  used on input line 173.
 (pdftex.def)             Requested size: 318.66948pt x 199.06677pt.
-<img/lego2.jpg, id=365, 1204.5pt x 718.685pt>
+<img/lego2.jpg, id=489, 1204.5pt x 718.685pt>
 File: img/lego2.jpg Graphic file (type jpg)
 <use img/lego2.jpg>
-Package pdftex.def Info: img/lego2.jpg  used on input line 161.
+Package pdftex.def Info: img/lego2.jpg  used on input line 181.
 (pdftex.def)             Requested size: 318.66948pt x 190.14355pt.
-LaTeX Info: Redefining \. on input line 163.
-LaTeX Info: Redefining \% on input line 163.
-LaTeX Info: Redefining \. on input line 163.
-LaTeX Info: Redefining \% on input line 163.
-[12 <./img/scratch.jpg> <./img/lego1.png>]
-<img/kitev3.jpg, id=371, 701.62125pt x 529.98pt>
+LaTeX Info: Redefining \. on input line 183.
+LaTeX Info: Redefining \% on input line 183.
+LaTeX Info: Redefining \. on input line 183.
+LaTeX Info: Redefining \% on input line 183.
+[13 <./img/scratch.jpg> <./img/lego1.png>]
+<img/kitev3.jpg, id=497, 701.62125pt x 529.98pt>
 File: img/kitev3.jpg Graphic file (type jpg)
 <use img/kitev3.jpg>
-Package pdftex.def Info: img/kitev3.jpg  used on input line 170.
+Package pdftex.def Info: img/kitev3.jpg  used on input line 190.
 (pdftex.def)             Requested size: 318.66948pt x 240.71266pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 173.
-LaTeX Info: Redefining \% on input line 173.
-LaTeX Info: Redefining \. on input line 173.
-LaTeX Info: Redefining \% on input line 173.
- [13 <./img/lego2.jpg>]
+LaTeX Info: Redefining \. on input line 193.
+LaTeX Info: Redefining \% on input line 193.
+LaTeX Info: Redefining \. on input line 193.
+LaTeX Info: Redefining \% on input line 193.
+ [14 <./img/lego2.jpg>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 180.
+(Font)              <7> on input line 202.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 180.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-80.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
+(Font)              <5> on input line 202.
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
  []
 
-<img/kibotics2.png, id=380, 1610.015pt x 805.0075pt>
+<img/kibotics2.png, id=506, 1610.015pt x 805.0075pt>
 File: img/kibotics2.png Graphic file (type png)
 <use img/kibotics2.png>
-Package pdftex.def Info: img/kibotics2.png  used on input line 185.
+Package pdftex.def Info: img/kibotics2.png  used on input line 207.
 (pdftex.def)             Requested size: 455.24411pt x 227.61157pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<img/kibotics1.png, id=381, 1902.10625pt x 823.075pt>
+<img/kibotics1.png, id=507, 1902.10625pt x 823.075pt>
 File: img/kibotics1.png Graphic file (type png)
 <use img/kibotics1.png>
-Package pdftex.def Info: img/kibotics1.png  used on input line 192.
+Package pdftex.def Info: img/kibotics1.png  used on input line 214.
 (pdftex.def)             Requested size: 455.24411pt x 196.98943pt.
-LaTeX Info: Redefining \. on input line 196.
-LaTeX Info: Redefining \% on input line 196.
-LaTeX Info: Redefining \. on input line 196.
-LaTeX Info: Redefining \% on input line 196.
-[14 <./img/kitev3.jpg>]) (./objetivos.tex
+LaTeX Info: Redefining \. on input line 218.
+LaTeX Info: Redefining \% on input line 218.
+LaTeX Info: Redefining \. on input line 218.
+LaTeX Info: Redefining \% on input line 218.
+[15 <./img/kitev3.jpg>]) (./objetivos.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [15 <./img/kibotics2.png> <./img/kibotics1.png>]
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [16
+ [16 <./img/kibotics2.png> <./img/kibotics1.png>]
+Cap\'{\i }tulo 2.
+[17
 
 ]
-Cap\'{\i }tulo 2.
-[17]
-LaTeX Info: Redefining \. on input line 38.
-LaTeX Info: Redefining \% on input line 38.
-LaTeX Info: Redefining \. on input line 38.
-LaTeX Info: Redefining \% on input line 38.
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
+LaTeX Info: Redefining \. on input line 40.
+LaTeX Info: Redefining \% on input line 40.
  [18]
-<img/metodoiterativo.png, id=415, 2908.8675pt x 1606.0pt>
+<img/metodoiterativo.png, id=535, 2908.8675pt x 1606.0pt>
 File: img/metodoiterativo.png Graphic file (type png)
 <use img/metodoiterativo.png>
-Package pdftex.def Info: img/metodoiterativo.png  used on input line 43.
+Package pdftex.def Info: img/metodoiterativo.png  used on input line 45.
 (pdftex.def)             Requested size: 409.71692pt x 226.18628pt.
-LaTeX Info: Redefining \. on input line 51.
-LaTeX Info: Redefining \% on input line 51.
-LaTeX Info: Redefining \. on input line 51.
-LaTeX Info: Redefining \% on input line 51.
- [19 <./img/metodoiterativo.png>]) (./simulado.tex
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+LaTeX Info: Redefining \. on input line 53.
+LaTeX Info: Redefining \% on input line 53.
+ [19 <./img/metodoiterativo.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+) (./herramientas.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [20]
 Cap\'{\i }tulo 3.
-<img/partes.png, id=427, 760.8425pt x 670.505pt>
+<img/partes.png, id=548, 760.8425pt x 670.505pt>
 File: img/partes.png Graphic file (type png)
 <use img/partes.png>
-Package pdftex.def Info: img/partes.png  used on input line 9.
+Package pdftex.def Info: img/partes.png  used on input line 10.
 (pdftex.def)             Requested size: 532.58612pt x 469.35031pt.
 
-Overfull \hbox (77.34201pt too wide) in paragraph at lines 9--10
+Overfull \hbox (77.34201pt too wide) in paragraph at lines 10--11
  [][] 
  []
 
@@ -838,607 +919,888 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [21
 
 ]
-<img/blendercolor.jpg, id=432, 1927.2pt x 1036.87375pt>
-File: img/blendercolor.jpg Graphic file (type jpg)
-<use img/blendercolor.jpg>
-Package pdftex.def Info: img/blendercolor.jpg  used on input line 15.
-(pdftex.def)             Requested size: 318.66948pt x 171.44067pt.
-<img/blendertouch.jpg, id=433, 1927.2pt x 1034.86626pt>
-File: img/blendertouch.jpg Graphic file (type jpg)
-<use img/blendertouch.jpg>
-Package pdftex.def Info: img/blendertouch.jpg  used on input line 20.
-(pdftex.def)             Requested size: 318.66948pt x 171.10875pt.
+Overfull \hbox (11.56001pt too wide) in paragraph at lines 17--19
+[]\OT1/ptm/m/n/12 Python es un len-gua-je de pro-gra-ma-ci[]on ad-mi-nis-tra-do
+ por la Pyt-hon Soft-wa-re Foun-da-tion.Posee
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 22.
-LaTeX Info: Redefining \% on input line 22.
-LaTeX Info: Redefining \. on input line 22.
-LaTeX Info: Redefining \% on input line 22.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
  [22 <./img/partes.png>]
-<img/blenderus.jpg, id=439, 1927.2pt x 1037.8775pt>
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
+ [23]
+<img/Aframe.png, id=571, 1365.1pt x 979.66pt>
+File: img/Aframe.png Graphic file (type png)
+<use img/Aframe.png>
+Package pdftex.def Info: img/Aframe.png  used on input line 53.
+(pdftex.def)             Requested size: 455.24411pt x 326.69704pt.
+LaTeX Info: Redefining \. on input line 60.
+LaTeX Info: Redefining \% on input line 60.
+LaTeX Info: Redefining \. on input line 60.
+LaTeX Info: Redefining \% on input line 60.
+ [24]
+
+LaTeX Warning: Citation `bib:gpl' on page 25 undefined on input line 70.
+
+<img/primermodelo.png, id=579, 1727.45375pt x 977.6525pt>
+File: img/primermodelo.png Graphic file (type png)
+<use img/primermodelo.png>
+Package pdftex.def Info: img/primermodelo.png  used on input line 75.
+(pdftex.def)             Requested size: 455.24411pt x 257.64458pt.
+LaTeX Info: Redefining \. on input line 83.
+LaTeX Info: Redefining \% on input line 83.
+LaTeX Info: Redefining \. on input line 83.
+LaTeX Info: Redefining \% on input line 83.
+[25 <./img/Aframe.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
+LaTeX Info: Redefining \. on input line 92.
+LaTeX Info: Redefining \% on input line 92.
+ [26 <./img/primermodelo.png>]
+<img/websim.png, id=591, 1914.15125pt x 981.6675pt>
+File: img/websim.png Graphic file (type png)
+<use img/websim.png>
+Package pdftex.def Info: img/websim.png  used on input line 110.
+(pdftex.def)             Requested size: 455.24411pt x 233.46301pt.
+
+Underfull \vbox (badness 6332) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 113.
+LaTeX Info: Redefining \% on input line 113.
+LaTeX Info: Redefining \. on input line 113.
+LaTeX Info: Redefining \% on input line 113.
+ [27]
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 1
+38.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 138.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 140.
+LaTeX Info: Redefining \% on input line 140.
+LaTeX Info: Redefining \. on input line 140.
+LaTeX Info: Redefining \% on input line 140.
+ [28 <./img/WebSim.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
+LaTeX Info: Redefining \. on input line 166.
+LaTeX Info: Redefining \% on input line 166.
+ [29]
+<img/mvc.png, id=608, 602.25pt x 602.25pt>
+File: img/mvc.png Graphic file (type png)
+<use img/mvc.png>
+Package pdftex.def Info: img/mvc.png  used on input line 182.
+(pdftex.def)             Requested size: 273.14923pt x 273.16035pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 188.
+LaTeX Info: Redefining \% on input line 188.
+LaTeX Info: Redefining \. on input line 188.
+LaTeX Info: Redefining \% on input line 188.
+[30]
+<img/flask.png, id=613, 1204.5pt x 471.7625pt>
+File: img/flask.png Graphic file (type png)
+<use img/flask.png>
+Package pdftex.def Info: img/flask.png  used on input line 196.
+(pdftex.def)             Requested size: 182.09486pt x 71.3156pt.
+)
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+ [31 <./img/mvc.png>] (./simulado.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [32 <./img/flask.png>]
+Cap\'{\i }tulo 4.
+File: img/primermodelo.png Graphic file (type png)
+<use img/primermodelo.png>
+Package pdftex.def Info: img/primermodelo.png  used on input line 10.
+(pdftex.def)             Requested size: 318.66948pt x 180.34076pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--28
+
+ []
+
+<img/blendercolor.jpg, id=629, 1927.2pt x 1036.87375pt>
+File: img/blendercolor.jpg Graphic file (type jpg)
+<use img/blendercolor.jpg>
+Package pdftex.def Info: img/blendercolor.jpg  used on input line 31.
+(pdftex.def)             Requested size: 318.66948pt x 171.44067pt.
+<img/blendertouch.jpg, id=630, 1927.2pt x 1034.86626pt>
+File: img/blendertouch.jpg Graphic file (type jpg)
+<use img/blendertouch.jpg>
+Package pdftex.def Info: img/blendertouch.jpg  used on input line 36.
+(pdftex.def)             Requested size: 318.66948pt x 171.10875pt.
+
+Underfull \vbox (badness 6316) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
+LaTeX Info: Redefining \. on input line 38.
+LaTeX Info: Redefining \% on input line 38.
+ [34]
+<img/blenderus.jpg, id=635, 1927.2pt x 1037.8775pt>
 File: img/blenderus.jpg Graphic file (type jpg)
 <use img/blenderus.jpg>
-Package pdftex.def Info: img/blenderus.jpg  used on input line 25.
+Package pdftex.def Info: img/blenderus.jpg  used on input line 41.
 (pdftex.def)             Requested size: 318.66948pt x 171.60664pt.
-LaTeX Info: Redefining \. on input line 30.
-LaTeX Info: Redefining \% on input line 30.
-LaTeX Info: Redefining \. on input line 30.
-LaTeX Info: Redefining \% on input line 30.
- [23 <./img/blendercolor.jpg> <./img/blendertouch.jpg> <./img/blenderus.jpg>]
-<img/color.png, id=445, 156.585pt x 579.16376pt>
+<img/motores.png, id=636, 350.30875pt x 497.86pt>
+File: img/motores.png Graphic file (type png)
+<use img/motores.png>
+Package pdftex.def Info: img/motores.png  used on input line 52.
+(pdftex.def)             Requested size: 81.9456pt x 116.45775pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--55
+
+ []
+
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+LaTeX Info: Redefining \. on input line 55.
+LaTeX Info: Redefining \% on input line 55.
+[35 <./img/blendercolor.jpg> <./img/blendertouch.jpg> <./img/blenderus.jpg>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
+ [36 <./img/motores.png>]
+<img/color.png, id=646, 156.585pt x 579.16376pt>
 File: img/color.png Graphic file (type png)
 <use img/color.png>
-Package pdftex.def Info: img/color.png  used on input line 39.
+Package pdftex.def Info: img/color.png  used on input line 92.
 (pdftex.def)             Requested size: 81.9456pt x 303.10225pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--42
-\OT1/ptm/m/n/12 La ta-sa de mues-treo del sen-sor de co-lor es de 1 kHz.
+Underfull \hbox (badness 10000) in paragraph at lines 88--95
+
  []
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 51.
+put line 104.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 52.
+put line 105.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 52.
+put line 105.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 52.
+put line 105.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 53.
+put line 106.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 54.
+put line 107.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 54.
+put line 107.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 54.
+put line 107.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 55.
+put line 108.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 56.
+put line 109.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 57.
+put line 110.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 58.
+put line 111.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 58.
+put line 111.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 58.
+put line 111.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 58.
+put line 111.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 58.
+put line 111.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 58.
+put line 111.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 59.
+put line 112.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 60.
+put line 113.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 60.
+put line 113.
 
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
-LaTeX Info: Redefining \. on input line 62.
-LaTeX Info: Redefining \% on input line 62.
-[24 <./img/color.png>]
+LaTeX Info: Redefining \. on input line 115.
+LaTeX Info: Redefining \% on input line 115.
+LaTeX Info: Redefining \. on input line 115.
+LaTeX Info: Redefining \% on input line 115.
+[37 <./img/color.png>]
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 62.
+put line 115.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 62.
+put line 115.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 62.
+put line 115.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 63.
+put line 116.
 
-LaTeX Info: Redefining \. on input line 103.
-LaTeX Info: Redefining \% on input line 103.
-LaTeX Info: Redefining \. on input line 103.
-LaTeX Info: Redefining \% on input line 103.
-[25]
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
-LaTeX Info: Redefining \. on input line 138.
-LaTeX Info: Redefining \% on input line 138.
- [26]
-<img/ultrasonidos.png, id=528, 173.64874pt x 191.71625pt>
+LaTeX Info: Redefining \. on input line 156.
+LaTeX Info: Redefining \% on input line 156.
+LaTeX Info: Redefining \. on input line 156.
+LaTeX Info: Redefining \% on input line 156.
+[38]
+LaTeX Info: Redefining \. on input line 191.
+LaTeX Info: Redefining \% on input line 191.
+LaTeX Info: Redefining \. on input line 191.
+LaTeX Info: Redefining \% on input line 191.
+ [39]
+<img/ultrasonidos.png, id=731, 173.64874pt x 191.71625pt>
 File: img/ultrasonidos.png Graphic file (type png)
 <use img/ultrasonidos.png>
-Package pdftex.def Info: img/ultrasonidos.png  used on input line 147.
+Package pdftex.def Info: img/ultrasonidos.png  used on input line 200.
 (pdftex.def)             Requested size: 113.81102pt x 125.6555pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--150
+Underfull \hbox (badness 10000) in paragraph at lines 196--203
 
  []
 
-<img/pruebaUS.png, id=529, 995.72pt x 780.9175pt>
+<img/pruebaUS.png, id=732, 995.72pt x 780.9175pt>
 File: img/pruebaUS.png Graphic file (type png)
 <use img/pruebaUS.png>
-Package pdftex.def Info: img/pruebaUS.png  used on input line 158.
+Package pdftex.def Info: img/pruebaUS.png  used on input line 210.
 (pdftex.def)             Requested size: 318.66948pt x 249.92253pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 161.
-LaTeX Info: Redefining \% on input line 161.
-LaTeX Info: Redefining \. on input line 161.
-LaTeX Info: Redefining \% on input line 161.
- [27 <./img/ultrasonidos.png>]
-LaTeX Info: Redefining \. on input line 184.
-LaTeX Info: Redefining \% on input line 184.
-LaTeX Info: Redefining \. on input line 184.
-LaTeX Info: Redefining \% on input line 184.
- [28 <./img/pruebaUS.png>]
-<img/tactil.png, id=558, 154.5775pt x 377.41pt>
+LaTeX Info: Redefining \. on input line 213.
+LaTeX Info: Redefining \% on input line 213.
+LaTeX Info: Redefining \. on input line 213.
+LaTeX Info: Redefining \% on input line 213.
+ [40 <./img/ultrasonidos.png>]
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+ [41 <./img/pruebaUS.png>]
+<img/tactil.png, id=761, 154.5775pt x 377.41pt>
 File: img/tactil.png Graphic file (type png)
 <use img/tactil.png>
-Package pdftex.def Info: img/tactil.png  used on input line 229.
+Package pdftex.def Info: img/tactil.png  used on input line 281.
 (pdftex.def)             Requested size: 113.81102pt x 277.88539pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--232
+Underfull \hbox (badness 10000) in paragraph at lines 278--284
 \OT1/ptm/m/n/12 (pre-sio-na-do).
  []
 
-LaTeX Info: Redefining \. on input line 232.
-LaTeX Info: Redefining \% on input line 232.
-LaTeX Info: Redefining \. on input line 232.
-LaTeX Info: Redefining \% on input line 232.
-[29]
+LaTeX Info: Redefining \. on input line 284.
+LaTeX Info: Redefining \% on input line 284.
+LaTeX Info: Redefining \. on input line 284.
+LaTeX Info: Redefining \% on input line 284.
+[42]
+Underfull \hbox (badness 1259) in paragraph at lines 287--288
+\OT1/ptm/m/n/12 con-tac-to. As[]^^P que, se han crea-do un par
+ []
+
+
 Underfull \vbox (badness 1584) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 255.
-LaTeX Info: Redefining \% on input line 255.
-LaTeX Info: Redefining \. on input line 255.
-LaTeX Info: Redefining \% on input line 255.
- [30 <./img/tactil.png>]
-<img/gyrosensor.png, id=620, 171.64125pt x 177.66376pt>
+LaTeX Info: Redefining \. on input line 304.
+LaTeX Info: Redefining \% on input line 304.
+LaTeX Info: Redefining \. on input line 304.
+LaTeX Info: Redefining \% on input line 304.
+ [43 <./img/tactil.png>]
+<img/gyrosensor.png, id=825, 171.64125pt x 177.66376pt>
 File: img/gyrosensor.png Graphic file (type png)
 <use img/gyrosensor.png>
-Package pdftex.def Info: img/gyrosensor.png  used on input line 258.
+Package pdftex.def Info: img/gyrosensor.png  used on input line 310.
 (pdftex.def)             Requested size: 113.81102pt x 117.80333pt.
-<img/siguelineas.png, id=621, 911.405pt x 596.2275pt>
+<img/siguelineas.png, id=826, 911.405pt x 596.2275pt>
 File: img/siguelineas.png Graphic file (type png)
 <use img/siguelineas.png>
-Package pdftex.def Info: img/siguelineas.png  used on input line 279.
+Package pdftex.def Info: img/siguelineas.png  used on input line 331.
 (pdftex.def)             Requested size: 364.55554pt x 238.48677pt.
 
-Underfull \vbox (badness 2173) has occurred while \output is active []
+Underfull \vbox (badness 5490) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 282.
-LaTeX Info: Redefining \% on input line 282.
-LaTeX Info: Redefining \. on input line 282.
-LaTeX Info: Redefining \% on input line 282.
- [31 <./img/gyrosensor.png>]
-<img/solucion.png, id=627, 626.34pt x 383.4325pt>
+LaTeX Info: Redefining \. on input line 333.
+LaTeX Info: Redefining \% on input line 333.
+LaTeX Info: Redefining \. on input line 333.
+LaTeX Info: Redefining \% on input line 333.
+ [44 <./img/gyrosensor.png>]
+<img/solucion.png, id=833, 626.34pt x 383.4325pt>
 File: img/solucion.png Graphic file (type png)
 <use img/solucion.png>
-Package pdftex.def Info: img/solucion.png  used on input line 285.
+Package pdftex.def Info: img/solucion.png  used on input line 337.
 (pdftex.def)             Requested size: 313.16922pt x 191.71577pt.
-<img/chocagira.png, id=628, 1618.045pt x 622.325pt>
+LaTeX Info: Redefining \. on input line 345.
+LaTeX Info: Redefining \% on input line 345.
+LaTeX Info: Redefining \. on input line 345.
+LaTeX Info: Redefining \% on input line 345.
+ [45 <./img/siguelineas.png> <./img/solucion.png>]
+<img/chocagira.png, id=840, 1618.045pt x 622.325pt>
 File: img/chocagira.png Graphic file (type png)
 <use img/chocagira.png>
-Package pdftex.def Info: img/chocagira.png  used on input line 300.
+Package pdftex.def Info: img/chocagira.png  used on input line 352.
 (pdftex.def)             Requested size: 404.51025pt x 155.58086pt.
-LaTeX Info: Redefining \. on input line 303.
-LaTeX Info: Redefining \% on input line 303.
-LaTeX Info: Redefining \. on input line 303.
-LaTeX Info: Redefining \% on input line 303.
- [32 <./img/siguelineas.png> <./img/solucion.png>]
-LaTeX Info: Redefining \. on input line 325.
-LaTeX Info: Redefining \% on input line 325.
-LaTeX Info: Redefining \. on input line 325.
-LaTeX Info: Redefining \% on input line 325.
- [33 <./img/chocagira.png>]
-<img/forest.png, id=654, 842.14626pt x 480.79625pt>
+LaTeX Info: Redefining \. on input line 363.
+LaTeX Info: Redefining \% on input line 363.
+LaTeX Info: Redefining \. on input line 363.
+LaTeX Info: Redefining \% on input line 363.
+ [46 <./img/chocagira.png>]
+<img/forest.png, id=849, 842.14626pt x 480.79625pt>
 File: img/forest.png Graphic file (type png)
 <use img/forest.png>
-Package pdftex.def Info: img/forest.png  used on input line 360.
+Package pdftex.def Info: img/forest.png  used on input line 412.
 (pdftex.def)             Requested size: 378.96231pt x 216.35631pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 364.
-LaTeX Info: Redefining \% on input line 364.
-LaTeX Info: Redefining \. on input line 364.
-LaTeX Info: Redefining \% on input line 364.
- [34]
-<img/solucionforest.png, id=688, 344.28625pt x 256.96pt>
+LaTeX Info: Redefining \. on input line 416.
+LaTeX Info: Redefining \% on input line 416.
+LaTeX Info: Redefining \. on input line 416.
+LaTeX Info: Redefining \% on input line 416.
+ [47]
+<img/solucionforest.png, id=893, 344.28625pt x 256.96pt>
 File: img/solucionforest.png Graphic file (type png)
 <use img/solucionforest.png>
-Package pdftex.def Info: img/solucionforest.png  used on input line 367.
+Package pdftex.def Info: img/solucionforest.png  used on input line 419.
 (pdftex.def)             Requested size: 206.57333pt x 154.17719pt.
-)
-LaTeX Info: Redefining \. on input line 249.
-LaTeX Info: Redefining \% on input line 249.
-LaTeX Info: Redefining \. on input line 249.
-LaTeX Info: Redefining \% on input line 249.
-
-[35 <./img/forest.png> <./img/solucionforest.png>]
-LaTeX Info: Redefining \. on input line 249.
-LaTeX Info: Redefining \% on input line 249.
-LaTeX Info: Redefining \. on input line 249.
-LaTeX Info: Redefining \% on input line 249.
- [36
+) (./fisico.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [48 <./img/forest.png> <./img/solucionforest.png>]
+Cap\'{\i }tulo 5.
+[49
 
 ]
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+LaTeX Info: Redefining \. on input line 74.
+LaTeX Info: Redefining \% on input line 74.
+ [50]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
+LaTeX Info: Redefining \. on input line 119.
+LaTeX Info: Redefining \% on input line 119.
+ [51]
+LaTeX Info: Redefining \. on input line 162.
+LaTeX Info: Redefining \% on input line 162.
+LaTeX Info: Redefining \. on input line 162.
+LaTeX Info: Redefining \% on input line 162.
+
+[52]
+<img/legomind.jpg, id=1044, 1505.625pt x 1135.24126pt>
+File: img/legomind.jpg Graphic file (type jpg)
+<use img/legomind.jpg>
+Package pdftex.def Info: img/legomind.jpg  used on input line 170.
+(pdftex.def)             Requested size: 364.19667pt x 274.59412pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--175
+
+ []
+
+<img/logo_ev3dev_mono.png, id=1045, 357.335pt x 256.96pt>
+File: img/logo_ev3dev_mono.png Graphic file (type png)
+<use img/logo_ev3dev_mono.png>
+Package pdftex.def Info: img/logo_ev3dev_mono.png  used on input line 178.
+(pdftex.def)             Requested size: 81.9456pt x 58.92703pt.
+LaTeX Info: Redefining \. on input line 183.
+LaTeX Info: Redefining \% on input line 183.
+LaTeX Info: Redefining \. on input line 183.
+LaTeX Info: Redefining \% on input line 183.
+[53 <./img/legomind.jpg>]
+<img/ev3dev.png, id=1052, 961.5925pt x 203.76125pt>
+File: img/ev3dev.png Graphic file (type png)
+<use img/ev3dev.png>
+Package pdftex.def Info: img/ev3dev.png  used on input line 190.
+(pdftex.def)             Requested size: 364.19667pt x 77.17513pt.
+<img/esquema.JPG, id=1053, 612.48825pt x 466.74374pt>
+File: img/esquema.JPG Graphic file (type jpg)
+<use img/esquema.JPG>
+Package pdftex.def Info: img/esquema.JPG  used on input line 201.
+(pdftex.def)             Requested size: 364.19667pt x 277.54149pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Info: Redefining \. on input line 212.
+LaTeX Info: Redefining \% on input line 212.
+LaTeX Info: Redefining \. on input line 212.
+LaTeX Info: Redefining \% on input line 212.
+[54 <./img/logo_ev3dev_mono.png (PNG copy)> <./img/ev3dev.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+
+ []
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 217
+.
+
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
+LaTeX Info: Redefining \. on input line 221.
+LaTeX Info: Redefining \% on input line 221.
+[55 <./img/Esquema.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
+
+ []
+
+LaTeX Info: Redefining \. on input line 262.
+LaTeX Info: Redefining \% on input line 262.
+LaTeX Info: Redefining \. on input line 262.
+LaTeX Info: Redefining \% on input line 262.
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 304--309
+
+ []
+
+LaTeX Info: Redefining \. on input line 309.
+LaTeX Info: Redefining \% on input line 309.
+LaTeX Info: Redefining \. on input line 309.
+LaTeX Info: Redefining \% on input line 309.
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 344--344
+[][][][][]$\OT1/pcr/m/n/10 https : / / www . youtube . com / watch ? v = 5dD7O7
+Qku6I & ab _ channel =
+ []
+
+LaTeX Info: Redefining \. on input line 345.
+LaTeX Info: Redefining \% on input line 345.
+LaTeX Info: Redefining \. on input line 345.
+LaTeX Info: Redefining \% on input line 345.
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 377--377
+[][][][][]$\OT1/pcr/m/n/10 https : / / www . youtube . com / watch ? v = iMn7Us
+aB2vo & ab _ channel =
+ []
+
+LaTeX Info: Redefining \. on input line 381.
+LaTeX Info: Redefining \% on input line 381.
+LaTeX Info: Redefining \. on input line 381.
+LaTeX Info: Redefining \% on input line 381.
+[59]) (./conclusiones.tex
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [60]
+Cap\'{\i }tulo 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+[61
+
+])
+LaTeX Info: Redefining \. on input line 249.
+LaTeX Info: Redefining \% on input line 249.
+LaTeX Info: Redefining \. on input line 249.
+LaTeX Info: Redefining \% on input line 249.
+ [62]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 252.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 252.
  (./main.aux
@@ -1447,15 +1809,9 @@ LaTeX Info: Redefining \% on input line 24.
 )
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 252.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 252.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 9B9FE5A81C23EBA3B72C35A1034FE0E3;3532.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 9833F27EB4E98DB9FE7E4F9B628FC063;2748
-(rerunfilecheck)             After:  491FDE9AAD0FC966AEA0634557CC5615;1798.
 
 LaTeX Warning: There were undefined references.
 
@@ -1465,70 +1821,26 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
  ) 
 Here is how much of TeX's memory you used:
- 11147 strings out of 481239
- 166399 string characters out of 5920376
- 550107 words of memory out of 5000000
- 25881 multiletter control sequences out of 15000+600000
- 563661 words of font info for 78 fonts, out of 8000000 for 9000
+ 11837 strings out of 481239
+ 176268 string characters out of 5920376
+ 559297 words of memory out of 5000000
+ 26208 multiletter control sequences out of 15000+600000
+ 564176 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,13n,45p,853b,2147s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{figure.caption.35} has been referenced but does n
-ot exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.33} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.5.3} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.5.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.5.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.3.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.3.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section.4.1} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.4} has been referenced but does not exist, 
-replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
-a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (44 pages, 9262141 bytes).
+ 42i,16n,45p,1023b,2113s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/hel
+vetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/times/utmri8a.pfb>
+Output written on main.pdf (74 pages, 12617155 bytes).
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 690 compressed objects within 7 object streams
- 291 named destinations out of 1000 (max. 500000)
- 471 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1412 PDF objects out of 1440 (max. 8388607)
+ 1248 compressed objects within 13 object streams
+ 629 named destinations out of 1000 (max. 500000)
+ 651 words of extra memory for PDF output out of 10000 (max. 10000000)
 

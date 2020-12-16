@@ -71,21 +71,64 @@ Para dotar de esta inteligencia a los robots se necesitan herramientas que trans
     \item \textit{\textbf{Robot Operating System (ROS)}}\cite{bib:ros}. Plataforma de \textit{software} libre para el desarrollo de \textit{software} de robots. Provee servicios estándar de un sistema operativo como la abstracción de \textit{hardware}, control de dispositivos de bajo nivel, mecanismos de intercambio de mensajes entre procesos y mas herramientas vitales para el desarrollo del robot. Es el mas utilizado a día de hoy porque fue especialmente desarrollado para \textit{UNIX} y luego se implemento para el resto de sistemas operativos
     \item \textit{\textbf{ORCA}}\cite{bib:orca}. Plataforma de \textit{software} libre diseñado para crear aplicaciones mas complejas, ya que esta orientado a las componentes por separado
      \item \textit{\textbf{OROCOS}}\cite{bib:orocos} Proyecto de \textit{software} libre también orientado a componentes y basado en C++
-      \item \textit{\textbf{JdeRobot}}\cite{bib:jderobot} Plataforma de desarrollo robótico, en la que se basa este proyecto. Tiene varios nodos programados  con varios lenguajes de programación, con compatibilidad con otros \textit{middleware}.
+
 \end{itemize}{}
+
+\subsection{Simuladores robóticos}
+\label{sec:simuladores}
+La simulación  es el proceso de diseñar un modelo de un sistema real y llevar a término experiencias con él, con la finalidad de comprender el comportamiento del sistema o evaluar nuevas estrategias. De esta forma los simuladores ahorran tiempo porque puedes detectar posibles errores en el código antes de lanzarlo en el \textit{Hardware} y que pueda llevar mayores problemas.\newline
+Algunos de los simuladores que más se utilizan y más nos interesan en este proyecto:
+\begin{itemize}
+    \item \textbf{Gazebo}: Gazebo es un simulador de robótica 3D de código abierto. Gazebo fue un componente en el Proyecto Player desde 2004 hasta 2011. Gazebo integró el motor de física ODE, la representación de OpenGL y el código de soporte para la simulación de sensores y el control del actuador. También es importante destacar que tiene soporte para \texttt{ROS} lo que significa que puedes probar código real del robot en el simulador
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/gazebo.png}
+    \caption{Interfaz de Gazebo} \label{fig:gazebo}
+    \end{figure}
+    
+    \item \textbf{WebSim}: Es un simulador diseñado por alumnos de la universidad y que va escalando poco a poco. Hace uso de un entorno A-Frame y su diseño permite conectarlo con un editor que permite programar en diferentes lenguajes como \textit{JavaScript} y \textit{Python}, incluso un lenguaje de bloques llamado \textit{Blockly}(equivalente a Scratch pero diseñado por Google). Permite acoplar una aplicación externa a través de comunicaciones ICE. Es la base de la plataforma de \textit{Kibotics} y que vamos a utilizar en este proyecto.
+\end{itemize}
 
 \section{Tecnologías web}
 \label{sec:web}
-Las tecnologías web sirven para acceder a los recursos de conocimiento que hay disponibles en \textit{Internet} utilizando un \textit{navegador}. Esto va desde leer publicaciones, buscar referencias en bibliotecas, compras electronicas, etcetera... Son herramientas que procesan y te muestran mediante una interfaz gráfica lo almacenado en un servidor. Las tecnologias más relevantes son:
+Las tecnologías web sirven para acceder a los recursos de conocimiento que hay disponibles en \textit{Internet} utilizando un \textit{navegador}. Son herramientas que procesan y lo muestran mediante una interfaz gráfica lo almacenado en un servidor. Además gracias a la forma que esta estructurada la \textit{World Wide Web} (WWW) hace sencillo saltar de un recurso a otro. 
+WWW es una combinación de 4 ideas: Hipertexto, identificadores de recursos(URL y URI), el lenguaje de marcado y el modelo cliente servidor.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{img/tecnologiasweb.png}
+\caption{Concepto de Tecnologias Web} \label{fig:tecnologiasweb}
+\end{figure}
+
+Lo que nos interesa de las \textit{Tecnologías Web} es el modelo de cliente-servidor, también llamados, \textit{FrontEnd} a todo lo que el usuario se encuentra directamente en la web, lo que es la parte del cliente. Y \textit{BackEnd} a la parte del interior de las aplicaciones que viven en el servidor, que es lo denominado "el lado del servidor". Modelo que utilizare para abastecer a mi robot de los programas que se desarrollan en \textit{Kibotics}.
+\subsection{FrontEnd}
+\label{subsec:frontend} 
+Es la parte encargada de dar forma a la interfaz de usuario y de establecer la comunicación con el servidor. Una pieza importante del cliente es el navegador, ya que es el encargado de leer e interpretar la información recibida. Entre los navegadores \textit{web} más empleados se encuentran \textit{Firefox}, \textit{Google Chrome} u \textit{Opera}\cite{bib:navegadores}. Las tecnologías que hacen posible esa comunicación son: 
+
+\begin{itemize} 
+    \item \textit{\textbf{JavaScript}}. Es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos. Es el lenguaje más utilizado para el desarrollo de aplicaciones Web y de paginas Web. La mayor parte de \textit{Kibotics} esta desarrollado en \textit{Javascript}. Por lo que en el siguiente capítulo desarrollaremos en más profundidad.
+    \item \textit{\textbf{HTML}}. siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web. Es el estándar más utilizado a dia de hoy.\newline
+HTML sólo sirve para indicar como va ordenado el contenido de una página web. Esto lo hace por medio de las marcas de hipertexto las cuales son etiquetas conocidas en inglés como tags. Las mejoras del diseño gráfico ya vienen dada de la versión actual, \textit{HTML5}, que incluye muchas mejoras respecto a su predecesor: \textit{canvas}, \textit{websockets}, \textit{WebRTC}, vídeo, audio, etc. Este lenguaje indica la estructura de una página web, para editar el estilo y presentación visual hay que hacer uso de otros elementos como \textit{CSS}.
+    \item \textit{\textbf{Cascading Style Sheets (CSS)}}. Lenguaje de diseño gráfico para definir y crear la presentación de un documento escrito en un lenguaje de marcado. De esta forma, se puede separar información y datos (en los documentos \textit{HTML}) y todo lo relativo al diseño y presentación (en documentos \textit{CSS}). Actualmente los navegadores usan la versión \textit{CSS3}.
+
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{img/http.jpeg}
+\caption{Comunicación cliente-servidor en HTTP} \label{fig:http}
+\end{figure}
+\subsection{BackEnd}
+\label{subsec:backend}
+En la parte del servidor web se encarga de proveer los datos, hacer posible crear una aplicación que se le mostrará al cliente y facilitar herramientas como bases de datos y recursos compartidos. 
 \begin{itemize}
-\item \textbf{Correo Electrónico:} El correo electrónico se utiliza para el intercambio de mensajes entre personas por medio de computadoras y es una de las herramientas más importantes que existen para la comunicación y el trabajo colaborativo. 
-\item \textbf{Motores de búsqueda:}Los motores de búsqueda están formados por un paquete de programas que permite localizar, dentro de un gran conjunto, aquellos documentos que cumplen una serie de requisitos específicos.
-\item \textbf{Navegadores Web:} Los navegadores son programas preparados para mostrar las páginas Web y para el acceso a Internet, a través de una interfaz gráfica que permite representar texto, gráficos, audio y vídeo
-\item \textbf{Tecnología Push:} Esta tecnología consiste en entregar al usuario la información que necesita evitándole así tener que buscarla en la Web. El usuario indica qué tipo de información desea y es el software quien se encarga de localizarla, avisándole mediante una señal, que la misma está a su disposición. 
-\end{itemize}{}
-Lo que nos interesa de las \textit{Tecnologías Web} es el modelo de cliente-servidor, para abastecer a mi robot de los programas que se desarrollan en \textit{Kibotics.}
+    \item \textbf{Node.js}: Node. js es un entorno JavaScript que nos permite ejecutar en el servidor, de manera asíncrona, con una arquitectura orientada a eventos   
+    \item \textbf{Django}: Django es un framework web extremadamente popular y completamente funcional, escrito en  \textit{Python}. El módulo muestra por qué Django es uno de los frameworks de servidores web más populares.
+\end{itemize}
+
 \subsection{HTTP}
-\label{subsec:http} 
+\label{subsec:http}
+
 \textit{HiperText Transfer Protocol} (\textit{HTTP}) es el protocolo de nivel de aplicación utilizado para transferir recursos hipermedia entre ordenadores y sigue el esquema petición-respuesta entre cliente y servidor (Figura \ref{fig:http}). 
 Las peticiones están definidas por el protocolo y tienen métodos concretos: 
 \begin{itemize}
@@ -96,32 +139,9 @@ Las peticiones están definidas por el protocolo y tienen métodos concretos:
     \item DELETE: Elimina en el servidor un recurso.
 \end{itemize}
 
-Aunque estos son los principales métodos, el protocolo tiene flexibilidad para ir añadiendo nuevos e incorporar funcionalidad. El número de métodos ha ido aumentando con las nuevas versiones. 
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.4]{img/http.jpeg}
-\caption{Comunicación cliente-servidor en HTTP} \label{fig:http}
-\end{figure}
+Aunque estos son los principales métodos, el protocolo tiene flexibilidad para ir añadiendo nuevos e incorporar funcionalidad. El número de métodos ha ido aumentando con las nuevas versiones.\newline
 
-\subsection{Tecnologías en servidor}
-\label{subsec:tecserver}
-En la parte del servidor web se encarga de proveer los datos, hacer posible crear una aplicación que se le mostrará al cliente y facilitar herramientas como bases de datos y recursos compartidos. 
-\begin{itemize}
-    \item \textit{Node.js}: Node. js es un entorno JavaScript que nos permite ejecutar en el servidor, de manera asíncrona, con una arquitectura orientada a eventos   
-    \item \textit{Django}: Django es un framework web extremadamente popular y completamente funcional, escrito en  \textit{Python}. El módulo muestra por qué Django es uno de los frameworks de servidores web más populares.
-\end{itemize}
 
-\subsection{Tecnologías en cliente}
-\label{subsec:tecclient}
-Es la parte encargada de dar forma a la interfaz de usuario y de establecer la comunicación con el servidor. Una pieza importante del cliente es el navegador, ya que es el encargado de leer e interpretar la información recibida. Entre los navegadores \textit{web} más empleados se encuentran \textit{Firefox}, \textit{Google Chrome} u \textit{Opera}\cite{bib:navegadores}. Las tecnologías que hacen posible esa comunicación son: 
-
-\begin{itemize} 
-    \item \textit{\textbf{JavaScript}}. Es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos. Es el lenguaje más utilizado para el desarrollo de aplicaciones Web y de paginas Web. La mayor parte de \textit{Kibotics} esta desarrollado en \textit{Javascript}. Por lo que en el siguiente capítulo desarrollaremos en más profundidad.
-    \item \textit{\textbf{HTML}}. siglas en inglés de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web. Es el estándar más utilizado a dia de hoy.\newline
-HTML sólo sirve para indicar como va ordenado el contenido de una página web. Esto lo hace por medio de las marcas de hipertexto las cuales son etiquetas conocidas en inglés como tags. Las mejoras del diseño gráfico ya vienen dada de la versión actual, \textit{HTML5}, que incluye muchas mejoras respecto a su predecesor: \textit{canvas}, \textit{websockets}, \textit{WebRTC}, vídeo, audio, etc. Este lenguaje indica la estructura de una página web, para editar el estilo y presentación visual hay que hacer uso de otros elementos como \textit{CSS}.
-    \item \textit{\textbf{Cascading Style Sheets (CSS)}}. Lenguaje de diseño gráfico para definir y crear la presentación de un documento escrito en un lenguaje de marcado. De esta forma, se puede separar información y datos (en los documentos \textit{HTML}) y todo lo relativo al diseño y presentación (en documentos \textit{CSS}). Actualmente los navegadores usan la versión \textit{CSS3}.
-
-\end{itemize}
 
 
 \section{Robótica educativa}
@@ -175,7 +195,9 @@ En el caso de LEGO y en otros kits incorporan los elementos básicos para la con
 
 En el siguiente capitulo, profundizare mas en lo que se puede hacer con el robot \textbf{LEGO Ev3} y explicare cuales van a ser los objetivos y porque elegir este robot.
 
-\section{Kibotics}
+
+
+\subsection{Kibotics}
 \label{sec:kibotics}
 Kibotics\footnote{\url{https://kibotics.org/}}, es un entorno web desarrollado por la Asociación JdeRobot\footnote{\url{https://jderobot.github.io/}} para la docencia de robótica. Fue creada para impartir cursos de robótica, en los que destacan una iniciación muy sencilla, y una gran variedad de recursos a disposición del alumno.
 Es una plataforma en la que podemos encontrar distintos ejercicios de robots simulados que no son reales (como el Formula 1). Tiene los ejercicios divididos , en los robots con ruedas sobre una superficie, con cámaras, sensores de todo tipo, y los drones, con funcionalidad adicional, y otro tipo de ejercicios, y dentro de estos dos grupos, se dividen entre los dos lenguajes de programación. \newline

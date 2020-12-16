@@ -1,0 +1,26 @@
+\chapter{Conclusiones}
+\label{chap:conclusiones}
+
+En este capítulo se recogen las conclusiones a las que se han llegado una vez realizado el Trabajo de Fin de Grado, y voy a valorar los logros alcanzados, comparándolos con los objetivos planteados. Así como una recapitulación sobre los conocimientos adquiridos y se presentarán una serie de mejoras para realizar en un futuro.
+
+\section{Conclusiones}
+\label{sec:conclusiones}
+El objetivo principal era  integrar el robot \textit{LEGO EV3} en la plataforma de \textit{Kibotics} el cual ha sido alcanzo con exito este objetivo lo dividimos en varios subobjetivos que vamos a ir analizando.
+
+El primer subobjetivo consistía en dar soporte a la parte simulada del robot  \textit{LEGO EV3} en \textit{WebSim}. En el Capitulo 4 se explica cómo se ha llevado a cabo, aportando los modelos en 3D, los \textit{drivers} y bloques para las nuevas funcionalidades que añade el \textit{LEGO EV3}. Entre ellos está el nuevo sensor de contacto con su función \textit{IsTouching} y actualización de la funciones en los \textit{drivers} de los sensores de \textit{Ultrasonidos} y \textit{Sensor de IR}.\\
+
+El segundo subobjetivo era dar soporte al robot real para aceptar código desde el navegador web y el \textit{LEGO EV3} fuera capaz de recibir ese código, interpretarlo y ejecutarlo en local. Para ello se crearon unos \textit{drivers} en Python que daban la funcionalidad al robot real. Para que el robot real pudiera ejecutar programas que le enviaban, necesitó que se le instalara una imagen de ditribución \textit{Linux}, se instaló los \textit{drivers} al \textit{LEGO} y se lanzó un servidor \textit{Flask} que se encargaba de recibir los paquetes \textit{HTTP} que enviaba el navegador Web con el código en \textit{Python}. Una vez recibido se encargaba de guardarlo como ejecutable y lanzarlo en local. Todo esto viene explicado con más detalle en el Capitulo 5\\
+
+El tercer subobjetivo era incluir ejercicios que actuaran como validación experimental de los avances que he ido explicando anteriormente, y además para tener una batería de ejercicios que tener como temario. Se han implementado: \textit{Bump and Go, AtraviesaBosque, SigueLineasIR } para el robot simulado, además del \textit{Bump and Go y SigueLíneas} para el robot real en \textit{Python}
+
+\section{Mejoras futuras}
+\label{sec:mejoras_futuras}
+
+La implementación del \textit{LEGO EV3} en \textit{Kibotics} ha supuesto un avance para la plataforma, pero además ha dejado las puertas a futuros proyectos que pueden enriquecer más la plataforma, como por ejemplo:
+
+\begin{itemize}
+    \item Añadir el \textit{LEGO EV3} real al catálogo de robots que ofrece \textit{Kibotics} en producción, y que se pueda programar y lanzar desde la propia página web de \textit{Kibotics} en vez de, desde una página externa  
+    \item Añadir más ejercicios a la plataforma con los sensores que ofrece \textit{LEGO}, aparte de los que vienen con el paquete \textit{MINDSTORM} como pueden ser el micrófono, el sensor de temperatura, o el sensor de luz ambiental. 
+    \item Añadir más montajes con el \textit{LEGO Ev3} de modo que el propio robot simulado tenga un centro de gravedad y pueda caer para que el \textit{girosensor} tenga más utilidad. O que haya un nivel de luz, o temperatura en el escenario, lo que daría mas posibilidades a la hora de crear ejercicios. Añadir mas diseños de modelados 3D de robots de \textit{LEGO EV3} y con ellos crear más tipos diferentes de ejercicios.
+ 
+ \end{itemize} 
