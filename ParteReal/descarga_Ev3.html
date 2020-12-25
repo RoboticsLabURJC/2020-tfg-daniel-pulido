@@ -1,0 +1,72 @@
+{% load static %}
+
+<center><h3>En esta seccion podras enviar tu codigo  al LEGO Ev3.</h3></center>
+
+<div class="text-center">
+  <img class="text-center" src="{% static '/'%}img/lego-mindstorms-education-ev3.jpg"
+      width="300px" height="250px"
+</div>
+
+<div id="text" class="text-center">
+  <h3><span id="proxy_state" class="label label-success">Conexión con proxy</span></h3>
+
+      <button type="button" id="send_mbot" class="btn btn-info" onclick="send_code_to_ev3()"><span
+              class="glyphicon glyphicon-send"></span> Enviar
+      </button>
+</div>
+
+<script>
+  let responseOk;
+  var editor = ace.edit("ace");
+  editor.setTheme("ace/theme/monokai");
+  editor.session.setMode("ace/mode/python");
+
+  function send_code_to_ev3() {
+      let code = editor.getValue();
+      console.log(code);
+      const message = {
+          method: "GET"
+      };
+      url = 'http://10.42.0.102:8001/run?python_code=' + JSON.stringify(code);
+      fetch(url, message)
+          .then(function(response) {
+              if(response.ok){
+                  responseOk = true
+              }else{
+                  responseOk = false
+              }
+              return response.text();
+          })
+          .then(function(data) {
+               if(responseOk){
+                  console.log("Ok")
+              }else{
+                  console.log("Send Fail")
+              }
+
+          })
+          .catch(function(err) {
+              console.error(err);
+          });
+  }
+
+  function save_exercise() {
+      var editor = ace.edit("ace");
+      let code = editor.getValue();
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log('código guardado con éxito');
+        }
+      };
+      var csrf = '{{ csrf_token }}';
+      xhttp.open("POST", "/save_user_code/", true);
+      xhttp.setRequestHeader("Content-Type", "application/json");
+      xhttp.setRequestHeader("X-CSRFToken", csrf);
+      xhttp.send(JSON.stringify({
+          simulation_code : code
+      }));
+  }
+
+</script>

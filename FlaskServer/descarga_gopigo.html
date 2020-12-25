@@ -1,17 +1,17 @@
 {% load static %} <!-- Cargamos los archivos estaticos -->
 
 
-<center><h3>En esta sección podrás enviar tu código  al Gopigo3.</h3></center>
+<center><h3>En esta sección podrás enviar tu código  al Lego Ev3.</h3></center>
 
 <div class="text-center">
-    <img class="text-center" src="{% static '/'%}{{ exercise.language }}/{{ exercise.exercise_id }}/img/gopigo3.png"
+    <img class="text-center" src="{% static '/'%}{{ exercise.language }}/{{ exercise.exercise_id }}/img/ev3.png"
          width="300px" height="250px">
 </div>
 
 <div id="text" class="text-center">
     <h3><span id="proxy_state" class="label label-success">Conexión con proxy</span></h3>
     {% if exercise.language == "python" %}
-        <button type="button" id="send_mbot" class="btn btn-info" onclick="send_code_to_gopigo()"><span
+        <button type="button" id="send_mbot" class="btn btn-info" onclick="send_code_to_ev3()"><span
                 class="glyphicon glyphicon-send"></span> Enviar
         </button>
 </div>

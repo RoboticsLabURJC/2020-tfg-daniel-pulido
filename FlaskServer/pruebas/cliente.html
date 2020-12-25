@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>GoPiGo3</title></head>
+<body><h1>GoPiGo3 example</h1>
+<p>Podras realizar tu programa para enviarselo al GoPiGo.</p>
+<p><img src="{% static 'python/PRMbo009/img/GoPiGo3.png' %}" width=200px></p>
+
+<h2>1 - Instalacion</h2>
+<ul>
+ <li type="circle">
+  <h4>   <b>En la Raspberry Pi 3 del GoPiGo3:</b> </h4>
+   <ol start='1' >
+    <li>
+     Descargar el siguiente fichero comprimido => <a href="{% static 'python/PRMbo009/install/configuracion_GoPiGo.zip' %}" target="_blank">Intalador</a>
+    </li>
+    <li>
+     Descomprimir el Zip descargado y situarlo en el directorio /home/pi/
+    </li>
+    <li>
+     Ir al directorio e instalar los drivers necesario, para ello abrir un terminal y ejecutar
+    </li>
+    <ol start='1' >
+     <li>
+      <code>chmod +x instalar_drivers_GoPiGo.sh</code>
+     </li>
+     <li>
+      <code>./instalar_drivers_GoPiGo.sh</code>
+     </li>
+    </ol>
+    <li>
+     Agregar la instruccion que permite levantar siempre el servidor al encenderse la Raspberry, para ello dirigirse al directorio y abrir un terminal:</li>
+     <ol start='1' >
+      <li>
+       Ejecutar => <code>chmod +x iniciar_servidor_GoPiGo.sh</code>
+      </li>
+      <li>
+       Abrir el servicio cron => <code>crontabl -e</code>
+      </li>
+      <li>
+       Agregar la tarea <code> @reboot /home/pi/configuracion_GoPiGo/iniciar_servidor_GoPiGo.sh &</code>
+      </li>
+     </ol>
+   </ol>
+   </li>
+   <li type="circle">
+    <h4>   <b>En el ordenador MacOS/Linux/Windows:</b> </h4>
+     <p>No es necesaria ningun tipo de instalacion adicional para el funcionamiento.</p>
+    </li>
+</ul>
+
+<h2>2 - Ejecucion</h2>
+<ol start='' >
+ <li>
+  Realice su programa
+ </li>
+  <li>
+   Eciende el GoPiGo y asegurate de que esta conectado a el WiFi.
+  </li>
+  <li>
+   Pulse en <b>Enviar</b>, si todo ha ido bien se cargara el programa en el GoPiGo3.
+  </li>
+</ol>
+</body>
+</html>
